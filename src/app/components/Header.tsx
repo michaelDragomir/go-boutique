@@ -1,15 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import {
-	GiClothes,
-	GiSittingDog,
-	GiHouse,
-	GiSmartphone,
-	GiHamburgerMenu,
-	GiGingerbreadMan,
-	GiBathtub,
-} from 'react-icons/gi';
+import SubHeaderTabs from './SubHeaderTabs';
 
 const Header = () => {
 	return (
@@ -56,38 +48,7 @@ const Header = () => {
 				</div>
 			</div>
 			<div className='bg-white'>
-				<div className='max-w-[1920px] mx-auto xl:px-20 md:px-2 px-4'>
-					<div className='pt-4 flex flex-row items-center justify-between overflow-x-auto'>
-						<div className='flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer border-b-slate-800 text-slate-800'>
-							<GiHamburgerMenu className='w-7 h-7' />
-							<div className='font-medium text-sm'>All</div>
-						</div>
-						<div className='flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer border-transparent text-slate-500'>
-							<GiClothes className='w-7 h-7' />
-							<div className='font-medium text-sm'>Clothing</div>
-						</div>
-						<div className='flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer border-transparent text-slate-500'>
-							<GiSittingDog className='w-7 h-7' />
-							<div className='font-medium text-sm'>Pet Supplies</div>
-						</div>
-						<div className='flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer border-transparent text-slate-500'>
-							<GiHouse className='w-7 h-7' />
-							<div className='font-medium text-sm'>Household</div>
-						</div>
-						<div className='flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer border-transparent text-slate-500'>
-							<GiSmartphone className='w-7 h-7' />
-							<div className='font-medium text-sm'>Electronics</div>
-						</div>
-						<div className='flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer border-transparent text-slate-500'>
-							<GiBathtub className='w-7 h-7' />
-							<div className='font-medium text-sm'>Health & Beauty</div>
-						</div>
-						<div className='flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer border-transparent text-slate-500'>
-							<GiGingerbreadMan className='w-7 h-7' />
-							<div className='font-medium text-sm'>Toys</div>
-						</div>
-					</div>
-				</div>
+				<SubHeaderTabs />
 			</div>
 		</div>
 	);

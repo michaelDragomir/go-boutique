@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import SubHeaderTabs from './SubHeaderTabs';
+import { IoCartOutline } from 'react-icons/io5';
 
 const Header = () => {
 	return (
@@ -40,7 +41,12 @@ const Header = () => {
 						</div>
 						<div className='flex items-center gap-8 md:gap-12'>
 							<div className='relative cursor-pointer text-black'>
-								Placeholder 1
+								<div className='text-3xl'>
+									<IoCartOutline className='text-slate-500 w-8 h-8' />
+									<span className=' absolute top-[-10px] right-[-10px] bg-slate-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm '>
+										1
+									</span>
+								</div>
 							</div>
 							<div className='relative z-30 text-black'> Placeholder 2</div>
 						</div>

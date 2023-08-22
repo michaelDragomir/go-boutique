@@ -9,6 +9,7 @@ import {
 } from 'react-icons/gi';
 
 import SubTabSlider from './SubTabSlider';
+import Container from '@/app/components/Container';
 
 const tabItems = [
 	{
@@ -44,9 +45,9 @@ const tabItems = [
 const SubHeaderTabs = () => {
 	return (
 		<>
-			<div className='box-border max-w-[1920px] mx-auto xl:px-20 md:px-2 px-4'>
+			<Container>
 				<SubTabSlider tabItems={tabItems} />
-			</div>
+			</Container>
 		</>
 	);
 };

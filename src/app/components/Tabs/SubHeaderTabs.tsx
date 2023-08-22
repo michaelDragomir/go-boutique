@@ -34,7 +34,7 @@ const tabItems = [
 	},
 	{
 		icon: <GiBathtub className='w-7 h-7' />,
-		name: 'Personal Care',
+		name: 'Bath & Body',
 	},
 	{
 		icon: <GiGingerbreadMan className='w-7 h-7' />,

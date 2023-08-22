@@ -21,7 +21,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 					}`}
 				>
 					{item.icon}
-					<div className='font-medium text-sm'>{item.name}</div>
+					<div className='font-medium'>{item.name}</div>
 				</div>
 			))}
 		</div>

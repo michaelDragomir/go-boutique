@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SubHeaderTabs from '../Tabs/SubHeaderTabs';
 import { IoCartOutline } from 'react-icons/io5';
+import { FaRegUser } from 'react-icons/fa6';
+import { BiSolidDownArrow } from 'react-icons/bi';
 import Container from '@/app/components/Container';
 
 const Header = () => {
@@ -51,7 +53,13 @@ const Header = () => {
 								</span>
 							</div>
 						</div>
-						<div className='relative z-30 text-black'> Placeholder 2</div>
+						<div className='relative z-30 text-black'>
+							{' '}
+							<div className=' p-2 border-[1px] border-slate-400 flex flex-row items-center gap-1 rounded-full cursor-pointer hover:shadow-md transition text-slate-700 '>
+								<FaRegUser className='text-slate-500 w-5 h-5' />
+								<BiSolidDownArrow />
+							</div>
+						</div>
 					</div>
 				</div>
 			</Container>

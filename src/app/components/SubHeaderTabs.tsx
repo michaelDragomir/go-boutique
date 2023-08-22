@@ -44,7 +44,7 @@ const tabItems = [
 const SubHeaderTabs = () => {
 	return (
 		<>
-			<div className='max-w-[1920px] mx-auto xl:px-20 md:px-2 px-4'>
+			<div className='box-border max-w-[1920px] mx-auto xl:px-20 md:px-2 px-4'>
 				<SubTabSlider tabItems={tabItems} />
 			</div>
 		</>

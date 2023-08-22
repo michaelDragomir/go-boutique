@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
-	const [activeTab, setActiveTab] = useState<any>(tabItems[0].name);
+	const [activeTab, setActiveTab] = useState<any>(tabItems[0]);
 
 	const handleTabClick = (tabItem: any) => {
 		setActiveTab(tabItem);
@@ -14,9 +14,9 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 				<div
 					key={item.name}
 					onClick={() => handleTabClick(item.name)}
-					className={`flex items-center justify-center text-center gap-1 p-2 border hover:text-slate-800 transition cursor-pointer border-transparent ${
+					className={`w-40 flex items-center justify-center text-center gap-1 p-2 hover:text-slate-800 transition cursor-pointer ${
 						activeTab === tabItems[idx].name
-							? 'text-slate-800 border border-slate-800'
+							? 'text-slate-800 border border-[#FF66C4]'
 							: 'text-slate-500'
 					}`}
 				>

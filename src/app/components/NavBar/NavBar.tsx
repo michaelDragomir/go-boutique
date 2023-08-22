@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import SubHeaderTabs from './SubHeaderTabs';
+import SubHeaderTabs from '../Tabs/SubHeaderTabs';
 import { IoCartOutline } from 'react-icons/io5';
 
 const Header = () => {

@@ -1,9 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Header from '@/app/components/Header';
+import { Poppins } from 'next/font/google';
+import NavBar from '@/app/components/NavBar/NavBar';
+import Footer from '@/app/components/Footer/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({ subsets: ['latin'], weight: ['300', '500'] });
 
 export const metadata: Metadata = {
 	title: 'Go Boutique',
@@ -23,9 +24,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
-				<Header />
-				{children}
+			<body className={poppins.className}>
+				<main>
+					<NavBar />
+					{children}
+					<Footer />
+				</main>
 			</body>
 		</html>
 	);

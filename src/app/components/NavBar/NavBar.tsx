@@ -2,11 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+
 import SubHeaderTabs from '../Tabs/SubHeaderTabs';
+import Container from '@/app/components/Container';
+
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
 import { BiSolidDownArrow } from 'react-icons/bi';
-import Container from '@/app/components/Container';
+import { GoHeart } from 'react-icons/go';
 
 const Header = () => {
 	return (
@@ -30,7 +33,7 @@ const Header = () => {
 						>
 							<input
 								required
-								className={`w-[800px] h-10 placeholder:text-slate-400 block bg-slate-100 border border-slate-300 rounded-l-lg py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm`}
+								className={`w-[700px] h-10 placeholder:text-slate-400 block bg-slate-100 border border-slate-300 rounded-l-lg py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm`}
 								placeholder='Explore Go Boutique...'
 								type='text'
 								// value={inputFieldValue}
@@ -65,6 +68,12 @@ const Header = () => {
 									</Link>
 								</div>
 							</div>
+						</div>
+						<div className='flex'>
+							<h4 className='cursor-pointer text-sm font-bold pr-1 text-slate-500 flex items-center'>
+								My Favorites
+							</h4>
+							<GoHeart className='text-goPink w-6 h-6' />
 						</div>
 						<div className='cursor-pointer text-black mt-2'>
 							<div className='flex items-center'>

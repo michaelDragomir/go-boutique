@@ -68,10 +68,18 @@ const Header = () => {
 						</div>
 						<div className='cursor-pointer text-black mt-2'>
 							<div className='flex items-center'>
-								<h4 className='text-sm font-bold pr-2 text-slate-500'>
-									Cart | <span>1 item(s)</span>
+								<div className='border-r-2 border-slate-400 mr-1'>
+									<IoCartOutline className='text-slate-500 w-8 h-8' />
+									<h4 className='text-sm font-bold pr-1 text-slate-500 flex justify-center items-center'>
+										Cart
+									</h4>
+								</div>
+								<span className='text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-goPink drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+									1
+								</span>
+								<h4 className='text-sm font-bold pl-1 text-slate-500'>
+									item(s)
 								</h4>
-								<IoCartOutline className='text-slate-500 w-8 h-8' />
 							</div>
 						</div>
 					</div>

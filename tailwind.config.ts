@@ -21,7 +21,7 @@ const config: Config = {
 				},
 			},
 			animation: {
-				slide: 'slide 1s infinite',
+				slide: 'slide .15s forwards',
 			},
 
 			backgroundImage: {

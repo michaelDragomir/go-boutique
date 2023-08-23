@@ -51,7 +51,7 @@ const Header = () => {
 								<FaRegUser className='text-slate-500 w-5 h-5' />
 								<BiSolidDownArrow className='text-slate-500' />
 							</div>
-							<div className='absolute rounded-md drop-shadow-md w-[155px] bg-white overflow-hidden right-0 top-30 text-sm flex flex-col cursor-pointer invisible group-hover:visible animate-slide'>
+							<div className='absolute rounded-md drop-shadow-md w-[155px] bg-white overflow-hidden right-0 top-30 text-sm flex flex-col cursor-pointer invisible group-hover:visible group-hover:animate-slide'>
 								<div>
 									<Link href='/login'>
 										<p className='px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>

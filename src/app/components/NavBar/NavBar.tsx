@@ -45,32 +45,33 @@ const Header = () => {
 						</form>
 					</div>
 					<div className='flex items-center gap-8 md:gap-12'>
-						<div className='relative cursor-pointer text-black mt-2'>
-							<div className='text-3xl '>
-								<IoCartOutline className='text-slate-500 w-8 h-8' />
-								<span className=' absolute top-[-10px] right-[-10px] bg-slate-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm '>
-									1
-								</span>
-							</div>
-						</div>
 						<div className='group relative z-30 text-black'>
-							<div className='p-2 border border-slate-400 flex flex-row items-center gap-1 rounded-md cursor-pointer transition text-slate-700 '>
+							<div className='p-[9px] border border-slate-400 flex flex-row items-center gap-1 cursor-pointer transition text-slate-700 rounded-md'>
+								<span className='text-sm pr-2'>My Account</span>
 								<FaRegUser className='text-slate-500 w-5 h-5' />
-								<BiSolidDownArrow />
+								<BiSolidDownArrow className='text-slate-500' />
 							</div>
-							<div className='absolute rounded-md drop-shadow-md w-[170px] bg-white overflow-hidden right-0 top-30 text-sm flex flex-col cursor-pointer invisible group-hover:visible'>
+							<div className='absolute rounded-md drop-shadow-md w-[155px] bg-white overflow-hidden right-0 top-30 text-sm flex flex-col cursor-pointer invisible group-hover:visible animate-slide'>
 								<div>
 									<Link href='/login'>
-										<div className='px-4 py-3 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>
-											Login
-										</div>
+										<p className='px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>
+											Sign In
+										</p>
 									</Link>
 									<Link href='/register'>
-										<div className='px-4 py-3 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>
-											Register
-										</div>
+										<p className='px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>
+											Create Account
+										</p>
 									</Link>
 								</div>
+							</div>
+						</div>
+						<div className='cursor-pointer text-black mt-2'>
+							<div className='flex items-center'>
+								<h4 className='text-sm font-bold pr-2 text-slate-500'>
+									Cart | <span>1 item(s)</span>
+								</h4>
+								<IoCartOutline className='text-slate-500 w-8 h-8' />
 							</div>
 						</div>
 					</div>

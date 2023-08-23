@@ -8,6 +8,22 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			keyframes: {
+				slide: {
+					'0%': {
+						transform: 'translateY(-25%)',
+						opacity: '0',
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1',
+					},
+				},
+			},
+			animation: {
+				slide: 'slide 1s infinite',
+			},
+
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':

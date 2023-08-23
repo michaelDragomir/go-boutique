@@ -7,6 +7,7 @@ import {
 	GiGingerbreadMan,
 	GiBathtub,
 } from 'react-icons/gi';
+import { FaPersonRunning } from 'react-icons/fa6';
 
 import SubTabSlider from './SubTabSlider';
 import Container from '@/app/components/Container';
@@ -39,6 +40,10 @@ const tabItems = [
 	{
 		icon: <GiGingerbreadMan className='w-7 h-7' />,
 		name: 'Toys',
+	},
+	{
+		icon: <FaPersonRunning className='w-7 h-7' />,
+		name: 'Active',
 	},
 ];
 

@@ -12,7 +12,7 @@ const Header = () => {
 	return (
 		<div className='sticky w-full bg-white z-30 shadow-sm top-0'>
 			<Container>
-				<div className='flex flex-row items-center justify-around gap-3 md:gap-0 '>
+				<div className='flex flex-row items-center justify-between gap-3 md:gap-0 '>
 					<Link href='/'>
 						<Image
 							src='/assets/images/goImage.png'
@@ -61,7 +61,7 @@ const Header = () => {
 							<div className='absolute rounded-md drop-shadow-md w-[170px] bg-white overflow-hidden right-0 top-30 text-sm flex flex-col cursor-pointer invisible group-hover:visible'>
 								<div>
 									<Link href='/login'>
-										<div className='px-4 py-3 hover:underline hover:underline-offset-4 hover:text-goPink transition '>
+										<div className='px-4 py-3 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>
 											Login
 										</div>
 									</Link>

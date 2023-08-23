@@ -71,10 +71,10 @@ const Header = () => {
 						</div>
 						<div className='flex'>
 							<GoHeart className='text-goPink w-6 h-6 pr-1' />
-							<h4 className='border-r border-slate-400 cursor-pointer text-sm font-bold text-slate-500 flex items-center'>
+							<h4 className='border-r border-slate-400 cursor-pointer text-sm text-slate-500 flex items-center'>
 								<span className='mr-1'>My Favorites</span>
 							</h4>
-							<span className='text-slate-500 flex items-center text-sm ml-1'>
+							<span className='text-slate-500 flex items-center text-sm pl-1'>
 								1
 							</span>
 						</div>
@@ -82,7 +82,7 @@ const Header = () => {
 							<div className='flex items-center'>
 								<div className='border-r border-slate-400 mr-1'>
 									<IoCartOutline className='text-slate-500 w-8 h-8' />
-									<h4 className='text-sm font-bold pr-1 text-slate-500 flex justify-center items-center'>
+									<h4 className='text-sm pr-1 text-slate-500 flex justify-center items-center'>
 										Cart
 									</h4>
 								</div>

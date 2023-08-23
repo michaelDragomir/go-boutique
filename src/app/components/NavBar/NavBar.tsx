@@ -49,7 +49,7 @@ const Header = () => {
 					</div>
 					<div className='flex items-center gap-8 md:gap-12'>
 						<div className='group relative z-30 text-black'>
-							<div className='p-[9px] border border-slate-400 flex flex-row items-center gap-1 cursor-pointer transition text-slate-700 rounded-md'>
+							<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer transition text-slate-500 rounded-md'>
 								<span className='text-sm pr-2'>My Account</span>
 								<FaRegUser className='text-slate-500 w-5 h-5' />
 								<BiSolidDownArrow className='text-slate-500' />
@@ -57,12 +57,12 @@ const Header = () => {
 							<div className='absolute rounded-md drop-shadow-md w-[155px] bg-white overflow-hidden right-0 top-30 text-sm flex flex-col cursor-pointer invisible group-hover:visible group-hover:animate-slide'>
 								<div>
 									<Link href='/login'>
-										<p className='px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>
+										<p className='text-slate-500 px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen'>
 											Sign In
 										</p>
 									</Link>
 									<Link href='/register'>
-										<p className='px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen transition '>
+										<p className='text-slate-500 px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen'>
 											Create Account
 										</p>
 									</Link>
@@ -70,14 +70,17 @@ const Header = () => {
 							</div>
 						</div>
 						<div className='flex'>
-							<h4 className='cursor-pointer text-sm font-bold pr-1 text-slate-500 flex items-center'>
-								My Favorites
+							<GoHeart className='text-goPink w-6 h-6 pr-1' />
+							<h4 className='border-r border-slate-400 cursor-pointer text-sm font-bold text-slate-500 flex items-center'>
+								<span className='mr-1'>My Favorites</span>
 							</h4>
-							<GoHeart className='text-goPink w-6 h-6' />
+							<span className='text-slate-500 flex items-center text-sm ml-1'>
+								1
+							</span>
 						</div>
 						<div className='cursor-pointer text-black mt-2'>
 							<div className='flex items-center'>
-								<div className='border-r-2 border-slate-400 mr-1'>
+								<div className='border-r border-slate-400 mr-1'>
 									<IoCartOutline className='text-slate-500 w-8 h-8' />
 									<h4 className='text-sm font-bold pr-1 text-slate-500 flex justify-center items-center'>
 										Cart

@@ -3,16 +3,26 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import SubHeaderTabs from '../Tabs/SubHeaderTabs';
 import Container from '@/app/components/Container';
+import SubHeaderTabs from '../Tabs/SubHeaderTabs';
+import NavAcctDropDown from '../NavAcctDropDown/navAcctDropDown';
 
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
-import { BiSolidDownArrow } from 'react-icons/bi';
+import { IoIosArrowDown } from 'react-icons/io';
 import { GoHeart } from 'react-icons/go';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
+import { useState } from 'react';
+
 const Header = () => {
+	const [isHover, setIsHover] = useState<boolean>(false);
+
+	const showDropdownHandler = (bool: boolean) => {
+		setIsHover(bool);
+		console.log('!!!', isHover);
+	};
+
 	return (
 		<div className='sticky w-full bg-white z-30 shadow-sm top-0'>
 			<Container>
@@ -51,29 +61,18 @@ const Header = () => {
 					</div>
 					<div className='flex items-center gap-8 md:gap-12'>
 						<div className='group relative z-30 text-black'>
-							<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
+							<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md hover:border-slate-800'>
 								<span className='text-sm pr-2'>My Account</span>
 								<FaRegUser className='text-slate-500 w-5 h-5' />
-								<BiSolidDownArrow className='text-slate-500' />
+								<IoIosArrowDown className='text-slate-500 w-5 h-5' />
 							</div>
-							<div className='absolute rounded-md drop-shadow-md w-[155px] bg-white overflow-hidden right-0 top-30 text-sm flex flex-col cursor-pointer invisible group-hover:visible group-hover:animate-slide'>
-								<div>
-									<Link href='/login'>
-										<p className='text-slate-500 px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen'>
-											Sign In
-										</p>
-									</Link>
-									<Link href='/register'>
-										<p className='text-slate-500 px-3 py-2 hover:underline hover:underline-offset-4 hover:text-goGreen'>
-											Create Account
-										</p>
-									</Link>
-								</div>
+							<div className='absolute invisible group-hover:visible group-hover:animate-slideDown'>
+								<NavAcctDropDown />
 							</div>
 						</div>
-						<div className='flex border border-slate-500 rounded-md p-[7px] hover:border-goPink'>
+						<div className='flex border border-slate-500 rounded-md p-[7px] hover:border-slate-800'>
 							<GoHeart className='text-goPink w-6 h-6 pr-1' />
-							<h4 className='border-r border-slate-400 cursor-pointer text-sm text-slate-500 flex items-center'>
+							<h4 className='border-r border-goPink cursor-pointer text-sm text-slate-500 flex items-center'>
 								<span className='mr-1'>My Favorites</span>
 							</h4>
 							<span className='text-slate-500 flex items-center text-sm pl-1'>

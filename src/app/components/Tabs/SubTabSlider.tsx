@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 	const [activeTab, setActiveTab] = useState<any>(tabItems[0]);
@@ -20,9 +21,11 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 							: 'text-slate-500'
 					}`}
 				>
-					<span className='hover:text-goPink'>{item.icon}</span>
-
+					<span>{item.icon}</span>
 					<div className='font-medium text-sm'>{item.name}</div>
+					<div className='hover:text-goPink'>
+						<IoIosArrowDown />
+					</div>
 				</div>
 			))}
 		</div>

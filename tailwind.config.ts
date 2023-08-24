@@ -9,7 +9,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			keyframes: {
-				slide: {
+				slideDown: {
 					'0%': {
 						transform: 'translateY(-25%)',
 						opacity: '0',
@@ -19,9 +19,20 @@ const config: Config = {
 						opacity: '1',
 					},
 				},
+				slideUp: {
+					'0%': {
+						transform: 'translateY(0)',
+						opacity: '1',
+					},
+					'100%': {
+						transform: 'translateY(-25%)',
+						opacity: '0',
+					},
+				},
 			},
 			animation: {
-				slide: 'slide .15s forwards',
+				slideDown: 'slideDown .15s ease-in',
+				slideUp: 'slideUp .5s ease-in',
 			},
 
 			backgroundImage: {

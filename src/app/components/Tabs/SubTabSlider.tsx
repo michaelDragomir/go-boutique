@@ -9,7 +9,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 		setActiveTab(tabItem);
 	};
 	return (
-		<div className='flex flex-row items-center justify-between overflow-x-auto'>
+		<div className='flex flex-row items-center justify-evenly overflow-x-auto'>
 			{tabItems.map((item: any, idx: any) => (
 				<div
 					key={item.name}

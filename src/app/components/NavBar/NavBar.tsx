@@ -10,12 +10,14 @@ import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
 import { BiSolidDownArrow } from 'react-icons/bi';
 import { GoHeart } from 'react-icons/go';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Header = () => {
 	return (
 		<div className='sticky w-full bg-white z-30 shadow-sm top-0'>
 			<Container>
-				<div className='flex flex-row items-center justify-between gap-3 md:gap-0 '>
+				<div className='flex flex-row items-center justify-evenly gap-3 md:gap-0 '>
+					<GiHamburgerMenu className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer' />
 					<Link href='/'>
 						<Image
 							src='/assets/images/goImage.png'
@@ -49,7 +51,7 @@ const Header = () => {
 					</div>
 					<div className='flex items-center gap-8 md:gap-12'>
 						<div className='group relative z-30 text-black'>
-							<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer transition text-slate-500 rounded-md'>
+							<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
 								<span className='text-sm pr-2'>My Account</span>
 								<FaRegUser className='text-slate-500 w-5 h-5' />
 								<BiSolidDownArrow className='text-slate-500' />
@@ -69,13 +71,13 @@ const Header = () => {
 								</div>
 							</div>
 						</div>
-						<div className='flex'>
+						<div className='flex border border-slate-500 rounded-md p-[7px] hover:border-goPink'>
 							<GoHeart className='text-goPink w-6 h-6 pr-1' />
 							<h4 className='border-r border-slate-400 cursor-pointer text-sm text-slate-500 flex items-center'>
 								<span className='mr-1'>My Favorites</span>
 							</h4>
 							<span className='text-slate-500 flex items-center text-sm pl-1'>
-								1
+								346
 							</span>
 						</div>
 						<div className='cursor-pointer text-black mt-2'>

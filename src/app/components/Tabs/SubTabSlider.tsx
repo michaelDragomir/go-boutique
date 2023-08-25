@@ -15,14 +15,14 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 	};
 	return (
 		<Container>
-			<div className='p-2 flex flex-row items-center justify-around overflow-x-auto'>
+			<div className='flex justify-between'>
 				{tabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
 						onClick={() => handleTabClick(item.name)}
-						className={`flex items-center justify-center text-center gap-1 p-2 hover:text-slate-800 cursor-pointer border-transparent text-slate-500 border border-goGreen ${
+						className={`flex items-center justify-center text-center gap-1 p-3 hover:text-slate-800 cursor-pointer text-slate-500 w-[145px] ${
 							activeTab === tabItems[idx].name
-								? 'text-slate-800'
+								? 'text-slate-800 border-t border-goPink'
 								: 'text-slate-500'
 						}`}
 					>

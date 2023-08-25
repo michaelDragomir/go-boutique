@@ -1,7 +1,7 @@
 const Footer = () => {
 	return (
 		<footer className='bg-slate-700 text-slate-200 text-sm mt-16'>
-			<div className=' max-w-[1920px] mx-auto xl:px-20 md:px-2 px-4'>
+			<div className=' max-w-[1770px] mx-auto xl:px-20 md:px-2 px-4'>
 				<div className='flex flex-col md:flex-row justify-between pt-16 pb-8'>
 					<div className=' w-full sm:w-1/2 md:w-1/4 lg:w-1/6 mb-6 flex flex-col gap-2'>
 						<h3 className='text-base font-bold mb-2'>Shop Categories</h3>

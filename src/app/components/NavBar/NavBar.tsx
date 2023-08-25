@@ -18,6 +18,12 @@ const Header = () => {
 		<div className='sticky w-full bg-white shadow-sm top-0 border-b border-slate-500'>
 			<div className='py-4 border-b-[1px]'>
 				<Container>
+					<div className='flex justify-end gap-12 text-sm font-light'>
+						<p>Store Finder</p>
+						<p>Gift Cards</p>
+						<p>Credit Services</p>
+						<p>Help</p>
+					</div>
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
 						<GiHamburgerMenu className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer' />
 						<Link href='/'>
@@ -54,13 +60,13 @@ const Header = () => {
 							</div>
 						</div>
 						<div className='flex items-center gap-8 md:gap-12'>
-							<div className='group relative text-black'>
+							<div className='group relative text-black z-50'>
 								<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md hover:border-slate-800'>
 									<span className='text-sm pr-2'>My Account</span>
 									<FaRegUser className='text-slate-500 w-5 h-5' />
 									<IoIosArrowDown className='text-slate-500 w-5 h-5' />
 								</div>
-								<div className='absolute visible group-hover:visible group-hover:animate-slideDown'>
+								<div className='absolute invisible group-hover:visible group-hover:animate-slideDown'>
 									<NavAcctDropDown />
 								</div>
 							</div>

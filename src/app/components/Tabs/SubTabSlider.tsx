@@ -20,13 +20,13 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 					<div
 						key={item.name}
 						onClick={() => handleTabClick(item.name)}
-						className={`w-40 h-[35px] flex items-center justify-center text-center gap-1 p-2 hover:text-slate-800 transition cursor-pointer ${
+						className={`w-40 h-[35px] items-center justify-center text-center gap-1 p-2 hover:text-slate-800 transition cursor-pointer ${
 							activeTab === tabItems[idx].name
 								? 'text-slate-800 border-b border-goPink'
 								: 'text-slate-500'
 						}`}
 					>
-						<div className='group absolute flex flex-row items-center'>
+						<div className='flex group absolute flex-row items-center'>
 							<span className='pr-1'>{item.icon}</span>
 							<div className='font-medium text-sm'>{item.name}</div>
 							<span className='hover:text-goPink'>

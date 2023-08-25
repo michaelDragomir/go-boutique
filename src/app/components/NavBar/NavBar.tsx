@@ -79,7 +79,7 @@ const Header = () => {
 									346
 								</span>
 							</div>
-							<div className='cursor-pointer text-black mt-2'>
+							<div className='cursor-pointer text-black'>
 								<div className='flex items-center'>
 									<div className='border-r border-slate-400 mr-1'>
 										<IoCartOutline className='text-slate-500 w-8 h-8' />

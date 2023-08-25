@@ -15,24 +15,24 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 	};
 	return (
 		<Container>
-			<div className='flex flex-row items-center justify-evenly'>
+			<div className='p-2 flex flex-row items-center justify-around overflow-x-auto'>
 				{tabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
 						onClick={() => handleTabClick(item.name)}
-						className={`w-40 h-[35px] items-center justify-center text-center gap-1 p-2 hover:text-slate-800 transition cursor-pointer ${
+						className={`flex items-center justify-center text-center gap-1 p-2 hover:text-slate-800 cursor-pointer border-transparent text-slate-500 border border-goGreen ${
 							activeTab === tabItems[idx].name
-								? 'text-slate-800 border-b border-goPink'
+								? 'text-slate-800'
 								: 'text-slate-500'
 						}`}
 					>
 						<div className='flex group absolute flex-row items-center'>
 							<span className='pr-1'>{item.icon}</span>
-							<div className='font-medium text-sm'>{item.name}</div>
+							<p className='font-medium text-sm'>{item.name}</p>
 							<span className='hover:text-goPink'>
 								<IoIosArrowDown />
 							</span>
-							<div className='h-3 visible group-hover:visible group-hover:animate-slideDown'>
+							<div className='h-3 invisible group-hover:visible group-hover:animate-slideDown'>
 								{<NavItemsDropDown props />}
 							</div>
 						</div>

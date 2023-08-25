@@ -2,8 +2,10 @@
 
 export default function Home() {
 	return (
-		<div className='bg-slate-400 position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none'>
-			<div>Main Page</div>
-		</div>
+		<main className='p-8'>
+			<div className='max-w-[1920px] mx-auto xl:px-10 md:px-2 px-4'>
+				Main Page
+			</div>
+		</main>
 	);
 }

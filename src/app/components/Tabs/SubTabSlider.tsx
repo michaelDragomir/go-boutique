@@ -15,7 +15,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 	};
 	return (
 		<Container>
-			<div className='flex flex-row items-center justify-between overflow-x-auto'>
+			<div className='flex flex-row items-center justify-evenly'>
 				{tabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}

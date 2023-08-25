@@ -60,7 +60,7 @@ const Header = () => {
 							</div>
 						</div>
 						<div className='flex items-center gap-8 md:gap-12'>
-							<div className='group relative text-black z-50'>
+							<div className='group text-black z-50'>
 								<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md hover:border-slate-800'>
 									<span className='text-sm pr-2'>My Account</span>
 									<FaRegUser className='text-slate-500 w-5 h-5' />

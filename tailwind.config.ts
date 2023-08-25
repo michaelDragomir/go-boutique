@@ -31,7 +31,7 @@ const config: Config = {
 				},
 			},
 			animation: {
-				slideDown: 'slideDown .15s ease-in',
+				slideDown: 'slideDown .25s forwards',
 				slideUp: 'slideUp .5s ease-in',
 			},
 

@@ -113,7 +113,7 @@ const Header = () => {
 											Cart
 										</h4>
 									</div>
-									<span className='text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-goPink drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
+									<span className='text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
 										1
 									</span>
 									<h4 className='text-sm font-bold pl-1 text-slate-500'>

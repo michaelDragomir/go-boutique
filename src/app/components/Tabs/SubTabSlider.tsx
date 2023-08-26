@@ -3,9 +3,11 @@
 import { useState } from 'react';
 
 import Container from '@/app/components/Container';
-
 import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
+
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+
+import { categories } from '@/app/utils/categoiresDropdown';
 
 const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 	const [activeTab, setActiveTab] = useState<Boolean>(tabItems[0]);
@@ -14,6 +16,8 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 		setActiveTab(tabItem);
 	};
 
+	console.log('categories:', categories);
+
 	return (
 		<Container>
 			<div className='flex justify-between'>
@@ -21,7 +25,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 					<div
 						key={item.name}
 						onClick={() => handleTabClick(item.name)}
-						className={`flex items-center justify-center text-center gap-1 p-3 cursor-pointer text-slate-500
+						className={`flex items-center justify-center text-center gap-1 pt-3 pb-2.5 cursor-pointer text-slate-500
 						w-[145px] hover:text-slate-900 ${
 							activeTab === tabItems[idx].name ? '' : 'text-slate-500'
 						}`}
@@ -34,7 +38,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500' />
 							</span>
 							<div className='h-3 invisible text-black group-hover:visible group-hover:animate-slideDown'>
-								{<NavItemsDropDown props />}
+								{<NavItemsDropDown props={categories} />}
 							</div>
 						</div>
 					</div>

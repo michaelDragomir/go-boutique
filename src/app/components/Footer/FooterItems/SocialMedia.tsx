@@ -24,7 +24,7 @@ const SocialMedia = () => {
 				</Link>
 			</div>
 			<div className='pl-8 font-extralight text-sm'>
-				© 2023, Go Boutique, Inc. or its affiliates
+				&#169; 2023, Go Boutique, Inc.
 			</div>
 		</div>
 	);

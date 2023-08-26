@@ -5,14 +5,15 @@ import { useState } from 'react';
 import Container from '@/app/components/Container';
 
 import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
-	const [activeTab, setActiveTab] = useState<any>(tabItems[0]);
+	const [activeTab, setActiveTab] = useState<Boolean>(tabItems[0]);
 
 	const handleTabClick = (tabItem: any) => {
 		setActiveTab(tabItem);
 	};
+
 	return (
 		<Container>
 			<div className='flex justify-between'>
@@ -28,8 +29,9 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 						<div className='flex group absolute flex-row items-center'>
 							<span className='pr-1.5'>{item.icon}</span>
 							<p className='font-medium text-sm'>{item.name}</p>
-							<span className='hover:text-goPink'>
-								<IoIosArrowDown />
+							<span>
+								<IoIosArrowDown className='group-hover:hidden text-goGreen' />
+								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500' />
 							</span>
 							<div className='h-3 invisible text-black group-hover:visible group-hover:animate-slideDown'>
 								{<NavItemsDropDown props />}

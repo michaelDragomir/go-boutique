@@ -10,16 +10,14 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 
 const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
-	const [activeTab, setActiveTab] = useState<string>(tabItems[0]);
+	type String = string;
+	const [activeTab, setActiveTab] = useState<String>(tabItems[0]);
 
-	const handleTabClick = (tabItem: any) => {
-		setActiveTab(tabItem);
+	const onMouseEnterToggle = (tab: any) => {
+		setActiveTab(tab);
 	};
 
-	console.log('categories:', dropDownItems.bathBody);
-	console.log('activeTab:', activeTab);
-
-	const test = () => {
+	const dropDownMenuItems = () => {
 		switch (activeTab) {
 			case 'Categories':
 				return <NavItemsDropDown props={dropDownItems.categories} />;
@@ -48,7 +46,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 				{tabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
-						onClick={() => handleTabClick(item.name)}
+						onMouseEnter={() => onMouseEnterToggle(item.name)}
 						className={`flex items-center justify-center text-center gap-1 pt-3 pb-2.5 cursor-pointer text-slate-500
 						w-[145px] hover:text-slate-900 ${
 							activeTab === tabItems[idx].name ? '' : 'text-slate-500'
@@ -62,7 +60,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500' />
 							</span>
 							<div className='h-3 invisible text-black group-hover:visible group-hover:animate-slideDown'>
-								{test()}
+								{dropDownMenuItems()}
 							</div>
 						</div>
 					</div>

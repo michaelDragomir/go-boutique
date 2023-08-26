@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const PaymentProducts = () => {
 	return (
-		<div className='mb-12'>
-			<h3 className='text-base font-bold mb-2 text-center'>Payment Products</h3>
+		<div className='mb-6'>
+			<h3 className='text-base font-bold text-center'>Payment Products</h3>
 			<div className='flex p1 font-light justify-center'>
 				<Link href='/'>Go Visa</Link>
 				<span className='px-2'>|</span>

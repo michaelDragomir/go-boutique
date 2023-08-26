@@ -8,7 +8,7 @@ import {
 
 const SocialMedia = () => {
 	return (
-		<div className='border-t-2 border-slate-400 flex justify-center p-4'>
+		<div className='border-t border-slate-400 flex justify-center p-4'>
 			<div className='flex gap-2'>
 				<Link href='/'>
 					<AiFillFacebook className='w-5 h-5' />

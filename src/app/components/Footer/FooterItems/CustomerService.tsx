@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const CustomerService = () => {
 	return (
-		<div className='mb-12'>
-			<h3 className='text-base font-bold mb-2 text-center'>Customer Service</h3>
+		<div className='mb-6'>
+			<h3 className='text-base font-bold text-center'>Customer Service</h3>
 			<div className='flex p1 font-light justify-center'>
 				<Link href='/'>Your Account</Link>
 				<span className='px-2'>|</span>

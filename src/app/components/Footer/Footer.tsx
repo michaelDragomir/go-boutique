@@ -10,7 +10,7 @@ const Footer = () => {
 		<footer className='bg-slate-700 text-slate-200 text-sm mt-16'>
 			<div className=' max-w-[1770px] mx-auto xl:px-20 md:px-2 px-4'>
 				<div className='pt-8 pb-6'>
-					<div className='flex p1 font-light justify-center mb-12'>
+					<div className='flex p1 font-light justify-center mb-6'>
 						<Image
 							src='/assets/images/goImageDark.png'
 							width={75}

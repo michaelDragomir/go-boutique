@@ -9,8 +9,6 @@ import Container from '@/app/components/Container';
 import SubHeaderTabs from '../Tabs/SubHeaderTabs';
 import NavAcctDropDown from '../NavAcctDropDown/navAcctDropDown';
 
-import { categories } from '@/app/utils/categoiresDropdown';
-
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -21,7 +19,6 @@ const Header = () => {
 	type Array = number[];
 
 	const [FavoritesList, setfavoritesList] = useState<Array>([]);
-	console.log('!!', categories);
 
 	return (
 		<div className='sticky w-full bg-white shadow-sm top-0 border-b border-slate-500'>
@@ -77,7 +74,7 @@ const Header = () => {
 							</div>
 						</div>
 						<div className='flex items-center gap-8 md:gap-12'>
-							<div className='group text-black z-50'>
+							<div className='group text-black z-50 hover:bg-slate-100'>
 								<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
 									<span className='text-sm pr-2'>My Account</span>
 									<FaRegUser className='text-slate-500 w-5 h-5' />

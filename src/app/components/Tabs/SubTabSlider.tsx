@@ -7,7 +7,7 @@ import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown
 
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
-import { categories } from '@/app/utils/categoiresDropdown';
+import * as dropDownItems from '@/app/utils/dropDownItems';
 
 const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 	const [activeTab, setActiveTab] = useState<Boolean>(tabItems[0]);
@@ -16,7 +16,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 		setActiveTab(tabItem);
 	};
 
-	console.log('categories:', categories);
+	console.log('categories:', dropDownItems.bathBody);
 
 	return (
 		<Container>
@@ -38,7 +38,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500' />
 							</span>
 							<div className='h-3 invisible text-black group-hover:visible group-hover:animate-slideDown'>
-								{<NavItemsDropDown props={categories} />}
+								{<NavItemsDropDown props={dropDownItems.bathBody} />}
 							</div>
 						</div>
 					</div>

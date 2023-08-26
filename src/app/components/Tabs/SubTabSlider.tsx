@@ -10,13 +10,37 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 
 const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
-	const [activeTab, setActiveTab] = useState<Boolean>(tabItems[0]);
+	const [activeTab, setActiveTab] = useState<string>(tabItems[0]);
 
 	const handleTabClick = (tabItem: any) => {
 		setActiveTab(tabItem);
 	};
 
 	console.log('categories:', dropDownItems.bathBody);
+	console.log('activeTab:', activeTab);
+
+	const test = () => {
+		switch (activeTab) {
+			case 'Categories':
+				return <NavItemsDropDown props={dropDownItems.categories} />;
+			case 'Clothing':
+				return <NavItemsDropDown props={dropDownItems.clothing} />;
+			case 'Pet Supplies':
+				return <NavItemsDropDown props={dropDownItems.petSupplies} />;
+			case 'Household':
+				return <NavItemsDropDown props={dropDownItems.household} />;
+			case 'Electronics':
+				return <NavItemsDropDown props={dropDownItems.electronics} />;
+			case 'Bath & Body':
+				return <NavItemsDropDown props={dropDownItems.bathBody} />;
+			case 'Toys':
+				return <NavItemsDropDown props={dropDownItems.toys} />;
+			case 'Active':
+				return <NavItemsDropDown props={dropDownItems.active} />;
+			default:
+				return null;
+		}
+	};
 
 	return (
 		<Container>
@@ -38,7 +62,7 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500' />
 							</span>
 							<div className='h-3 invisible text-black group-hover:visible group-hover:animate-slideDown'>
-								{<NavItemsDropDown props={dropDownItems.bathBody} />}
+								{test()}
 							</div>
 						</div>
 					</div>

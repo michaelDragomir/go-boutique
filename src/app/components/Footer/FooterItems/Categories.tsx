@@ -3,34 +3,23 @@ import Link from 'next/link';
 const ShopCategories = () => {
 	return (
 		<div className='mb-12'>
-			<h3 className='text-base font-bold mb-2 text-center underline underline-offset-1'>
-				Shop Categories
-			</h3>
+			<h3 className='text-base font-bold mb-2 text-center'>Shop Categories</h3>
 			<div className='flex p1 font-light justify-center'>
-				<Link className='pr-2' href='/'>
-					All <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Clothing <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Pet Supplies <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Household <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Electronics <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Bath & Body <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Toys <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Active
-				</Link>
+				<Link href='/'>All</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Clothing</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Pet Supplies</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Household</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Electronics</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Bath & Body</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Toys</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Active</Link>
 			</div>
 		</div>
 	);

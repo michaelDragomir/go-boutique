@@ -3,34 +3,23 @@ import Link from 'next/link';
 const PaymentProducts = () => {
 	return (
 		<div className='mb-12'>
-			<h3 className='text-base font-bold mb-2 text-center underline underline-offset-1'>
-				Payment Products
-			</h3>
+			<h3 className='text-base font-bold mb-2 text-center'>Payment Products</h3>
 			<div className='flex p1 font-light justify-center'>
-				<Link className='pr-2' href='/'>
-					Go Visa <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Go Store Card <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Go Secured Card <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Go Business Card <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Shop with Points <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Reload Your Balance <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Gift Cards <span className='pl-2'>|</span>
-				</Link>
-				<Link className='pr-2' href='/'>
-					Go Currency Converter
-				</Link>
+				<Link href='/'>Go Visa</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Go Store Card</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Go Secured Card</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Go Business Card</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Shop with Points</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Reload Your Balance</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Gift Cards</Link>
+				<span className='px-2'>|</span>
+				<Link href='/'>Go Currency Converter</Link>
 			</div>
 		</div>
 	);

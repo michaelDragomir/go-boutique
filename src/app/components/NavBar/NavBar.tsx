@@ -3,26 +3,40 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { useState } from 'react';
+
 import Container from '@/app/components/Container';
 import SubHeaderTabs from '../Tabs/SubHeaderTabs';
 import NavAcctDropDown from '../NavAcctDropDown/navAcctDropDown';
 
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
-import { IoIosArrowDown } from 'react-icons/io';
-import { GoHeart } from 'react-icons/go';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Header = () => {
+	type Array = number[];
+
+	const [FavoritesList, setfavoritesList] = useState<Array>([]);
+
 	return (
 		<div className='sticky w-full bg-white shadow-sm top-0 border-b border-slate-500'>
 			<div className='py-4 border-b-[1px]'>
 				<Container>
-					<div className='flex justify-end gap-12 text-sm font-light'>
-						<p>Store Finder</p>
-						<p>Gift Cards</p>
-						<p>Credit Services</p>
-						<p>Help</p>
+					<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
+						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+							Store Finder
+						</p>
+						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+							Gift Cards
+						</p>
+						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+							Credit Services
+						</p>
+						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+							Help
+						</p>
 					</div>
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
 						<GiHamburgerMenu className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer' />
@@ -61,17 +75,26 @@ const Header = () => {
 						</div>
 						<div className='flex items-center gap-8 md:gap-12'>
 							<div className='group text-black z-50'>
-								<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md hover:border-slate-800'>
+								<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
 									<span className='text-sm pr-2'>My Account</span>
 									<FaRegUser className='text-slate-500 w-5 h-5' />
-									<IoIosArrowDown className='text-slate-500 w-5 h-5' />
+									<IoIosArrowDown className='group-hover:hidden text-goGreen w-5 h-5' />
+									<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500 w-5 h-5' />
 								</div>
 								<div className='absolute invisible group-hover:visible group-hover:animate-slideDown'>
 									<NavAcctDropDown />
 								</div>
 							</div>
 							<div className='flex border border-slate-500 rounded-md p-[7px] hover:border-slate-800'>
-								<GoHeart className='text-goPink w-6 h-6 pr-1' />
+								{FavoritesList.length === 0 ? (
+									<GoHeart className='text-goPink w-6 h-6 pr-1' />
+								) : (
+									<GoHeartFill
+										style={{ fill: '#FF66C4' }}
+										className='w-6 h-6 pr-1'
+									/>
+								)}
+
 								<h4 className='border-r border-goPink cursor-pointer text-sm text-slate-500 flex items-center'>
 									<span className='mr-1'>My Favorites</span>
 								</h4>

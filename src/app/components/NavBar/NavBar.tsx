@@ -18,7 +18,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 const Header = () => {
 	type Array = number[];
 
-	const [FavoritesList, setfavoritesList] = useState<Array>([]);
+	const [FavoritesList, setfavoritesList] = useState<Array>([0]);
 	const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
 
 	const test = () => {
@@ -50,7 +50,7 @@ const Header = () => {
 							<div
 								className={`${
 									isModalOpen
-										? 'absolute w-screen h-screen bg-black fixed top-0 left-0 opacity-25 z-[9999]'
+										? 'absolute w-screen h-screen bg-black fixed top-0 left-0 opacity-25 z-[9998]'
 										: ''
 								} `}
 							/>
@@ -58,6 +58,13 @@ const Header = () => {
 								onClick={test}
 								className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer mr-4'
 							/>
+							<div
+								className={`${
+									isModalOpen
+										? 'w-[200px] h-[200px] bg-goPink animate-drawerSlide z-[9999] absolute top-[100px]'
+										: ''
+								}`}
+							></div>
 							<Link href='/'>
 								<Image
 									src='/assets/images/goImage.png'
@@ -110,7 +117,7 @@ const Header = () => {
 								) : (
 									<GoHeartFill
 										style={{ fill: '#FF66C4' }}
-										className='w-6 h-6 pr-1'
+										className='w-6 h-6 pr-1 animate-pulse'
 									/>
 								)}
 

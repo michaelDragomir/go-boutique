@@ -19,20 +19,18 @@ const config: Config = {
 						opacity: '1',
 					},
 				},
-				slideUp: {
+				drawerSlide: {
 					'0%': {
-						transform: 'translateY(0)',
-						opacity: '1',
+						transform: 'translateX(-100)',
 					},
 					'100%': {
-						transform: 'translateY(-25%)',
-						opacity: '0',
+						transform: 'translateX(0)',
 					},
 				},
 			},
 			animation: {
 				slideDown: 'slideDown .25s forwards',
-				slideUp: 'slideUp .5s ease-in',
+				drawerSlide: 'drawerSlide 1s ease-in',
 			},
 
 			backgroundImage: {

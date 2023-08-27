@@ -40,7 +40,11 @@ const Header = () => {
 					<div className='relative'>
 						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
 							{aboveNav.map((item: any, idx: any) => (
-								<p className='above-nav'>{item}</p>
+								<ul>
+									<li key={idx} className='above-nav'>
+										{item}
+									</li>
+								</ul>
 							))}
 						</div>
 					</div>

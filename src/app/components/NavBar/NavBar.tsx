@@ -88,13 +88,16 @@ const Header = () => {
 												Hello, Renee
 											</div>
 											<div className='px-6'>
-												{dropDownItems.categories.map((item: any) => (
+												{dropDownItems.categories.map((item: any, idx: any) => (
 													<ul>
 														<li
-															key={item}
-															className='hover:border-b hover:border-goGreen text-slate-100 pt-6 py-2'
+															key={idx}
+															className='flex items-center text-slate-100 pt-6 py-2'
 														>
-															<span className=''>{item.name}</span>
+															{item.name}
+															<span className=''>
+																<IoIosArrowForward />
+															</span>
 														</li>
 													</ul>
 												))}

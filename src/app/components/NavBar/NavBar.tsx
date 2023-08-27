@@ -19,36 +19,55 @@ const Header = () => {
 	type Array = number[];
 
 	const [FavoritesList, setfavoritesList] = useState<Array>([]);
+	const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+
+	const test = () => {
+		setIsModalOpen((prev) => !prev);
+	};
 
 	return (
 		<div className='sticky w-full bg-white shadow-sm top-0 border-b border-slate-500'>
 			<div className='py-4 border-b-[1px]'>
 				<Container>
-					<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
-						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-							Store Finder
-						</p>
-						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-							Gift Cards
-						</p>
-						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-							Credit Services
-						</p>
-						<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-							Help
-						</p>
+					<div className='relative'>
+						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
+							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+								Store Finder
+							</p>
+							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+								Gift Cards
+							</p>
+							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+								Credit Services
+							</p>
+							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
+								Help
+							</p>
+						</div>
 					</div>
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
-						<GiHamburgerMenu className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer' />
-						<Link href='/'>
-							<Image
-								src='/assets/images/goImage.png'
-								width={75}
-								height={75}
-								alt='go Image'
-								className='rounded-lg object-cover'
+						<div className='flex flex-row items-center relative'>
+							<div
+								className={`${
+									isModalOpen
+										? 'absolute w-screen h-screen bg-black fixed top-0 left-0 opacity-25 z-[9999]'
+										: ''
+								} `}
 							/>
-						</Link>
+							<GiHamburgerMenu
+								onClick={test}
+								className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer mr-4'
+							/>
+							<Link href='/'>
+								<Image
+									src='/assets/images/goImage.png'
+									width={75}
+									height={75}
+									alt='go Image'
+									className='rounded-lg object-cover'
+								/>
+							</Link>
+						</div>
 						<div className='hidden md:block'>
 							<div className='flex items-center'>
 								<form

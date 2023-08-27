@@ -46,7 +46,7 @@ const Header = () => {
 						</div>
 					</div>
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
-						<div className='flex flex-row items-center relative'>
+						<div className='flex flex-row items-center'>
 							<div
 								className={`${
 									isModalOpen

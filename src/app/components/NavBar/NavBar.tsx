@@ -8,10 +8,16 @@ import { useState } from 'react';
 import Container from '@/app/components/Container';
 import SubHeaderTabs from '../Tabs/SubHeaderTabs';
 import NavAcctDropDown from '../NavAcctDropDown/navAcctDropDown';
+import * as dropDownItems from '@/app/utils/dropDownItems';
 
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import {
+	IoIosArrowDown,
+	IoIosArrowUp,
+	IoIosArrowForward,
+	IoIosArrowBack,
+} from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -57,22 +63,39 @@ const Header = () => {
 									onClick={ModalToggleHandler}
 									className={`${
 										!isModalOpen
-											? 'w-[225px] h-screen bg-slate-700 animate-drawerSlide z-sideDrawer absolute left-0 top-0 drop-shadow-md'
+											? 'w-[300px] h-screen bg-slate-700 animate-drawerSlide z-sideDrawer absolute left-0 top-0 drop-shadow-md'
 											: ''
 									}`}
 								>
 									{!isModalOpen ? (
-										<div>
-											<Link href='/'>
-												<Image
-													src='/assets/images/goImageDark.png'
-													width={75}
-													height={75}
-													alt='go Image'
-													className={`animate-drawerSlide rounded-lg object-cover absolute left-[143px] top-[55px]`}
-												/>
-											</Link>
-										</div>
+										<>
+											<div className='border-b-2 border-b-goPink h-[115px]'>
+												<Link href='/'>
+													<Image
+														src='/assets/images/goImageDark.png'
+														width={75}
+														height={75}
+														alt='go Image'
+														className={`animate-drawerSlide rounded-lg object-cover absolute left-[220px] top-[55px]`}
+													/>
+												</Link>
+											</div>
+											<div className='text-slate-800 bg-white px-6 py-2'>
+												Hello, Renee
+											</div>
+											<div className='px-6'>
+												{dropDownItems.categories.map((item: any) => (
+													<ul>
+														<li
+															key={item}
+															className='hover:border-b hover:border-goGreen text-slate-100 pt-6 py-2'
+														>
+															<span className=''>{item.name}</span>
+														</li>
+													</ul>
+												))}
+											</div>
+										</>
 									) : null}
 								</div>
 							</div>
@@ -123,7 +146,7 @@ const Header = () => {
 								</div>
 							</div>
 							<div className='flex border border-slate-500 rounded-md p-[7px] hover:border-slate-800'>
-								{FavoritesList.length === 0 ? (
+								{FavoritesList.length > 0 ? (
 									<GoHeart className='text-goPink w-6 h-6 pr-1' />
 								) : (
 									<GoHeartFill

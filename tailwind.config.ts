@@ -21,16 +21,18 @@ const config: Config = {
 				},
 				drawerSlide: {
 					'0%': {
-						transform: 'translateX(-100)',
+						transform: 'translateX(-100%)',
+						opacity: '0',
 					},
 					'100%': {
 						transform: 'translateX(0)',
+						opacity: '1',
 					},
 				},
 			},
 			animation: {
 				slideDown: 'slideDown .25s forwards',
-				drawerSlide: 'drawerSlide 1s ease-in',
+				drawerSlide: 'drawerSlide .1s ease-out',
 			},
 
 			backgroundImage: {

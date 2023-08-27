@@ -21,7 +21,7 @@ const Header = () => {
 	const [FavoritesList, setfavoritesList] = useState<Array>([0]);
 	const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
 
-	const test = () => {
+	const ModalToggleHandler = () => {
 		setIsModalOpen((prev) => !prev);
 	};
 
@@ -48,23 +48,41 @@ const Header = () => {
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
 						<div className='flex flex-row items-center'>
 							<div
+								onClick={ModalToggleHandler}
 								className={`${
-									isModalOpen
-										? 'absolute w-screen h-screen bg-black fixed top-0 left-0 opacity-25 z-[9998]'
+									!isModalOpen
+										? 'absolute w-screen h-screen bg-slate-400 fixed top-0 left-0 opacity-25 z-[9998]'
 										: ''
 								} `}
 							/>
 							<GiHamburgerMenu
-								onClick={test}
+								onClick={ModalToggleHandler}
 								className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer mr-4'
 							/>
-							<div
-								className={`${
-									isModalOpen
-										? 'w-[200px] h-[200px] bg-goPink animate-drawerSlide z-[9999] absolute top-[100px]'
-										: ''
-								}`}
-							></div>
+							<div className=''>
+								<div
+									onClick={ModalToggleHandler}
+									className={`${
+										!isModalOpen
+											? 'w-[225px] h-screen bg-slate-700 animate-drawerSlide z-[9999] absolute left-0 top-0 drop-shadow-md'
+											: ''
+									}`}
+								>
+									{!isModalOpen ? (
+										<div>
+											<Link href='/'>
+												<Image
+													src='/assets/images/goImageDark.png'
+													width={75}
+													height={75}
+													alt='go Image'
+													className={`animate-drawerSlide rounded-lg object-cover absolute left-[143px] top-[55px]`}
+												/>
+											</Link>
+										</div>
+									) : null}
+								</div>
+							</div>
 							<Link href='/'>
 								<Image
 									src='/assets/images/goImage.png'

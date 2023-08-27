@@ -15,6 +15,8 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
+const aboveNav = ['Store Finder', 'Gift Cards', 'Credit Services', 'Help'];
+
 const Header = () => {
 	type Array = number[];
 
@@ -31,18 +33,9 @@ const Header = () => {
 				<Container>
 					<div className='relative'>
 						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
-							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-								Store Finder
-							</p>
-							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-								Gift Cards
-							</p>
-							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-								Credit Services
-							</p>
-							<p className='text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800'>
-								Help
-							</p>
+							{aboveNav.map((item: any, idx: any) => (
+								<p className='above-nav'>{item}</p>
+							))}
 						</div>
 					</div>
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
@@ -51,7 +44,7 @@ const Header = () => {
 								onClick={ModalToggleHandler}
 								className={`${
 									!isModalOpen
-										? 'absolute w-screen h-screen bg-slate-400 fixed top-0 left-0 opacity-25 z-[9998]'
+										? 'absolute w-screen h-screen bg-slate-400 fixed top-0 left-0 opacity-40 z-overlay'
 										: ''
 								} `}
 							/>
@@ -64,7 +57,7 @@ const Header = () => {
 									onClick={ModalToggleHandler}
 									className={`${
 										!isModalOpen
-											? 'w-[225px] h-screen bg-slate-700 animate-drawerSlide z-[9999] absolute left-0 top-0 drop-shadow-md'
+											? 'w-[225px] h-screen bg-slate-700 animate-drawerSlide z-sideDrawer absolute left-0 top-0 drop-shadow-md'
 											: ''
 									}`}
 								>
@@ -110,7 +103,7 @@ const Header = () => {
 									/>
 									<button
 										type='submit'
-										className='h-10 rounded-r-lg border border-gray-700 bg-gray-800 px-3 py-2 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-gray-900 hover:bg-gray-900 focus:ring focus:ring-gray-200 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300'
+										className='h-10 rounded-r-lg border border-gray-700 bg-gray-800 px-3 py-2 text-center text-sm font-medium text-white shadow-sm hover:border-gray-900 hover:bg-gray-900'
 									>
 										<span className='text-[#57F8AB]'>GO</span>
 									</button>

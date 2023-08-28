@@ -9,7 +9,7 @@ import {
 import { FaPersonRunning } from 'react-icons/fa6';
 import { CgMenuGridR } from 'react-icons/cg';
 
-export const navTabIcons = [
+export const navTabItems = [
 	{
 		icon: <CgMenuGridR className='iconSize5px' />,
 		name: 'Categories',

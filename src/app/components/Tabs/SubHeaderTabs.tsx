@@ -1,10 +1,10 @@
 import SubTabSlider from './SubTabSlider';
-import { navTabIcons } from '@/app/utils/navTabIcons';
+import { navTabItems } from '@/app/utils/navTabIcons';
 
 const SubHeaderTabs = () => {
 	return (
 		<>
-			<SubTabSlider tabItems={navTabIcons} />
+			<SubTabSlider navTabItems={navTabItems} />
 		</>
 	);
 };

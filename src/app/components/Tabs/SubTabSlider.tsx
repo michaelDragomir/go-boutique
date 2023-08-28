@@ -9,9 +9,9 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 import * as dropDownItems from '@/app/utils/dropDownItems';
 
-const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
+const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 	type String = string;
-	const [activeTab, setActiveTab] = useState<String>(tabItems[0]);
+	const [activeTab, setActiveTab] = useState<String>(navTabItems[0]);
 
 	const onMouseEnterToggle = (tab: any) => {
 		setActiveTab(tab);
@@ -43,13 +43,13 @@ const SubTabSlider = ({ tabItems }: { tabItems: any }) => {
 	return (
 		<Container>
 			<div className='flex justify-between'>
-				{tabItems.map((item: any, idx: any) => (
+				{navTabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
 						onMouseEnter={() => onMouseEnterToggle(item.name)}
 						className={`flex items-center justify-center text-center gap-1 pt-3 pb-2.5 cursor-pointer text-slate-500
 						w-[145px] hover:text-slate-900 ${
-							activeTab === tabItems[idx].name ? '' : 'text-slate-500'
+							activeTab === navTabItems[idx].name ? '' : 'text-slate-500'
 						}`}
 					>
 						<div className='flex group absolute flex-row items-center'>

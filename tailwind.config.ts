@@ -40,10 +40,21 @@ const config: Config = {
 						opacity: '1',
 					},
 				},
+				innerDrawerSlide: {
+					'0%': {
+						transform: 'translateX(100%)',
+						opacity: '0',
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1',
+					},
+				},
 			},
 			animation: {
 				slideDown: 'slideDown .25s forwards',
 				drawerSlide: 'drawerSlide .1s ease-out',
+				innerDrawerSlide: 'innerDrawerSlide .1s ease-out',
 			},
 
 			backgroundImage: {

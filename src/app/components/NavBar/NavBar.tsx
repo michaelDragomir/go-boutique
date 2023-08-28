@@ -6,9 +6,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import Container from '@/app/components/Container';
-import SubHeaderTabs from '../Tabs/SubHeaderTabs';
-import NavAcctDropDown from '../NavAcctDropDown/navAcctDropDown';
+import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
+import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
+import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
 import * as dropDownItems from '@/app/utils/dropDownItems';
+import { navTabItems } from '@/app/utils/navTabIcons';
 
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
@@ -29,9 +31,42 @@ const Header = () => {
 
 	const [FavoritesList, setfavoritesList] = useState<Array>([0]);
 	const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+	const [isSubDrawerModalOpen, setisSubDrawerModalOpen] =
+		useState<Boolean>(false);
+	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
+
+	console.log('ACTIVETAB', activeTab);
+	console.log('isSubDrawerModalOpen', isSubDrawerModalOpen);
 
 	const ModalToggleHandler = () => {
 		setIsModalOpen((prev) => !prev);
+	};
+
+	const subDrawerToggleHandler = (activeTab: any) => {
+		setisSubDrawerModalOpen((prev) => !prev);
+		setActiveTab(activeTab);
+	};
+
+	const innerDrawerToggleHandler = (activeTab: any) => {
+		switch (activeTab) {
+			case 'Clothing':
+				return <div>clothing!!!!!!!</div>;
+			case 'Pet Supplies':
+				return <div>petSupplies!!!!!!!</div>;
+			case 'Household':
+				'';
+				return <div>household!!!!!!!</div>;
+			case 'Electronics':
+				return <div>electronics!!!!!!!!</div>;
+			case 'Bath & Body':
+				return <div>bathBody!!!!!!!!</div>;
+			case 'Toys':
+				return <div>toys!!!!!!!!</div>;
+			case 'Active':
+				return <div>Active!!!!!!!!</div>;
+			default:
+				return null;
+		}
 	};
 
 	return (
@@ -89,21 +124,32 @@ const Header = () => {
 											<div className='border-b-2 border-b-goPink text-slate-800 bg-slate-100 px-6 py-2 mb-6'>
 												Hello, Renee
 											</div>
-											{dropDownItems.categories.map((item: any, idx: any) => (
-												<div
-													className='px-6 hover:bg-slate-100 cursor-pointer'
-													onClick={() => console.log(item)}
-												>
-													<ul key={idx}>
-														<li className='flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>
-															{item.name}
-															<span className='text-goGreen'>
-																<IoIosArrowForward />
-															</span>
-														</li>
-													</ul>
-												</div>
-											))}
+											<div className='border'>
+												{dropDownItems.categories.map((item: any, idx: any) => (
+													<>
+														<div
+															className='px-6 hover:bg-slate-100 cursor-pointer'
+															onClick={() => subDrawerToggleHandler(item.name)}
+														>
+															<ul key={idx}>
+																<li className='flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>
+																	{item.name}
+																	<span className='text-goGreen'>
+																		<IoIosArrowForward />
+																	</span>
+																</li>
+															</ul>
+															{isSubDrawerModalOpen ? (
+																<div className='animate-innerDrawerSlide'>
+																	{innerDrawerToggleHandler(item.name)}
+																</div>
+															) : (
+																''
+															)}
+														</div>
+													</>
+												))}
+											</div>
 										</>
 									) : null}
 								</div>

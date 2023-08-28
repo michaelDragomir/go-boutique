@@ -40,10 +40,8 @@ const Header = () => {
 					<div className='relative'>
 						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
 							{aboveNav.map((item: any, idx: any) => (
-								<ul>
-									<li key={idx} className='above-nav'>
-										{item}
-									</li>
+								<ul key={idx}>
+									<li className='above-nav'>{item}</li>
 								</ul>
 							))}
 						</div>
@@ -89,11 +87,8 @@ const Header = () => {
 											</div>
 											<div className='px-6'>
 												{dropDownItems.categories.map((item: any, idx: any) => (
-													<ul>
-														<li
-															key={idx}
-															className='flex items-center text-slate-100 pt-6 py-2'
-														>
+													<ul key={idx}>
+														<li className='flex items-center text-slate-100 pt-6 py-2'>
 															{item.name}
 															<span className=''>
 																<IoIosArrowForward />

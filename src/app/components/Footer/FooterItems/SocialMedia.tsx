@@ -11,16 +11,16 @@ const SocialMedia = () => {
 		<div className='border-t border-slate-400 flex justify-center p-4'>
 			<div className='flex gap-2'>
 				<Link href='/'>
-					<AiFillFacebook className='w-5 h-5' />
+					<AiFillFacebook className='iconSize5px' />
 				</Link>
 				<Link href='/'>
-					<AiFillInstagram className='w-5 h-5' />
+					<AiFillInstagram className='iconSize5px' />
 				</Link>
 				<Link href='/'>
-					<AiFillTwitterCircle className='w-5 h-5' />
+					<AiFillTwitterCircle className='iconSize5px' />
 				</Link>
 				<Link href='/'>
-					<AiFillYoutube className='w-5 h-5' />
+					<AiFillYoutube className='iconSize5px' />
 				</Link>
 			</div>
 			<div className='pl-8 font-extralight text-sm'>

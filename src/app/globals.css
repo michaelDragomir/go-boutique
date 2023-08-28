@@ -6,4 +6,16 @@
 	.above-nav {
 		@apply text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800;
 	}
+
+	.iconSize6px {
+		@apply w-6 h-6;
+	}
+
+	.iconSize5px {
+		@apply w-5 h-5;
+	}
+
+	.iconSize8px {
+		@apply w-8 h-8;
+	}
 }

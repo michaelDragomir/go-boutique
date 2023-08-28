@@ -17,6 +17,7 @@ import {
 	IoIosArrowUp,
 	IoIosArrowForward,
 	IoIosArrowBack,
+	IoMdClose,
 } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -51,27 +52,30 @@ const Header = () => {
 							<div
 								onClick={ModalToggleHandler}
 								className={`${
-									!isModalOpen
+									isModalOpen
 										? 'absolute w-screen h-screen bg-slate-400 fixed top-0 left-0 opacity-40 z-overlay'
 										: ''
 								} `}
 							/>
 							<GiHamburgerMenu
 								onClick={ModalToggleHandler}
-								className='text-slate-500 w-8 h-8 hover:text-goPink cursor-pointer mr-4'
+								className='text-slate-500 iconSize8px hover:text-goPink cursor-pointer mr-4'
 							/>
 							<div className=''>
 								<div
-									onClick={ModalToggleHandler}
 									className={`${
-										!isModalOpen
+										isModalOpen
 											? 'w-[300px] h-screen bg-slate-700 animate-drawerSlide z-sideDrawer absolute left-0 top-0 drop-shadow-md'
 											: ''
 									}`}
 								>
-									{!isModalOpen ? (
+									{isModalOpen ? (
 										<>
-											<div className='border-b-2 border-b-goPink h-[115px]'>
+											<div className='h-[115px]'>
+												<IoMdClose
+													onClick={ModalToggleHandler}
+													className='iconSize8px absolute top-[10px] left-[10px] text-white cursor-pointer hover:text-goPink'
+												/>
 												<Link href='/'>
 													<Image
 														src='/assets/images/goImageDark.png'
@@ -82,21 +86,24 @@ const Header = () => {
 													/>
 												</Link>
 											</div>
-											<div className='text-slate-800 bg-white px-6 py-2'>
+											<div className='border-b-2 border-b-goPink text-slate-800 bg-slate-100 px-6 py-2 mb-6'>
 												Hello, Renee
 											</div>
-											<div className='px-6'>
-												{dropDownItems.categories.map((item: any, idx: any) => (
+											{dropDownItems.categories.map((item: any, idx: any) => (
+												<div
+													className='px-6 hover:bg-slate-100 cursor-pointer'
+													onClick={() => console.log(item)}
+												>
 													<ul key={idx}>
-														<li className='flex items-center text-slate-100 pt-6 py-2'>
+														<li className='flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>
 															{item.name}
-															<span className=''>
+															<span className='text-goGreen'>
 																<IoIosArrowForward />
 															</span>
 														</li>
 													</ul>
-												))}
-											</div>
+												</div>
+											))}
 										</>
 									) : null}
 								</div>
@@ -139,9 +146,9 @@ const Header = () => {
 							<div className='group text-black z-50 hover:bg-slate-100'>
 								<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
 									<span className='text-sm pr-2'>My Account</span>
-									<FaRegUser className='text-slate-500 w-5 h-5' />
-									<IoIosArrowDown className='group-hover:hidden text-goGreen w-5 h-5' />
-									<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500 w-5 h-5' />
+									<FaRegUser className='text-slate-500 iconSize5px' />
+									<IoIosArrowDown className='group-hover:hidden text-goGreen iconSize5px' />
+									<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500 iconSize5px' />
 								</div>
 								<div className='absolute invisible group-hover:visible group-hover:animate-slideDown'>
 									<NavAcctDropDown />
@@ -149,11 +156,11 @@ const Header = () => {
 							</div>
 							<div className='flex border border-slate-500 rounded-md p-[7px] hover:border-slate-800'>
 								{FavoritesList.length > 0 ? (
-									<GoHeart className='text-goPink w-6 h-6 pr-1' />
+									<GoHeart className='text-goPink iconSize6px pr-1' />
 								) : (
 									<GoHeartFill
 										style={{ fill: '#FF66C4' }}
-										className='w-6 h-6 pr-1 animate-pulse'
+										className='iconSize6px pr-1 animate-pulse'
 									/>
 								)}
 
@@ -167,7 +174,7 @@ const Header = () => {
 							<div className='cursor-pointer text-black'>
 								<div className='flex items-center'>
 									<div className='border-r border-slate-400 mr-1'>
-										<IoCartOutline className='text-slate-500 w-8 h-8' />
+										<IoCartOutline className='text-slate-500 iconSize8px' />
 										<h4 className='text-sm pr-1 text-slate-500 flex justify-center items-center'>
 											Cart
 										</h4>

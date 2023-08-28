@@ -142,7 +142,7 @@ const Header = () => {
 													</>
 												))}
 												{isModalOpen && isSubDrawerModalOpen ? (
-													<div className='animate-innerDrawerSlide'>
+													<div className='animate-innerDrawerSlide border border-goPink text-white'>
 														{innerDrawerToggleHandler()}
 													</div>
 												) : (

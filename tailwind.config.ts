@@ -53,8 +53,8 @@ const config: Config = {
 			},
 			animation: {
 				slideDown: 'slideDown .25s forwards',
-				drawerSlide: 'drawerSlide .1s ease-out',
-				innerDrawerSlide: 'innerDrawerSlide .1s ease-out',
+				drawerSlide: 'drawerSlide .25s ease-out',
+				innerDrawerSlide: 'innerDrawerSlide .25s ease-out',
 			},
 
 			backgroundImage: {

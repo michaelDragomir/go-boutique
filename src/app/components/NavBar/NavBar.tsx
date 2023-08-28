@@ -97,13 +97,13 @@ const Header = () => {
 							/>
 							<div className=''>
 								<div
-									className={`${
+									className={`w-[300px] h-screen bg-slate-700 z-sideDrawer absolute left-0 top-0 drop-shadow-md ${
 										isModalOpen
-											? 'w-[300px] h-screen bg-slate-700 animate-drawerSlide z-sideDrawer absolute left-0 top-0 drop-shadow-md'
-											: ''
+											? 'animate-drawerSlideIn'
+											: 'animate-drawerSlideOut'
 									}`}
 								>
-									{isModalOpen ? (
+									{isModalOpen && !isSubDrawerModalOpen ? (
 										<>
 											<div className='h-[115px]'>
 												<IoMdClose
@@ -116,14 +116,14 @@ const Header = () => {
 														width={75}
 														height={75}
 														alt='go Image'
-														className={`animate-drawerSlide rounded-lg object-cover absolute left-[220px] top-[55px]`}
+														className={`animate-drawerSlideIn rounded-lg object-cover absolute left-[220px] top-[55px]`}
 													/>
 												</Link>
 											</div>
 											<div className='border-b-2 border-b-goPink text-slate-800 bg-slate-100 px-6 py-2 mb-6'>
 												Hello, Renee
 											</div>
-											<div className='border'>
+											<div className='border border-goPink'>
 												{dropDownItems.categories.map((item: any, idx: any) => (
 													<>
 														<div
@@ -141,16 +141,20 @@ const Header = () => {
 														</div>
 													</>
 												))}
-												{isModalOpen && isSubDrawerModalOpen ? (
-													<div className='animate-innerDrawerSlide border border-goPink text-white'>
-														{innerDrawerToggleHandler()}
-													</div>
-												) : (
-													''
-												)}
 											</div>
+											{/* {isModalOpen && isSubDrawerModalOpen ? (
+												<div className='animate-innerDrawerSlide border border-goGreen text-white'>
+													{innerDrawerToggleHandler()}
+												</div>
+											) : (
+
+											)} */}
 										</>
-									) : null}
+									) : (
+										<div className='relative top-[170] animate-innerDrawerSlide border border-goGreen text-white'>
+											{innerDrawerToggleHandler()}
+										</div>
+									)}
 								</div>
 							</div>
 							<Link href='/'>

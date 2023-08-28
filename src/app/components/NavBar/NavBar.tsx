@@ -8,9 +8,10 @@ import { useState } from 'react';
 import Container from '@/app/components/Container';
 import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
 import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
-import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
+// import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { navTabItems } from '@/app/utils/navTabIcons';
+import SubDrawerModal from '../SubDrawer/SubDrawerModal';
 
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
@@ -34,9 +35,7 @@ const Header = () => {
 	const [isSubDrawerModalOpen, setisSubDrawerModalOpen] =
 		useState<Boolean>(false);
 	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
-
-	console.log('ACTIVETAB', activeTab);
-	console.log('isSubDrawerModalOpen', isSubDrawerModalOpen);
+	console.log('@@@@ctiveTab', activeTab);
 
 	const ModalToggleHandler = () => {
 		setIsModalOpen((prev) => !prev);
@@ -47,23 +46,23 @@ const Header = () => {
 		setActiveTab(activeTab);
 	};
 
-	const innerDrawerToggleHandler = (activeTab: any) => {
+	const innerDrawerToggleHandler = () => {
+		console.log('innerDrawerToggleHandler', activeTab);
 		switch (activeTab) {
 			case 'Clothing':
-				return <div>clothing!!!!!!!</div>;
+				return <SubDrawerModal data={dropDownItems.clothing} />;
 			case 'Pet Supplies':
-				return <div>petSupplies!!!!!!!</div>;
+				return <SubDrawerModal data={dropDownItems.petSupplies} />;
 			case 'Household':
-				'';
-				return <div>household!!!!!!!</div>;
+				return <SubDrawerModal data={dropDownItems.household} />;
 			case 'Electronics':
-				return <div>electronics!!!!!!!!</div>;
+				return <SubDrawerModal data={dropDownItems.electronics} />;
 			case 'Bath & Body':
-				return <div>bathBody!!!!!!!!</div>;
+				return <SubDrawerModal data={dropDownItems.bathBody} />;
 			case 'Toys':
-				return <div>toys!!!!!!!!</div>;
+				return <SubDrawerModal data={dropDownItems.toys} />;
 			case 'Active':
-				return <div>Active!!!!!!!!</div>;
+				return <SubDrawerModal data={dropDownItems.active} />;
 			default:
 				return null;
 		}
@@ -139,16 +138,16 @@ const Header = () => {
 																	</span>
 																</li>
 															</ul>
-															{isSubDrawerModalOpen ? (
-																<div className='animate-innerDrawerSlide'>
-																	{innerDrawerToggleHandler(item.name)}
-																</div>
-															) : (
-																''
-															)}
 														</div>
 													</>
 												))}
+												{isModalOpen && isSubDrawerModalOpen ? (
+													<div className='animate-innerDrawerSlide'>
+														{innerDrawerToggleHandler()}
+													</div>
+												) : (
+													''
+												)}
 											</div>
 										</>
 									) : null}

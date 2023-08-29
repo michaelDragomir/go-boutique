@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { IoIosArrowBack } from 'react-icons/io';
 
-const subDrawerModal = ({ data }: { data: any }) => {
+const subDrawerModal = ({ data, test }: { data: any; test: boolean }) => {
 	type String = any;
 
 	//TODO:
 	// sanitize item name for url input
-
+	console.log('IN MODAL', test);
 	return (
 		<div>
 			<div className='mt-3 px-3 flex items-center'>
@@ -14,7 +14,7 @@ const subDrawerModal = ({ data }: { data: any }) => {
 				<h2>Back to Menu</h2>
 			</div>
 			{data.map((item: String, idx: number) => (
-				<div className='px-6 hover:bg-slate-100'>
+				<div key={idx} className='px-6 hover:bg-slate-100'>
 					<ul className='' key={idx}>
 						<Link href={`/${item.name}`}>
 							<li className='flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>

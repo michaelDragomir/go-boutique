@@ -1,32 +1,38 @@
 import SubDrawerModal from './SubDrawerModal';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 
-const SubModalCategories = ({ activeTab }: { activeTab: any }) => {
-	const innerDrawerToggleHandler = () => {
-		console.log('innerDrawerToggleHandler', activeTab);
+const SubModalCategories = ({
+	activeTab,
+	test,
+}: {
+	activeTab: any;
+	test: boolean;
+}) => {
+	console.log('!!!@@@', test);
+	const innerDrawerToggleHandler = (activeTab: any) => {
 		switch (activeTab) {
 			case 'Clothing':
-				return <SubDrawerModal data={dropDownItems.clothing} />;
+				return <SubDrawerModal test={test} data={dropDownItems.clothing} />;
 			case 'Pet Supplies':
-				return <SubDrawerModal data={dropDownItems.petSupplies} />;
+				return <SubDrawerModal test={test} data={dropDownItems.petSupplies} />;
 			case 'Household':
-				return <SubDrawerModal data={dropDownItems.household} />;
+				return <SubDrawerModal test={test} data={dropDownItems.household} />;
 			case 'Electronics':
-				return <SubDrawerModal data={dropDownItems.electronics} />;
+				return <SubDrawerModal test={test} data={dropDownItems.electronics} />;
 			case 'Bath & Body':
-				return <SubDrawerModal data={dropDownItems.bathBody} />;
+				return <SubDrawerModal test={test} data={dropDownItems.bathBody} />;
 			case 'Toys':
-				return <SubDrawerModal data={dropDownItems.toys} />;
+				return <SubDrawerModal test={test} data={dropDownItems.toys} />;
 			case 'Active':
-				return <SubDrawerModal data={dropDownItems.active} />;
+				return <SubDrawerModal test={test} data={dropDownItems.active} />;
 			default:
 				return null;
 		}
 	};
 
 	return (
-		<div className='h-auto relative top-[170] animate-innerDrawerSlide border border-goGreen text-white'>
-			{innerDrawerToggleHandler()}
+		<div className='h-auto relative top-[8px] animate-innerDrawerSlide text-white'>
+			{innerDrawerToggleHandler(activeTab)}
 		</div>
 	);
 };

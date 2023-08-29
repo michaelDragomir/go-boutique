@@ -8,7 +8,6 @@ import { useState } from 'react';
 import Container from '@/app/components/Container';
 import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
 import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
-import { navTabItems } from '@/app/utils/navTabIcons';
 import SideDrawer from '../Drawer/SideDrawer';
 
 import { IoCartOutline } from 'react-icons/io5';
@@ -24,17 +23,9 @@ const Header = () => {
 
 	const [FavoritesList, setfavoritesList] = useState<Array>([0]);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-	const [isSubDrawerModalOpen, setisSubDrawerModalOpen] =
-		useState<boolean>(false);
-	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
 
 	const ModalToggleHandler = () => {
 		setIsModalOpen((prev) => !prev);
-	};
-
-	const subDrawerToggleHandler = (activeTab: any) => {
-		setisSubDrawerModalOpen((prev) => !prev);
-		setActiveTab(activeTab);
 	};
 
 	return (
@@ -60,17 +51,14 @@ const Header = () => {
 								onClick={ModalToggleHandler}
 								className={`${
 									isModalOpen
-										? 'absolute w-screen h-screen bg-slate-400 fixed top-0 left-0 opacity-40 z-overlay'
+										? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-40 z-overlay'
 										: ''
 								} `}
 							/>
 							<div>
 								<SideDrawer
-									activeTab={activeTab}
 									isModalOpen={isModalOpen}
-									isSubDrawerModalOpen={isSubDrawerModalOpen}
 									onClick={() => ModalToggleHandler()}
-									subModalOnClick={() => subDrawerToggleHandler(activeTab)}
 								/>
 							</div>
 							<Link href='/'>

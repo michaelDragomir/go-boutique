@@ -1,3 +1,5 @@
+'use cliet';
+
 import Link from 'next/link';
 import { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';

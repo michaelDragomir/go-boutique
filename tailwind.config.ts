@@ -50,7 +50,7 @@ const config: Config = {
 						opacity: '0',
 					},
 				},
-				innerDrawerSlide: {
+				innerDrawerSlideIn: {
 					'0%': {
 						transform: 'translateX(100%)',
 						opacity: '0',
@@ -60,12 +60,23 @@ const config: Config = {
 						opacity: '1',
 					},
 				},
+				innerDrawerSlideOut: {
+					'0%': {
+						transform: 'translateX(0)',
+						opacity: '1',
+					},
+					'100%': {
+						transform: 'translateX(100%)',
+						opacity: '0',
+					},
+				},
 			},
 			animation: {
 				slideDown: 'slideDown .25s forwards',
 				drawerSlideIn: 'drawerSlideIn .25s forwards',
 				drawerSlideOut: 'drawerSlideOut .25s forwards',
-				innerDrawerSlide: 'innerDrawerSlide .25s ease-in-out',
+				innerDrawerSlideIn: 'innerDrawerSlideIn .25s ease-in-out',
+				innerDrawerSlideOut: 'innerDrawerSlideOut .25s ease-in-out',
 			},
 
 			backgroundImage: {

@@ -6,7 +6,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { navTabItems } from '@/app/utils/navTabIcons';
 
-const subDrawerModal = ({ data }: { data: any }) => {
+const SubDrawerModal = ({ data }: { data: any }) => {
 	type String = any;
 
 	const [subDrawerModalOpen, setSubDrawerModalOpen] = useState<boolean>(false);
@@ -67,4 +67,4 @@ const subDrawerModal = ({ data }: { data: any }) => {
 	);
 };
 
-export default subDrawerModal;
+export default SubDrawerModal;

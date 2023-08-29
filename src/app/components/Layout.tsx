@@ -1,5 +1,5 @@
-// import Link from 'next/link';
-// import Image from 'next/image';
+'use client';
+
 import { IoMdClose } from 'react-icons/io';
 
 const Layout = ({

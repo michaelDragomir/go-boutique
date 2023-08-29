@@ -8,20 +8,12 @@ import { useState } from 'react';
 import Container from '@/app/components/Container';
 import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
 import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
-// import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
-import * as dropDownItems from '@/app/utils/dropDownItems';
 import { navTabItems } from '@/app/utils/navTabIcons';
-import SubDrawerModal from '../SubDrawer/SubDrawerModal';
+import SideDrawer from '../Drawer/SideDrawer';
 
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
-import {
-	IoIosArrowDown,
-	IoIosArrowUp,
-	IoIosArrowForward,
-	IoIosArrowBack,
-	IoMdClose,
-} from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -31,11 +23,10 @@ const Header = () => {
 	type Array = number[];
 
 	const [FavoritesList, setfavoritesList] = useState<Array>([0]);
-	const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [isSubDrawerModalOpen, setisSubDrawerModalOpen] =
-		useState<Boolean>(false);
+		useState<boolean>(false);
 	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
-	console.log('@@@@ctiveTab', activeTab);
 
 	const ModalToggleHandler = () => {
 		setIsModalOpen((prev) => !prev);
@@ -44,28 +35,6 @@ const Header = () => {
 	const subDrawerToggleHandler = (activeTab: any) => {
 		setisSubDrawerModalOpen((prev) => !prev);
 		setActiveTab(activeTab);
-	};
-
-	const innerDrawerToggleHandler = () => {
-		console.log('innerDrawerToggleHandler', activeTab);
-		switch (activeTab) {
-			case 'Clothing':
-				return <SubDrawerModal data={dropDownItems.clothing} />;
-			case 'Pet Supplies':
-				return <SubDrawerModal data={dropDownItems.petSupplies} />;
-			case 'Household':
-				return <SubDrawerModal data={dropDownItems.household} />;
-			case 'Electronics':
-				return <SubDrawerModal data={dropDownItems.electronics} />;
-			case 'Bath & Body':
-				return <SubDrawerModal data={dropDownItems.bathBody} />;
-			case 'Toys':
-				return <SubDrawerModal data={dropDownItems.toys} />;
-			case 'Active':
-				return <SubDrawerModal data={dropDownItems.active} />;
-			default:
-				return null;
-		}
 	};
 
 	return (
@@ -83,6 +52,10 @@ const Header = () => {
 					</div>
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
 						<div className='flex flex-row items-center'>
+							<GiHamburgerMenu
+								onClick={ModalToggleHandler}
+								className='text-slate-500 iconSize8px hover:text-goPink cursor-pointer mr-4'
+							/>
 							<div
 								onClick={ModalToggleHandler}
 								className={`${
@@ -91,71 +64,14 @@ const Header = () => {
 										: ''
 								} `}
 							/>
-							<GiHamburgerMenu
-								onClick={ModalToggleHandler}
-								className='text-slate-500 iconSize8px hover:text-goPink cursor-pointer mr-4'
-							/>
-							<div className=''>
-								<div
-									className={`w-[300px] h-screen bg-slate-700 z-sideDrawer absolute left-0 top-0 drop-shadow-md ${
-										isModalOpen
-											? 'animate-drawerSlideIn'
-											: 'animate-drawerSlideOut'
-									}`}
-								>
-									{isModalOpen && !isSubDrawerModalOpen ? (
-										<>
-											<div className='h-[115px]'>
-												<IoMdClose
-													onClick={ModalToggleHandler}
-													className='iconSize8px absolute top-[10px] left-[10px] text-white cursor-pointer hover:text-goPink'
-												/>
-												<Link href='/'>
-													<Image
-														src='/assets/images/goImageDark.png'
-														width={75}
-														height={75}
-														alt='go Image'
-														className={`animate-drawerSlideIn rounded-lg object-cover absolute left-[220px] top-[55px]`}
-													/>
-												</Link>
-											</div>
-											<div className='border-b-2 border-b-goPink text-slate-800 bg-slate-100 px-6 py-2 mb-6'>
-												Hello, Renee
-											</div>
-											<div className='border border-goPink'>
-												{dropDownItems.categories.map((item: any, idx: any) => (
-													<>
-														<div
-															className='px-6 hover:bg-slate-100 cursor-pointer'
-															onClick={() => subDrawerToggleHandler(item.name)}
-														>
-															<ul key={idx}>
-																<li className='flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>
-																	{item.name}
-																	<span className='text-goGreen'>
-																		<IoIosArrowForward />
-																	</span>
-																</li>
-															</ul>
-														</div>
-													</>
-												))}
-											</div>
-											{/* {isModalOpen && isSubDrawerModalOpen ? (
-												<div className='animate-innerDrawerSlide border border-goGreen text-white'>
-													{innerDrawerToggleHandler()}
-												</div>
-											) : (
-
-											)} */}
-										</>
-									) : (
-										<div className='relative top-[170] animate-innerDrawerSlide border border-goGreen text-white'>
-											{innerDrawerToggleHandler()}
-										</div>
-									)}
-								</div>
+							<div>
+								<SideDrawer
+									activeTab={activeTab}
+									isModalOpen={isModalOpen}
+									isSubDrawerModalOpen={isSubDrawerModalOpen}
+									onClick={() => ModalToggleHandler()}
+									subModalOnClick={() => subDrawerToggleHandler(activeTab)}
+								/>
 							</div>
 							<Link href='/'>
 								<Image

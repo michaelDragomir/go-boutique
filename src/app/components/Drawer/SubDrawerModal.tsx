@@ -21,7 +21,7 @@ const subDrawerModal = ({ data }: { data: any }) => {
 	return (
 		<>
 			{!subDrawerModalOpen ? (
-				<div>
+				<div className='animate-innerDrawerSlideIn'>
 					<div
 						onClick={() => subDrawerToggleHandler(activeTab)}
 						className='mt-3 px-3 flex items-center cursor-pointer mb-6'
@@ -42,7 +42,7 @@ const subDrawerModal = ({ data }: { data: any }) => {
 					))}
 				</div>
 			) : (
-				<div>
+				<div className='animate-innerDrawerSlideOut'>
 					{dropDownItems.categories.map((item: any, idx: any) => (
 						<div
 							key={idx}

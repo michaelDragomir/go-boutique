@@ -62,12 +62,12 @@ const config: Config = {
 				},
 				innerDrawerSlideOut: {
 					'0%': {
-						transform: 'translateX(0)',
-						opacity: '1',
+						transform: 'translateX(-100%)',
+						opacity: '0',
 					},
 					'100%': {
-						transform: 'translateX(100%)',
-						opacity: '0',
+						transform: 'translateX(0)',
+						opacity: '1',
 					},
 				},
 			},
@@ -76,7 +76,7 @@ const config: Config = {
 				drawerSlideIn: 'drawerSlideIn .25s forwards',
 				drawerSlideOut: 'drawerSlideOut .25s forwards',
 				innerDrawerSlideIn: 'innerDrawerSlideIn .25s ease-in-out',
-				innerDrawerSlideOut: 'innerDrawerSlideOut .25s ease-in-out',
+				innerDrawerSlideOut: 'innerDrawerSlideOut .25s forwards',
 			},
 
 			backgroundImage: {

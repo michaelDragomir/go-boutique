@@ -24,25 +24,25 @@ export const categories = [
 
 export const clothing = [
 	{
-		name: 'pants',
+		name: 'Pants',
 	},
 	{
-		name: 'dress shirts',
+		name: 'Dress Shirts',
 	},
 	{
-		name: 'dresses',
+		name: 'Dresses',
 	},
 	{
-		name: 'accessories',
+		name: 'Accessories',
 	},
 	{
-		name: 'shoes',
+		name: 'Shoes',
 	},
 	{
-		name: 'hats',
+		name: 'Hats',
 	},
 	{
-		name: 'tshirts',
+		name: 'T-shirts',
 	},
 ];
 

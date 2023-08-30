@@ -5,9 +5,11 @@ import { IoMdClose } from 'react-icons/io';
 const Layout = ({
 	closeModal,
 	children,
+	isModalOpen,
 }: {
 	closeModal: Function;
 	children: React.ReactNode;
+	isModalOpen: any;
 }) => {
 	return (
 		<>

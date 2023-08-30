@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import DrawerLayout from '@/app/components/Layout';
+import DrawerLayout from '@/app/components/DrawerLayout';
 import SubDrawerModal from './SubDrawerModal';
 
 import { navTabItems } from '@/app/utils/navTabIcons';
@@ -59,9 +59,9 @@ const SideDrawer = ({
 								onClick={() => subDrawerToggleHandler(item.name)}
 							>
 								<ul>
-									<li className='flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>
+									<li className='group flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>
 										{item.name}
-										<span className='text-goGreen'>
+										<span className='text-slate-100 group-hover:text-slate-800'>
 											<IoIosArrowForward />
 										</span>
 									</li>
@@ -73,7 +73,7 @@ const SideDrawer = ({
 					<div className='animate-innerDrawerSlideIn'>
 						<div
 							onClick={() => subDrawerToggleHandler(activeTab)}
-							className='mt-3 px-3 flex items-center cursor-pointer mb-6'
+							className='mt-6 px-3 flex items-center cursor-pointer mb-6'
 						>
 							<IoIosArrowBack className='iconSize5px text-goPink' />
 							<h2 className='text-sm text-slate-200'>Main Menu</h2>

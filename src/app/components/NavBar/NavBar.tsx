@@ -67,20 +67,20 @@ const Header = () => {
 									width={75}
 									height={75}
 									alt='go Image'
-									className='rounded-lg object-cover'
+									className='rounded-lg max-w-[75px]'
 								/>
 							</Link>
 						</div>
-						<div className='hidden md:block'>
+						<div className='w-[50%]'>
 							<div className='flex items-center'>
 								<form
 									onSubmit={() => console.log('form submit')}
 									noValidate
-									className='py-6 text-center flex justify-center items-center'
+									className='w-full py-6 text-center flex justify-center items-center'
 								>
 									<input
 										required
-										className={`w-[400px] h-10 placeholder:text-slate-400 block bg-slate-100 border border-slate-300 rounded-l-lg py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm`}
+										className={`w-full h-10 placeholder:text-slate-400 block bg-slate-100 border border-slate-300 rounded-l-lg py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm`}
 										placeholder='Explore Go Boutique...'
 										type='text'
 										// value={inputFieldValue}
@@ -95,11 +95,11 @@ const Header = () => {
 								</form>
 							</div>
 						</div>
-						<div className='flex items-center gap-8 md:gap-12'>
-							<div className='group text-black z-50 hover:bg-slate-100 min-w-fit'>
-								<div className='p-[9px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
+						<div className='flex items-center lg:gap-4 xl:gap-8'>
+							<div className='group text-black z-50 hover:bg-slate-100 md:p-[4px] xl:p-[7px]'>
+								<div className='md:p-[5px] xl:p-[7px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
 									<span className='text-sm pr-2 md:hidden lg:block'>
-										My Account
+										Account
 									</span>
 									<FaRegUser className='text-slate-500 iconSize5px' />
 									<IoIosArrowDown className='group-hover:hidden text-goGreen iconSize5px' />
@@ -109,7 +109,7 @@ const Header = () => {
 									<NavAcctDropDown />
 								</div>
 							</div>
-							<div className='flex border border-slate-500 rounded-md p-[7px] hover:border-slate-800 min-w-fit'>
+							<div className='flex border border-slate-500 rounded-md  md:p-[3px] xl:p-[7px] hover:border-slate-800'>
 								{FavoritesList.length > 0 ? (
 									<GoHeart className='text-goPink iconSize6px pr-1' />
 								) : (
@@ -120,10 +120,10 @@ const Header = () => {
 								)}
 
 								<h4 className='border-r border-goPink cursor-pointer text-sm text-slate-500 flex items-center'>
-									<span className='mr-1 md:hidden lg:block'>My Favorites</span>
+									<span className='mr-1 md:hidden lg:block'>Favorites</span>
 								</h4>
 								<span className='text-slate-500 flex items-center text-sm pl-1'>
-									346
+									3
 								</span>
 							</div>
 							<div className='cursor-pointer text-black'>

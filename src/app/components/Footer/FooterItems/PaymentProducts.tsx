@@ -5,13 +5,13 @@ const PaymentProducts = () => {
 		<div className='mb-6'>
 			<h3 className='text-base font-bold text-center'>Payment Products</h3>
 			<div className='flex p1 font-light justify-center'>
-				<Link href='/'>Go Visa</Link>
+				<Link href='/'>Visa</Link>
 				<span className='px-2'>|</span>
-				<Link href='/'>Go Store Card</Link>
+				<Link href='/'>Store Card</Link>
 				<span className='px-2'>|</span>
-				<Link href='/'>Go Secured Card</Link>
+				<Link href='/'>Secured Card</Link>
 				<span className='px-2'>|</span>
-				<Link href='/'>Go Business Card</Link>
+				<Link href='/'>Business Card</Link>
 				<span className='px-2'>|</span>
 				<Link href='/'>Shop with Points</Link>
 				<span className='px-2'>|</span>
@@ -19,7 +19,7 @@ const PaymentProducts = () => {
 				<span className='px-2'>|</span>
 				<Link href='/'>Gift Cards</Link>
 				<span className='px-2'>|</span>
-				<Link href='/'>Go Currency Converter</Link>
+				<Link href='/'>Currency Converter</Link>
 			</div>
 		</div>
 	);

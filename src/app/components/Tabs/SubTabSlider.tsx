@@ -42,7 +42,7 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 
 	return (
 		<Container>
-			<div className='flex justify-between'>
+			<div className='flex justify-between pb'>
 				{navTabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
@@ -53,7 +53,9 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 						}`}
 					>
 						<div className='flex group absolute flex-row items-center'>
-							<span className='pr-1.5'>{item.icon}</span>
+							<div className='pr-1.5 sm:hidden lg:block xl:block'>
+								{item.icon}
+							</div>
 							<p className='font-medium text-sm'>{item.name}</p>
 							<span>
 								<IoIosArrowDown className='group-hover:hidden text-goGreen' />

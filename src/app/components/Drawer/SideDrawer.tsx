@@ -7,6 +7,7 @@ import SubDrawerModal from './SubDrawerModal';
 import { navTabItems } from '@/app/utils/navTabIcons';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { IoIosArrowForward, IoIosArrowBack, IoMdClose } from 'react-icons/io';
+import { FaRegUser } from 'react-icons/fa6';
 
 const SideDrawer = ({
 	isModalOpen,
@@ -62,6 +63,7 @@ const SideDrawer = ({
 			<div onClick={mainMenuAndCloseHandler}>
 				<IoMdClose className='iconSize8px absolute top-[10px] left-[300px] text-slate-700 cursor-pointer hover:text-goPink' />
 			</div>
+			<FaRegUser className='text-slate-500 iconSize5px' />
 			<div className='border-b-2 border-b-goPink text-xl text-slate-800 bg-slate-100 px-6 py-2'>
 				Hello, Renee
 			</div>

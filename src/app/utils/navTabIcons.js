@@ -11,35 +11,31 @@ import { CgMenuGridR } from 'react-icons/cg';
 
 export const navTabItems = [
 	{
-		icon: <CgMenuGridR className='iconSize5px' />,
-		name: 'Categories',
-	},
-	{
-		icon: <GiClothes className='iconSize5px' />,
+		icon: <GiClothes />,
 		name: 'Clothing',
 	},
 	{
-		icon: <GiSittingDog className='iconSize5px' />,
+		icon: <GiSittingDog />,
 		name: 'Pet Supplies',
 	},
 	{
-		icon: <GiHouse className='iconSize5px' />,
+		icon: <GiHouse />,
 		name: 'Household',
 	},
 	{
-		icon: <GiSmartphone className='iconSize5px' />,
+		icon: <GiSmartphone />,
 		name: 'Electronics',
 	},
 	{
-		icon: <GiBathtub className='iconSize5px' />,
+		icon: <GiBathtub />,
 		name: 'Bath & Body',
 	},
 	{
-		icon: <GiGingerbreadMan className='iconSize5px' />,
+		icon: <GiGingerbreadMan />,
 		name: 'Toys',
 	},
 	{
-		icon: <FaPersonRunning className='iconSize5px' />,
+		icon: <FaPersonRunning />,
 		name: 'Active',
 	},
 ];

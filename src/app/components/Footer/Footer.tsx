@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Footer = () => {
 	return (
 		<footer className='bg-slate-700 text-slate-200 text-sm mt-16'>
-			<div className=' max-w-[1770px] mx-auto xl:px-20 md:px-2 px-4'>
+			<div className=' max-w-[1550px] mx-auto xl:px-20 md:px-2 px-4'>
 				<div className='pt-8 pb-4'>
 					<div className='flex p1 font-light justify-center mb-6'>
 						<Image

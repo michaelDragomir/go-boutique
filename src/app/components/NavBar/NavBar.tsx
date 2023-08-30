@@ -58,7 +58,7 @@ const Header = () => {
 							<div>
 								<SideDrawer
 									isModalOpen={isModalOpen}
-									test={ModalToggleHandler}
+									ModalToggleHandler={ModalToggleHandler}
 								/>
 							</div>
 							<Link href='/'>

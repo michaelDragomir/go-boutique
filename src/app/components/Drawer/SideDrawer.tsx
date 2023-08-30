@@ -10,10 +10,10 @@ import { IoIosArrowForward, IoIosArrowBack, IoMdClose } from 'react-icons/io';
 
 const SideDrawer = ({
 	isModalOpen,
-	test,
+	ModalToggleHandler,
 }: {
 	isModalOpen: boolean;
-	test: any;
+	ModalToggleHandler: any;
 }) => {
 	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
 	const [subDrawerModalOpen, setSubDrawerModalOpen] = useState<boolean>(false);
@@ -46,7 +46,7 @@ const SideDrawer = ({
 
 	const mainMenuAndCloseHandler = () => {
 		setSubDrawerModalOpen((prev) => !prev);
-		test();
+		ModalToggleHandler();
 	};
 
 	const backToMainMenuHandler = () => {
@@ -90,7 +90,7 @@ const SideDrawer = ({
 						onClick={backToMainMenuHandler}
 						className='mt-6 px-3 flex items-center cursor-pointer mb-6'
 					>
-						<IoIosArrowBack className='iconSize5px text-goPink' />
+						<IoIosArrowBack className='iconSize5px text-slate-100' />
 						<h2 className='text-sm text-slate-200'>Main Menu</h2>
 					</div>
 					{innerDrawerToggleHandler(activeTab)}

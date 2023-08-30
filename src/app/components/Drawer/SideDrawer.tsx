@@ -1,6 +1,7 @@
+'use client';
+
 import { useState } from 'react';
 
-import DrawerLayout from '@/app/components/DrawerLayout';
 import SubDrawerModal from './SubDrawerModal';
 
 import { navTabItems } from '@/app/utils/navTabIcons';
@@ -43,9 +44,13 @@ const SideDrawer = ({
 		setSubDrawerModalOpen((prev) => !prev);
 	};
 
-	const backToMainMenuHandler = () => {
+	const mainMenuAndCloseHandler = () => {
 		setSubDrawerModalOpen((prev) => !prev);
 		test();
+	};
+
+	const backToMainMenuHandler = () => {
+		setSubDrawerModalOpen((prev) => !prev);
 	};
 
 	return (
@@ -54,16 +59,12 @@ const SideDrawer = ({
 				isModalOpen ? 'animate-drawerSlideIn' : 'animate-drawerSlideOut'
 			}`}
 		>
-			<div onClick={backToMainMenuHandler}>
+			<div onClick={mainMenuAndCloseHandler}>
 				<IoMdClose className='iconSize8px absolute top-[10px] left-[300px] text-slate-700 cursor-pointer hover:text-goPink' />
 			</div>
 			<div className='border-b-2 border-b-goPink text-xl text-slate-800 bg-slate-100 px-6 py-2'>
 				Hello, Renee
 			</div>
-			{/* <DrawerLayout
-				isModalOpen={isModalOpen}
-				closeModal={backToMainMenuHandler}
-			> */}
 			{isModalOpen && !subDrawerModalOpen ? (
 				<>
 					{dropDownItems.categories.map((item: any, idx: any) => (
@@ -95,7 +96,6 @@ const SideDrawer = ({
 					{innerDrawerToggleHandler(activeTab)}
 				</div>
 			)}
-			{/* </DrawerLayout> */}
 		</div>
 	);
 };

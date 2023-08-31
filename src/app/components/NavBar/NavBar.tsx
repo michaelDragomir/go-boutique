@@ -32,7 +32,7 @@ const Header = () => {
 		<div className='sticky w-full bg-white shadow-sm top-0 border border-slate-500 sm:border-goGreen md:border-rose-500 lg:border-blue-500 xl:border-goGreen phone:border-goPink tablet:border-blue-500'>
 			<div className='pt-4 px-4 border-b-[1px]'>
 				<Container>
-					<div className='relative'>
+					<div className='relative phone:hidden md:block'>
 						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
 							{aboveNav.map((item: any, idx: any) => (
 								<ul key={idx}>

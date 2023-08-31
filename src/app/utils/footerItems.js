@@ -42,6 +42,10 @@ export const customerService = [
 		separator: '|',
 	},
 	{
+		name: 'Credit Services',
+		separator: '|',
+	},
+	{
 		name: 'Store Finder',
 		separator: '|',
 	},

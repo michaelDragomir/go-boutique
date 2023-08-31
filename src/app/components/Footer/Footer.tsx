@@ -19,7 +19,7 @@ const Footer = () => {
 							alt='go Image'
 						/>
 					</div>
-					<div className='md:flex md:justify-evenly lg:block'>
+					<div className='flex flex-wrap tablet:justify-evenly md:justify-evenly lg:block'>
 						<ShopCategories />
 						<CustomerService />
 						<PaymentProducts />
@@ -34,6 +34,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// w-full sm:w-1/2 md:w-1/4 lg:w-1/6 mb-6 flex flex-col gap-2
-// grid gap-4 grid-cols-2

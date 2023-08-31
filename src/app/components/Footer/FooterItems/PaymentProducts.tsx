@@ -9,11 +9,11 @@ const AboutUs = () => {
 				Payment Products
 			</h3>
 			<div className='md:flex md:flex-col md:space-y-2 lg:flex lg:flex-row p1 font-light lg:justify-center'>
-				{paymentProducts.map((item: any) => (
+				{paymentProducts.map((item: any, idx: any) => (
 					<>
 						<Link href={'/'}>
 							<ul className=''>
-								<li>{item.name}</li>
+								<li key={idx}>{item.name}</li>
 							</ul>
 						</Link>
 						<span className='px-2 md:hidden lg:block'>{item.separator}</span>

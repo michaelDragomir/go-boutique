@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import * as paymentProductsItems from '@/app/utils/footerItems';
+import * as categoriesItems from '@/app/utils/footerItems';
 
-const AboutUs = () => {
-	const { paymentProducts } = paymentProductsItems;
+const ShopCategories = () => {
+	const { categories } = categoriesItems;
 	return (
 		<div className='mb-6'>
 			<h3 className='text-base font-bold pb-2 lg:justify-center'>
-				Payment Products
+				Shop Categories
 			</h3>
 			<div className='md:flex md:flex-col md:space-y-2 lg:flex lg:flex-row p1 font-light lg:justify-center'>
-				{paymentProducts.map((item: any) => (
+				{categories.map((item: any) => (
 					<>
 						<Link href={'/'}>
 							<ul className=''>
@@ -24,4 +24,4 @@ const AboutUs = () => {
 	);
 };
 
-export default AboutUs;
+export default ShopCategories;

@@ -1,4 +1,4 @@
-import ShopCategories from './FooterItems/Categories';
+import ShopCategories from './FooterItems/ShopCategories';
 import CustomerService from './FooterItems/CustomerService';
 import AboutUs from './FooterItems/AboutUs';
 import SocialMedia from './FooterItems/SocialMedia';

@@ -1,25 +1,22 @@
 import Link from 'next/link';
+import * as aboutUsItems from '@/app/utils/footerItems';
 
 const AboutUs = () => {
+	const { aboutUs } = aboutUsItems;
 	return (
 		<div className='mb-6'>
-			<h3 className='text-base font-bold text-center'>About Us</h3>
-			<div className='flex p1 font-light justify-center'>
-				<Link href='/'>Careers</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>About Go Boutique</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>NewsLetters</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Sustainability</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Press</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Investor Relations</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Accessibility</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Credit Services</Link>
+			<h3 className='text-base font-bold pb-2 lg:justify-center'>About Us</h3>
+			<div className='md:flex md:flex-col md:space-y-2 lg:flex lg:flex-row p1 font-light lg:justify-center'>
+				{aboutUs.map((item: any) => (
+					<>
+						<Link href={'/'}>
+							<ul className=''>
+								<li>{item.name}</li>
+							</ul>
+						</Link>
+						<span className='px-2 md:hidden lg:block'>{item.separator}</span>
+					</>
+				))}
 			</div>
 		</div>
 	);

@@ -1,28 +1,27 @@
 import Link from 'next/link';
+import * as customerServiceItems from '@/app/utils/footerItems';
 
-const CustomerService = () => {
+const AboutUs = () => {
+	const { customerService } = customerServiceItems;
 	return (
 		<div className='mb-6'>
-			<h3 className='text-base font-bold text-center'>Customer Service</h3>
-			<div className='flex p1 font-light justify-center'>
-				<Link href='/'>Your Account</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Your Orders</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Help</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Store Finder</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Contact Us</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Shipping Policy</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>Returns &amp; Exchanges</Link>
-				<span className='px-2'>|</span>
-				<Link href='/'>FAQs</Link>
+			<h3 className='text-base font-bold pb-2 lg:justify-center'>
+				Customer Service
+			</h3>
+			<div className='md:flex md:flex-col md:space-y-2 lg:flex lg:flex-row p1 font-light lg:justify-center'>
+				{customerService.map((item: any) => (
+					<>
+						<Link href={'/'}>
+							<ul className=''>
+								<li>{item.name}</li>
+							</ul>
+						</Link>
+						<span className='px-2 md:hidden lg:block'>{item.separator}</span>
+					</>
+				))}
 			</div>
 		</div>
 	);
 };
 
-export default CustomerService;
+export default AboutUs;

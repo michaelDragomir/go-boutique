@@ -1,6 +1,6 @@
 export const categories = [
 	{
-		name: 'Clothiing',
+		name: 'Clothing',
 		separator: '|',
 	},
 	{

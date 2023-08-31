@@ -3,14 +3,15 @@ import CustomerService from './FooterItems/CustomerService';
 import AboutUs from './FooterItems/AboutUs';
 import SocialMedia from './FooterItems/SocialMedia';
 import PaymentProducts from './FooterItems/PaymentProducts';
+import Container from '../Container';
 import Image from 'next/image';
 
 const Footer = () => {
 	return (
 		<footer className='bg-slate-700 text-slate-200 text-sm mt-16'>
-			<div className=' max-w-[1550px] mx-auto xl:px-20 md:px-2 px-4'>
-				<div className='pt-8 pb-4'>
-					<div className='flex p1 font-light justify-center mb-6'>
+			<Container>
+				<div className=''>
+					<div className='mb-6 mt-6 flex justify-center'>
 						<Image
 							src='/assets/images/goImageDark.png'
 							width={75}
@@ -18,13 +19,16 @@ const Footer = () => {
 							alt='go Image'
 						/>
 					</div>
-					<ShopCategories />
-					<CustomerService />
-					<PaymentProducts />
-					<AboutUs />
+					<div className='md:flex md:justify-evenly lg:block'>
+						<ShopCategories />
+						<CustomerService />
+						<PaymentProducts />
+						<AboutUs />
+					</div>
 				</div>
-			</div>
-			<SocialMedia />
+
+				<SocialMedia />
+			</Container>
 		</footer>
 	);
 };
@@ -32,3 +36,4 @@ const Footer = () => {
 export default Footer;
 
 // w-full sm:w-1/2 md:w-1/4 lg:w-1/6 mb-6 flex flex-col gap-2
+// grid gap-4 grid-cols-2

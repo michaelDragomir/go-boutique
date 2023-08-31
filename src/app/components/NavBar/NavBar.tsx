@@ -10,7 +10,7 @@ import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
 import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
 import SideDrawer from '../Drawer/SideDrawer';
 
-import { IoCartOutline } from 'react-icons/io5';
+import { IoCartOutline, IoSearchSharp } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
@@ -23,9 +23,14 @@ const Header = () => {
 
 	const [FavoritesList, setfavoritesList] = useState<Array>([0]);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+	const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false);
 
-	const ModalToggleHandler = () => {
+	const modalToggleHandler = () => {
 		setIsModalOpen((prev) => !prev);
+	};
+
+	const searchModalToggleHandler = () => {
+		setIsSearchModalOpen((prev) => !prev);
 	};
 
 	return (
@@ -41,14 +46,14 @@ const Header = () => {
 							))}
 						</div>
 					</div>
-					<div className='flex flex-row items-center justify-between gap-3'>
+					<div className='flex flex-row items-center justify-between gap-3 mb-[15px]'>
 						<div className='flex flex-row items-center'>
 							<GiHamburgerMenu
-								onClick={ModalToggleHandler}
+								onClick={modalToggleHandler}
 								className='text-slate-500 iconSize8px hover:text-goPink cursor-pointer mr-4'
 							/>
 							<div
-								onClick={ModalToggleHandler}
+								onClick={modalToggleHandler}
 								className={`${
 									isModalOpen
 										? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-40 z-overlay'
@@ -58,7 +63,7 @@ const Header = () => {
 							<div>
 								<SideDrawer
 									isModalOpen={isModalOpen}
-									ModalToggleHandler={ModalToggleHandler}
+									modalToggleHandler={modalToggleHandler}
 								/>
 							</div>
 							<Link href='/'>
@@ -71,34 +76,51 @@ const Header = () => {
 								/>
 							</Link>
 						</div>
-						<div className='lg:w-[50%] xl:w-[100%] md:w-[60%]'>
+						<div className='lg:w-[55%] xl:w-[100%] phone:w-[68%] phone:hidden tablet:block'>
 							<div className='flex items-center'>
-								<form
+								{/* <form
 									onSubmit={() => console.log('form submit')}
 									noValidate
 									className='w-full py-6 text-center flex justify-center items-center'
+								> */}
+								<input
+									required
+									className={`w-full h-9 placeholder:text-slate-400 block bg-slate-100 border border-slate-300 rounded-l-lg py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm`}
+									placeholder='Explore Go Boutique...'
+									type='text'
+									// value={inputFieldValue}
+									// onChange={(e) => onChangeValueHandler(e)}
+								/>
+								<button
+									type='submit'
+									className='h-9 rounded-r-lg border border-gray-700 bg-gray-800 px-3 py-2 text-center text-sm font-medium text-white shadow-sm hover:border-gray-900 hover:bg-gray-900'
 								>
-									<input
-										required
-										className={`w-full h-10 placeholder:text-slate-400 block bg-slate-100 border border-slate-300 rounded-l-lg py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm`}
-										placeholder='Explore Go Boutique...'
-										type='text'
-										// value={inputFieldValue}
-										// onChange={(e) => onChangeValueHandler(e)}
-									/>
-									<button
-										type='submit'
-										className='h-10 rounded-r-lg border border-gray-700 bg-gray-800 px-3 py-2 text-center text-sm font-medium text-white shadow-sm hover:border-gray-900 hover:bg-gray-900'
-									>
-										<span className='text-[#57F8AB]'>GO</span>
-									</button>
-								</form>
+									<span className='text-[#57F8AB]'>
+										<IoSearchSharp className='iconSize5px' />
+									</span>
+								</button>
+								{/* </form> */}
 							</div>
 						</div>
-						<div className='flex items-center lg:gap-4 md:gap-6 xl:gap-8'>
+						<div
+							onClick={searchModalToggleHandler}
+							className='z-50 border border-slate-500 flex items-center gap-1 cursor-pointer text-slate-500 rounded-md tablet:hidden text-sm p-[5px]'
+						>
+							<span className='min-w-[100px]'>Search Modal</span>
+							<IoSearchSharp className='text-goGreen iconSize5px' />
+						</div>
+						<div
+							onClick={searchModalToggleHandler}
+							className={`${
+								isSearchModalOpen
+									? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-40 z-overlay'
+									: ''
+							} `}
+						/>
+						<div className='flex items-center lg:gap-4 phone:gap-4 xl:gap-8'>
 							<div className='group text-black z-50 hover:bg-slate-100'>
-								<div className='md:p-[5px] xl:p-[7px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
-									<span className='text-sm pr-2 md:hidden lg:block'>
+								<div className='phone:p-[5px] xl:p-[7px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
+									<span className='text-sm pr-2 phone:hidden sm:block'>
 										Account
 									</span>
 									<FaRegUser className='text-slate-500 iconSize5px' />
@@ -109,7 +131,7 @@ const Header = () => {
 									<NavAcctDropDown />
 								</div>
 							</div>
-							<div className='flex border border-slate-500 rounded-md  md:p-[3px] xl:p-[7px] hover:border-slate-800'>
+							<div className='flex border border-slate-500 rounded-md  phone:p-[3px] xl:p-[7px] hover:border-slate-800'>
 								{FavoritesList.length > 0 ? (
 									<GoHeart className='text-goPink iconSize6px pr-1' />
 								) : (
@@ -120,7 +142,7 @@ const Header = () => {
 								)}
 
 								<h4 className='border-r border-goPink cursor-pointer text-sm text-slate-500 flex items-center'>
-									<span className='mr-1 md:hidden lg:block'>Favorites</span>
+									<span className='mr-1 phone:hidden sm:block'>Favorites</span>
 								</h4>
 								<span className='text-slate-500 flex items-center text-sm pl-1'>
 									3
@@ -130,14 +152,14 @@ const Header = () => {
 								<div className='flex items-center'>
 									<div className='md:relative lg:border-r lg:border-slate-400 mr-1'>
 										<IoCartOutline className='text-slate-500 iconSize8px' />
-										<h4 className='md:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
+										<h4 className='phone:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
 											Cart
 										</h4>
 									</div>
-									<span className='md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
+									<span className='tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
 										1
 									</span>
-									<h4 className='md:hidden lg:block xl:block text-sm font-bold pl-1 text-slate-500'>
+									<h4 className='phone:hidden lg:block xl:block text-sm font-bold pl-1 text-slate-500'>
 										item(s)
 									</h4>
 								</div>
@@ -146,9 +168,7 @@ const Header = () => {
 					</div>
 				</Container>
 			</div>
-			<div className='bg-slate-100'>
-				<SubHeaderTabs />
-			</div>
+			<div className='bg-slate-100'>{/* <SubHeaderTabs /> */}</div>
 		</div>
 	);
 };

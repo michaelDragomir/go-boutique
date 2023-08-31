@@ -10,6 +10,7 @@ const config: Config = {
 		screens: {
 			phone: '375px',
 			tablet: '500px',
+			searchBreak: '700px',
 			sm: '640px',
 			md: '768px',
 			lg: '1024px',

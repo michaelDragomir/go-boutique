@@ -11,10 +11,10 @@ import { FaRegUser } from 'react-icons/fa6';
 
 const SideDrawer = ({
 	isModalOpen,
-	ModalToggleHandler,
+	modalToggleHandler,
 }: {
 	isModalOpen: boolean;
-	ModalToggleHandler: any;
+	modalToggleHandler: any;
 }) => {
 	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
 	const [subDrawerModalOpen, setSubDrawerModalOpen] = useState<boolean>(false);
@@ -47,7 +47,7 @@ const SideDrawer = ({
 
 	const mainMenuAndCloseHandler = () => {
 		setSubDrawerModalOpen((prev) => !prev);
-		ModalToggleHandler();
+		modalToggleHandler();
 	};
 
 	const backToMainMenuHandler = () => {
@@ -63,8 +63,10 @@ const SideDrawer = ({
 			<div onClick={mainMenuAndCloseHandler}>
 				<IoMdClose className='iconSize8px absolute top-[10px] left-[300px] text-slate-700 cursor-pointer hover:text-goPink' />
 			</div>
-			<FaRegUser className='text-slate-500 iconSize5px' />
-			<div className='border-b-2 border-b-goPink text-xl text-slate-800 bg-slate-100 px-6 py-2'>
+			<div className='flex border-b-2 border-b-goPink text-xl text-slate-800 bg-slate-100 px-6 py-2'>
+				<span className='mr-3'>
+					<FaRegUser className='text-slate-700 iconSize6px' />
+				</span>
 				Hello, Renee
 			</div>
 			{isModalOpen && !subDrawerModalOpen ? (

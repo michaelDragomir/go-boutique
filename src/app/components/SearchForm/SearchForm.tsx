@@ -7,7 +7,7 @@ const SearchForm = () => {
 			<form
 				onSubmit={() => console.log('form submit')}
 				noValidate
-				className='w-full py-6 text-center flex justify-center items-center'
+				className='w-full text-center flex justify-center items-center'
 			>
 				<input
 					required

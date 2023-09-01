@@ -19,15 +19,15 @@ const Footer = () => {
 							alt='go Image'
 						/>
 					</div>
-					<div className='sm:flex sm:flex-row sm:justify-evenly md:justify-center lg:block'>
-						<div className='sm:flex sm:flex-row lg:block md:mr-12 lg:mr-0'>
-							<span className='sm:pr-4 md:pr-12 lg:pr-0'>
+					<div className='sm:flex sm:flex-row sm:justify-center md:justify-center lg:block'>
+						<div className='sm:pr-[20px] md:pr-0 phone:text-center tablet:flex tablet:justify-center sm:flex-row lg:block md:mr-12 lg:mr-0'>
+							<span className='tablet:pr-12 md:pr-12 lg:pr-0'>
 								<ShopCategories />
 							</span>
 							<CustomerService />
 						</div>
-						<div className='sm:flex sm:flex-row lg:block md:mr-12 lg:mr-0'>
-							<span className='sm:pr-4 md:pr-12 lg:pr-0'>
+						<div className='phone:text-center tablet:flex tablet:justify-center sm:flex-row lg:block md:mr-12 lg:mr-0'>
+							<span className='tablet:pr-12 md:pr-12 lg:pr-0'>
 								<PaymentProducts />
 							</span>
 							<AboutUs />
@@ -42,9 +42,3 @@ const Footer = () => {
 };
 
 export default Footer;
-// <div className='flex tablet:justify-evenly md:justify-evenly lg:block'>
-// 	<ShopCategories />
-// 	<CustomerService />
-// 	<PaymentProducts />
-// 	<AboutUs />
-// </div>;

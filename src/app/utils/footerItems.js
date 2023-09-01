@@ -69,31 +69,31 @@ export const customerService = [
 
 export const aboutUs = [
 	{
-		name: 'Clothing',
+		name: 'Careers',
 		separator: '|',
 	},
 	{
-		name: 'Pet Supplies',
+		name: 'Who We Are',
 		separator: '|',
 	},
 	{
-		name: 'Household',
+		name: 'Press Center',
 		separator: '|',
 	},
 	{
-		name: 'Electronics',
+		name: 'Sustainability',
 		separator: '|',
 	},
 	{
-		name: 'Bath & Body',
+		name: 'Investor Realations',
 		separator: '|',
 	},
 	{
-		name: 'Toys',
+		name: 'Accessibility',
 		separator: '|',
 	},
 	{
-		name: 'Active',
+		name: 'Our Team',
 		separator: '',
 	},
 ];

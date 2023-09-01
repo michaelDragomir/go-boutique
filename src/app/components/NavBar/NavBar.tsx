@@ -137,7 +137,7 @@ const Header = () => {
 											Cart
 										</h4>
 									</div>
-									<span className='tablet:absolute tablet:top-[16px] tablet:right-[10px] md:absolute md:top-[43px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
+									<span className='sm:absolute sm:top-[30px] sm:right-[10px] tablet:absolute tablet:top-[12px] tablet:right-[10px] md:absolute md:top-[58px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
 										1
 									</span>
 									<h4 className='phone:hidden lg:block xl:block text-sm font-bold pl-1 text-slate-500'>
@@ -184,7 +184,7 @@ const Header = () => {
 										Cart
 									</h4>
 								</div>
-								<span className='phone:relative phone:top-[-10px] phone:right-[15px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
+								<span className='phone:relative phone:top-[-14px] phone:right-[15px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
 									1
 								</span>
 								<h4 className='phone:hidden lg:block xl:block text-sm font-bold pl-1 text-slate-500'>

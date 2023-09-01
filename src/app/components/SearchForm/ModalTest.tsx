@@ -1,7 +1,7 @@
 const ModalTest = () => {
 	return (
 		<div className='modal'>
-			<div>I'm a modal dialog</div>
+			<div>modal dialog</div>
 		</div>
 	);
 };

@@ -97,7 +97,7 @@ const Header = () => {
 									: ''
 							} `}
 						>
-							<div className='phone:block sm:hidden w-9/12 mx-auto mt-40px z-aboveAll relative'>
+							<div className='phone:block sm:hidden w-9/12 mx-auto mt-[40px] z-aboveAll relative'>
 								{isSearchModalOpen &&
 									createPortal(<ModalTest />, document.body)}
 							</div>

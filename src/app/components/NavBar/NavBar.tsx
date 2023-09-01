@@ -11,6 +11,7 @@ import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
 import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
 import SideDrawer from '@/app/components/Drawer/SideDrawer';
 import SearchForm from '@/app/components/SearchForm/SearchForm';
+import ModalTest from '@/app/components/SearchForm/ModalTest';
 
 import { IoCartOutline, IoSearchSharp } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
@@ -37,9 +38,9 @@ const Header = () => {
 
 	return (
 		<div className='sticky w-full bg-white shadow-sm top-0 border-b border-b-slate-400'>
-			<div className='pt-4 px-4 border-b-[1px]'>
+			<div className='phone:p-4 tablet:pt-4 sm:pb-0 sm:pt-0 md:pt-4 sm:px-4 border-b-[1px] '>
 				<Container>
-					<div className='relative phone:hidden md:block mb-2'>
+					<div className='relative phone:hidden md:block'>
 						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
 							{aboveNav.map((item: any, idx: any) => (
 								<ul key={idx}>
@@ -48,7 +49,7 @@ const Header = () => {
 							))}
 						</div>
 					</div>
-					<div className='flex flex-row items-center justify-between gap-3 mb-[15px]'>
+					<div className='flex flex-row items-center justify-between gap-3'>
 						<div className='flex flex-row items-center'>
 							<GiHamburgerMenu
 								onClick={modalToggleHandler}
@@ -92,11 +93,14 @@ const Header = () => {
 							onClick={searchModalToggleHandler}
 							className={`${
 								isSearchModalOpen
-									? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-40 z-overlay'
+									? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-90 z-overlay'
 									: ''
 							} `}
 						>
-							{isSearchModalOpen && <SearchForm />}
+							<div className='phone:block sm:hidden w-9/12 mx-auto mt-40px z-aboveAll relative'>
+								{isSearchModalOpen &&
+									createPortal(<ModalTest />, document.body)}
+							</div>
 						</div>
 						<div className='phone:hidden tablet:flex items-center lg:gap-4 phone:gap-4 xl:gap-8'>
 							<div className='group text-black z-50 hover:bg-slate-100'>
@@ -137,7 +141,7 @@ const Header = () => {
 											Cart
 										</h4>
 									</div>
-									<span className='sm:absolute sm:top-[30px] sm:right-[10px] tablet:absolute tablet:top-[12px] tablet:right-[10px] md:absolute md:top-[58px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
+									<span className='sm:absolute sm:top-[15px] sm:right-[10px] tablet:absolute tablet:top-[12px] tablet:right-[10px] md:absolute md:top-[50px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
 										1
 									</span>
 									<h4 className='phone:hidden lg:block xl:block text-sm font-bold pl-1 text-slate-500'>
@@ -147,7 +151,7 @@ const Header = () => {
 							</div>
 						</div>
 					</div>
-					<div className='tablet:hidden flex items-center lg:gap-4 phone:gap-4 xl:gap-8 justify-center'>
+					<div className='tablet:hidden flex items-center lg:gap-4 phone:gap-4 xl:gap-8 justify-center mt-[20px]'>
 						<div className='group text-black z-50 hover:bg-slate-100'>
 							<div className='phone:p-[5px] xl:p-[7px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
 								<span className='text-sm pr-2 sm:block'>Account</span>

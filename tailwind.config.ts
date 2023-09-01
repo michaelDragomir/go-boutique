@@ -20,7 +20,7 @@ const config: Config = {
 		extend: {
 			zIndex: {
 				overlay: '9998',
-				sideDrawer: '9999',
+				aboveAll: '9999',
 			},
 			keyframes: {
 				slideDown: {

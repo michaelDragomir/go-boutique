@@ -76,7 +76,7 @@ const Header = () => {
 								/>
 							</Link>
 						</div>
-						<div className='lg:w-[55%] xl:w-[100%] phone:w-[68%] phone:hidden tablet:block'>
+						<div className='lg:w-[55%] xl:w-[100%] phone:w-[68%] phone:hidden sm:block'>
 							<div className='flex items-center'>
 								{/* <form
 									onSubmit={() => console.log('form submit')}
@@ -104,7 +104,7 @@ const Header = () => {
 						</div>
 						<div
 							onClick={searchModalToggleHandler}
-							className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-slate-500 rounded-md tablet:hidden text-sm p-[5px] justify-start'
+							className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-slate-500 rounded-md sm:hidden text-sm p-[5px] justify-start'
 						>
 							<span className=''>Search Modal</span>
 							<IoSearchSharp className='text-goGreen iconSize5px' />

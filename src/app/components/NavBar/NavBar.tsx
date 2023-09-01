@@ -4,11 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import Container from '@/app/components/Container';
 import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
 import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
-import SideDrawer from '../Drawer/SideDrawer';
+import SideDrawer from '@/app/components/Drawer/SideDrawer';
+import SearchForm from '@/app/components/SearchForm/SearchForm';
 
 import { IoCartOutline, IoSearchSharp } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
@@ -34,10 +36,10 @@ const Header = () => {
 	};
 
 	return (
-		<div className='sticky w-full bg-white shadow-sm top-0 border border-slate-500 sm:border-goGreen md:border-rose-500 lg:border-blue-500 xl:border-goGreen phone:border-goPink tablet:border-blue-500'>
+		<div className='sticky w-full bg-white shadow-sm top-0 border-b border-b-slate-400'>
 			<div className='pt-4 px-4 border-b-[1px]'>
 				<Container>
-					<div className='relative phone:hidden md:block'>
+					<div className='relative phone:hidden md:block mb-2'>
 						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
 							{aboveNav.map((item: any, idx: any) => (
 								<ul key={idx}>
@@ -50,7 +52,7 @@ const Header = () => {
 						<div className='flex flex-row items-center'>
 							<GiHamburgerMenu
 								onClick={modalToggleHandler}
-								className='text-slate-500 iconSize8px hover:text-goPink cursor-pointer mr-4'
+								className='phone:animate-pulse phone:text-goGreen md:text-slate-500 md:animate-none iconSize8px hover:text-goPink cursor-pointer mr-4'
 							/>
 							<div
 								onClick={modalToggleHandler}
@@ -77,30 +79,7 @@ const Header = () => {
 							</Link>
 						</div>
 						<div className='lg:w-[55%] xl:w-[100%] phone:w-[68%] phone:hidden sm:block'>
-							<div className='flex items-center'>
-								{/* <form
-									onSubmit={() => console.log('form submit')}
-									noValidate
-									className='w-full py-6 text-center flex justify-center items-center'
-								> */}
-								<input
-									required
-									className={`w-full h-9 placeholder:text-slate-400 block bg-slate-100 border border-slate-300 rounded-l-lg py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm`}
-									placeholder='Explore Go Boutique...'
-									type='text'
-									// value={inputFieldValue}
-									// onChange={(e) => onChangeValueHandler(e)}
-								/>
-								<button
-									type='submit'
-									className='h-9 rounded-r-lg border border-gray-700 bg-gray-800 px-3 py-2 text-center text-sm font-medium text-white shadow-sm hover:border-gray-900 hover:bg-gray-900'
-								>
-									<span className='text-[#57F8AB]'>
-										<IoSearchSharp className='iconSize5px' />
-									</span>
-								</button>
-								{/* </form> */}
-							</div>
+							<SearchForm />
 						</div>
 						<div
 							onClick={searchModalToggleHandler}
@@ -116,7 +95,9 @@ const Header = () => {
 									? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-40 z-overlay'
 									: ''
 							} `}
-						/>
+						>
+							{isSearchModalOpen && <SearchForm />}
+						</div>
 						<div className='phone:hidden tablet:flex items-center lg:gap-4 phone:gap-4 xl:gap-8'>
 							<div className='group text-black z-50 hover:bg-slate-100'>
 								<div className='phone:p-[5px] xl:p-[7px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
@@ -156,7 +137,7 @@ const Header = () => {
 											Cart
 										</h4>
 									</div>
-									<span className='tablet:absolute tablet:top-[16px] tablet:right-[10px] md:absolute md:top-[36px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
+									<span className='tablet:absolute tablet:top-[16px] tablet:right-[10px] md:absolute md:top-[43px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] animate-pulse'>
 										1
 									</span>
 									<h4 className='phone:hidden lg:block xl:block text-sm font-bold pl-1 text-slate-500'>
@@ -214,7 +195,9 @@ const Header = () => {
 					</div>
 				</Container>
 			</div>
-			<div className='bg-slate-100'>{/* <SubHeaderTabs /> */}</div>
+			<div className='bg-slate-100 p-[4px] phone:hidden md:block'>
+				<SubHeaderTabs />
+			</div>
 		</div>
 	);
 };

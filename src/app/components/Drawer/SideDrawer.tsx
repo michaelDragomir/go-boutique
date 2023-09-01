@@ -56,7 +56,7 @@ const SideDrawer = ({
 
 	return (
 		<div
-			className={`w-[300px] h-screen bg-slate-700 z-sideDrawer absolute left-0 top-0 drop-shadow-md ${
+			className={`w-[300px] h-screen bg-slate-700 z-sideDrawer absolute left-[-1px] top-0 drop-shadow-md ${
 				isModalOpen ? 'animate-drawerSlideIn' : 'animate-drawerSlideOut'
 			}`}
 		>

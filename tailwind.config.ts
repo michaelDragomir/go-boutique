@@ -76,10 +76,10 @@ const config: Config = {
 			},
 			animation: {
 				slideDown: 'slideDown .25s forwards',
-				drawerSlideIn: 'drawerSlideIn .25s forwards',
-				drawerSlideOut: 'drawerSlideOut .25s forwards',
-				innerDrawerSlideIn: 'innerDrawerSlideIn .25s ease-in-out',
-				innerDrawerSlideOut: 'innerDrawerSlideOut .25s forwards',
+				drawerSlideIn: 'drawerSlideIn .15s forwards',
+				drawerSlideOut: 'drawerSlideOut .15s forwards',
+				innerDrawerSlideIn: 'innerDrawerSlideIn .15s ease-in-out',
+				innerDrawerSlideOut: 'innerDrawerSlideOut .15s forwards',
 			},
 
 			backgroundImage: {

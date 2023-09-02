@@ -23,6 +23,16 @@ const config: Config = {
 				aboveAll: '9999',
 			},
 			keyframes: {
+				searchSlideDown: {
+					'0%': {
+						transform: 'translateY(-25%)',
+						opacity: '0',
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1',
+					},
+				},
 				slideDown: {
 					'0%': {
 						transform: 'translateY(-25%)',
@@ -75,6 +85,7 @@ const config: Config = {
 				},
 			},
 			animation: {
+				searchSlideDown: 'searchSlideDown .25s forwards',
 				slideDown: 'slideDown .25s forwards',
 				drawerSlideIn: 'drawerSlideIn .15s forwards',
 				drawerSlideOut: 'drawerSlideOut .15s forwards',

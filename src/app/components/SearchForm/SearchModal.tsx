@@ -1,7 +1,5 @@
+//file not being used. but wanted to keep it as reference.
 import { createPortal } from 'react-dom';
-
-// import { IoMdClose } from 'react-icons/io';
-
 import SearchForm from './SearchForm';
 
 const SearchModal = () => {

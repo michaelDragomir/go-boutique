@@ -14,7 +14,7 @@ import SearchModal from '@/app/components/SearchForm/SearchModal';
 
 import { IoCartOutline, IoSearchSharp } from 'react-icons/io5';
 import { FaRegUser } from 'react-icons/fa6';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp, IoMdClose } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -92,16 +92,17 @@ const Header = () => {
 							onClick={searchModalToggleHandler}
 							className={`${
 								isSearchModalOpen
-									? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-90 z-overlay'
+									? 'sm:hidden absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-90 z-overlay'
 									: ''
 							} `}
 						>
-							{isSearchModalOpen && (
-								<div>
-									<SearchModal />
-								</div>
-							)}
+							<IoMdClose
+								className={`iconSize8px absolute top-[10px] right-[15px] text-white cursor-pointer hover:text-goPink ${
+									isSearchModalOpen ? '' : 'hidden'
+								}`}
+							/>
 						</div>
+						{isSearchModalOpen && <SearchModal />}
 						<div className='phone:hidden tablet:flex items-center lg:gap-4 phone:gap-4 xl:gap-8'>
 							<div className='group text-black z-50 hover:bg-slate-100'>
 								<div className='phone:p-[5px] xl:p-[7px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>

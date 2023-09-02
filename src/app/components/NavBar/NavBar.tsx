@@ -85,7 +85,7 @@ const Header = () => {
 								onClick={searchModalToggleHandler}
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-slate-500 rounded-md sm:hidden text-sm p-[5px] justify-start'
 							>
-								<span className=''>Search Modal</span>
+								<span className=''>Click to Search</span>
 								<IoSearchSharp className='text-goGreen iconSize5px' />
 							</div>
 							<div className='phone:hidden tablet:flex items-center lg:gap-4 phone:gap-4 xl:gap-8'>

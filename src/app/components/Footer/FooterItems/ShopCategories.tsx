@@ -11,11 +11,11 @@ const ShopCategories = () => {
 			<div className='phone:space-y-2 flex flex-col md:space-y-4 lg:flex lg:flex-row p1 font-light lg:justify-center'>
 				{categories.map((item: any, idx: any) => (
 					<>
-						<Link className='mt-[15px]' href={'/'}>
-							<ul>
+						<ul className='mt-[15px]'>
+							<Link href={'/'}>
 								<li key={idx}>{item.name}</li>
-							</ul>
-						</Link>
+							</Link>
+						</ul>
 						<span className='px-2 phone:hidden lg:block'>{item.separator}</span>
 					</>
 				))}

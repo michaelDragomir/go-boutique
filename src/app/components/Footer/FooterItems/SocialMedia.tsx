@@ -1,27 +1,18 @@
 import Link from 'next/link';
-import {
-	AiFillFacebook,
-	AiFillInstagram,
-	AiFillTwitterCircle,
-	AiFillYoutube,
-} from 'react-icons/ai';
+import * as SocialMediaIcons from '@/app/utils/footerItems';
 
 const SocialMedia = () => {
+	const { socialMedia } = SocialMediaIcons;
 	return (
 		<div className='border-t border-slate-400 flex justify-center p-4'>
 			<div className='flex gap-2'>
-				<Link href='/'>
-					<AiFillFacebook className='iconSize5px' />
-				</Link>
-				<Link href='/'>
-					<AiFillInstagram className='iconSize5px' />
-				</Link>
-				<Link href='/'>
-					<AiFillTwitterCircle className='iconSize5px' />
-				</Link>
-				<Link href='/'>
-					<AiFillYoutube className='iconSize5px' />
-				</Link>
+				{socialMedia.map((icon: any, idx: any) => (
+					<ul key={idx}>
+						<Link href='/'>
+							<li>{icon.icon}</li>
+						</Link>
+					</ul>
+				))}
 			</div>
 			<div className='pl-8 font-extralight text-sm'>
 				&#169; 2023, Go Boutique, Inc.

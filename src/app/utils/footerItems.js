@@ -1,3 +1,10 @@
+import {
+	AiFillFacebook,
+	AiFillInstagram,
+	AiFillTwitterCircle,
+	AiFillYoutube,
+} from 'react-icons/ai';
+
 export const categories = [
 	{
 		name: 'Clothing',
@@ -28,6 +35,7 @@ export const categories = [
 		separator: '',
 	},
 ];
+
 export const customerService = [
 	{
 		name: 'Your Account',
@@ -130,5 +138,20 @@ export const paymentProducts = [
 	{
 		name: 'Currency Converter',
 		separator: '',
+	},
+];
+
+export const socialMedia = [
+	{
+		icon: <AiFillFacebook className='iconSize5px' />,
+	},
+	{
+		icon: <AiFillInstagram className='iconSize5px' />,
+	},
+	{
+		icon: <AiFillTwitterCircle className='iconSize5px' />,
+	},
+	{
+		icon: <AiFillYoutube className='iconSize5px' />,
 	},
 ];

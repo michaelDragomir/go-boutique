@@ -191,12 +191,12 @@ const Header = () => {
 					<SubHeaderTabs />
 				</div>
 				{isSearchModalOpen && (
-					<>
+					<div onClick={searchModalToggleHandler}>
 						<IoMdClose className='sm:hidden rounded-full phone:absolute animate-searchSlideDown z-overlay phone:right-[12px] phone:top-[112px] iconSize6px bg-slate-400 text-white tablet:top-[60px]' />
 						<div className='rounded-b-lg phone:mx-auto sm:hidden w-screen phone:absolute bg-slate-400 animate-searchSlideDown p-3'>
 							<SearchForm />
 						</div>
-					</>
+					</div>
 				)}
 			</div>
 		</>

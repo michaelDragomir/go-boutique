@@ -6,8 +6,10 @@ const NavItemsDropDown = ({ props }: { props: any }) => {
 	//TODO:
 	// sanitize item name for url input
 
+	console.log('pROPS', props);
+
 	return (
-		<div className='px-3 pt-3 rounded-md drop-shadow-md w-max bg-white text-sm absolute right-[-30px] top-[17px]'>
+		<div className=''>
 			{props.map((item: String, idx: number) => (
 				<ul
 					className='pb-2 font-light text-slate-500 hover:text-slate-800'
@@ -25,3 +27,5 @@ const NavItemsDropDown = ({ props }: { props: any }) => {
 };
 
 export default NavItemsDropDown;
+// className =
+// 'w-6/12 h-12 px-3 pt-3 rounded-md drop-shadow-md bg-black text-sm absolute top-[140px]';

@@ -125,9 +125,9 @@ const Header = () => {
 									<div className='flex items-center'>
 										<div className='md:relative lg:border-r lg:border-slate-400 mr-1'>
 											<IoCartOutline className='text-slate-500 iconSize8px' />
-											<h4 className='phone:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
+											{/* <h4 className='phone:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
 												Cart
-											</h4>
+											</h4> */}
 										</div>
 										<span className='sm:absolute sm:top-[15px] sm:right-[10px] tablet:absolute tablet:top-[12px] tablet:right-[10px] md:absolute md:top-[40px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
 											1

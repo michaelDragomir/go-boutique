@@ -35,6 +35,6 @@ export const navTabItems = [
 	},
 	{
 		icon: <FaPersonRunning className='xl:iconSize5px lg:iconSize4px' />,
-		name: 'Active',
+		name: 'Sporting Goods',
 	},
 ];

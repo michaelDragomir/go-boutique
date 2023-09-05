@@ -42,7 +42,7 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 
 	return (
 		<Container>
-			<div className='flex justify-between'>
+			<div className='flex justify-between relative group'>
 				{navTabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
@@ -52,24 +52,28 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 							activeTab === navTabItems[idx].name ? '' : 'text-slate-500'
 						}`}
 					>
-						<div className='flex group absolute flex-row items-center'>
+						<div className='flex group absolute flex-row items-center hover:bg-goPink'>
 							<span className='pr-2 sm:hidden lg:block xl:block'>
 								{item.icon}
 							</span>
 							<p className='font-medium text-sm'>{item.name}</p>
-							<span>
+							{/* <span>
 								<IoIosArrowDown className='group-hover:hidden text-goGreen' />
 								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500' />
-							</span>
-							<div className='h-3 invisible text-black group-hover:visible group-hover:animate-slideDown'>
-								{dropDownMenuItems()}
-							</div>
+							</span> */}
 						</div>
 					</div>
 				))}
+				<div className='w-full h-[200px] invisible bg-slate-200 group-hover:visible absolute transform -translate-x-1/2 -translate-y-1/2 top-[25px] rounded-md drop-shadow-md group-hover:animate-slideDown'>
+					{dropDownMenuItems()}
+					{/* hello */}
+				</div>
 			</div>
 		</Container>
 	);
 };
 
 export default SubTabSlider;
+
+// h-3 text-black bg-black group-hover:visible group-hover:animate-slideDown
+// absolute inset-0 flex justify-center items-center

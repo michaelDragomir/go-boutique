@@ -62,6 +62,8 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 					{dropDownMenuItems()}
 				</div>
 			</div>
+			<div className='h-[35px] w-[260px] absolute top-[105px]' />
+			<div className='h-[35px] w-[260px] absolute right-[68px] top-[105px]' />
 		</Container>
 	);
 };

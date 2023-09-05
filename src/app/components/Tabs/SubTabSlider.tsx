@@ -58,7 +58,7 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 						</div>
 					</div>
 				))}
-				<div className='w-full h-[300px] invisible bg-slate-200 group-hover:visible absolute top-[180px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 rounded-md drop-shadow-md'>
+				<div className='w-full h-[300px] invisible bg-slate-200 group-hover:visible absolute top-[180px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 rounded-b-lg drop-shadow-md border'>
 					{dropDownMenuItems()}
 				</div>
 			</div>

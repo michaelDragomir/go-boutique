@@ -16,8 +16,10 @@ const NavItemsDropDown = ({ props }: { props: any }) => {
 					key={idx}
 				>
 					<Link href={`/${item.name}`}>
-						<li className='hover:border-b hover:border-b-goPink h-[20px]'>
-							{item.name}
+						<li className=''>
+							<span className='hover:border-b hover:border-b-goPink'>
+								{item.name}
+							</span>
 						</li>
 					</Link>
 				</ul>
@@ -27,5 +29,3 @@ const NavItemsDropDown = ({ props }: { props: any }) => {
 };
 
 export default NavItemsDropDown;
-// className =
-// 'w-6/12 h-12 px-3 pt-3 rounded-md drop-shadow-md bg-black text-sm absolute top-[140px]';

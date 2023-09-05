@@ -187,7 +187,7 @@ const Header = () => {
 						</div>
 					</Container>
 				</div>
-				<div className='phone:hidden md:block border-0 h-[10px]'>
+				<div className='phone:hidden md:block border-0'>
 					<SubHeaderTabs />
 				</div>
 				{isSearchModalOpen && (

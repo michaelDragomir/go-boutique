@@ -5,8 +5,6 @@ import { useState } from 'react';
 import Container from '@/app/components/Container';
 import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
 
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-
 import * as dropDownItems from '@/app/utils/dropDownItems';
 
 const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
@@ -42,13 +40,13 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 
 	return (
 		<Container>
-			<div className='flex justify-between relative group border-y'>
+			<div className='flex justify-center relative group border-y gap-3'>
 				{navTabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
 						onMouseEnter={() => onMouseEnterToggle(item.name)}
 						className={`flex items-center justify-center text-center gap-1 pt-3 pb-2.5 cursor-pointer text-slate-500
-						w-[145px] h-[30px] hover:text-slate-900 border-0 border-slate-900 hover:border-x hover:border-t ${
+						w-[145px] h-[30px] hover:text-slate-900 hover:bg-slate-200 ${
 							activeTab === navTabItems[idx].name ? '' : 'text-slate-500'
 						}`}
 					>
@@ -57,22 +55,15 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 								{item.icon}
 							</span>
 							<p className='font-medium text-sm'>{item.name}</p>
-							{/* <span>
-								<IoIosArrowDown className='group-hover:hidden text-goGreen' />
-								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500' />
-							</span> */}
 						</div>
 					</div>
 				))}
-				{/* <div className='w-full h-[200px] invisible bg-slate-200 group-hover:visible absolute transform -translate-x-1/2 -translate-y-1/2 top-[25px] rounded-md drop-shadow-md group-hover:animate-slideDown'>
+				<div className='w-full h-[300px] invisible bg-slate-200 group-hover:visible absolute top-[180px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 rounded-md drop-shadow-md'>
 					{dropDownMenuItems()}
-				</div> */}
+				</div>
 			</div>
 		</Container>
 	);
 };
 
 export default SubTabSlider;
-
-// h-3 text-black bg-black group-hover:visible group-hover:animate-slideDown
-// absolute inset-0 flex justify-center items-center

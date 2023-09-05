@@ -36,8 +36,8 @@ const Header = () => {
 
 	return (
 		<>
-			<div className='relative sticky w-full bg-white shadow-sm top-0 border-b border-b-slate-400'>
-				<div className='p-4 border-b-[1px] '>
+			<div className='relative sticky w-full bg-white top-0'>
+				<div className='p-4'>
 					<Container>
 						<div className='relative phone:hidden md:block mb-2'>
 							<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
@@ -187,7 +187,7 @@ const Header = () => {
 						</div>
 					</Container>
 				</div>
-				<div className='bg-slate-100 p-[4px] phone:hidden md:block'>
+				<div className='phone:hidden md:block border-0 h-[10px]'>
 					<SubHeaderTabs />
 				</div>
 				{isSearchModalOpen && (

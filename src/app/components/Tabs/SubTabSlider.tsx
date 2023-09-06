@@ -46,7 +46,7 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 						key={item.name}
 						onMouseEnter={() => onMouseEnterToggle(item.name)}
 						className={`flex items-center justify-center text-center gap-1 pt-3 pb-2.5 cursor-pointer text-slate-500
-						w-[145px] h-[30px] hover:text-slate-900 hover:bg-slate-200 ${
+						w-[145px] h-[30px] hover:text-slate-900 hover:bg-slate-200 relative hover:z-aboveAll border-0 hover:border-x hover:border-slate-800 hover:border-t ${
 							activeTab === navTabItems[idx].name ? '' : 'text-slate-500'
 						}`}
 					>
@@ -58,12 +58,12 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 						</div>
 					</div>
 				))}
-				<div className='w-full h-[300px] invisible bg-slate-200 group-hover:visible absolute top-[180px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 rounded-b-lg drop-shadow-md border'>
+				<div className='w-full h-[300px] invisible bg-slate-200 group-hover:visible absolute top-[179px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-b-lg drop-shadow-md border-slate-800 border z-10'>
 					{dropDownMenuItems()}
 				</div>
 			</div>
-			<div className='h-[35px] w-[260px] absolute top-[105px]' />
-			<div className='h-[35px] w-[260px] absolute right-[68px] top-[105px]' />
+			<div className='h-[35px] w-[260px] absolute top-[105px] left-[115px] z-overlay' />
+			<div className='h-[35px] w-[260px] absolute right-[100px] top-[105px] z-overlay' />
 		</Container>
 	);
 };

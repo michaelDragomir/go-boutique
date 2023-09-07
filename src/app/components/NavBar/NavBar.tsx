@@ -60,7 +60,7 @@ const Header = () => {
 								onClick={modalToggleHandler}
 								className={`${
 									isModalOpen
-										? 'absolute w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-40 z-overlay'
+										? 'absolute w-screen h-screen bg-slate-400 fixed top-[-8px] left-0 opacity-40 z-overlay'
 										: ''
 								} `}
 							/>
@@ -131,7 +131,7 @@ const Header = () => {
 							</div>
 						</div> */}
 						<div className='flex border border-slate-500 rounded-md  phone:p-[3px] xl:p-[7px] hover:border-slate-800'>
-							{FavoritesList.length > 0 ? (
+							{FavoritesList === 0 ? (
 								<GoHeart className='text-goPink iconSize6px pr-1' />
 							) : (
 								<GoHeartFill

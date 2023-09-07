@@ -26,12 +26,12 @@ export default function Home() {
 
 	return (
 		<main className='p-8'>
-			{products.map((item: any, idx: any) => (
+			{/* {products.map((item: any, idx: any) => (
 				<ul key={idx}>
 					<li>{item.title}</li>
 					<Image src={item.image} width={300} height={200} alt={item.title} />
 				</ul>
-			))}
+			))} */}
 		</main>
 	);
 }

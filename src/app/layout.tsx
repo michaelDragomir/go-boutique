@@ -1,10 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { inter, roboto_mono, alata, roboto } from './fonts';
 import NavBar from '@/app/components/NavBar/NavBar';
 import Footer from '@/app/components/Footer/Footer';
-
-const poppins = Poppins({ subsets: ['latin'], weight: ['300', '500'] });
 
 export const metadata: Metadata = {
 	title: 'Go Boutique',
@@ -23,11 +21,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en'>
-			<body className={poppins.className}>
+		<html lang='en' className={inter.className}>
+			<body>
 				<div className='flex flex-col min-h-screen'>
-					<NavBar />
-					<main className='flex-grow'>{children}</main>
+					<div className={`bg-slate-900 ${roboto.className}`}>
+						<NavBar />
+					</div>
+					<main className={`flex-grow ${roboto_mono.className}`}>
+						{children}
+					</main>
 					<Footer />
 				</div>
 			</body>

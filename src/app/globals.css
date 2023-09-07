@@ -4,7 +4,7 @@
 
 @layer components {
 	.above-nav {
-		@apply text-slate-500 hover:text-slate-800 hover:border-b hover:border-slate-800;
+		@apply text-black hover:text-slate-100 hover:border-b hover:border-slate-100;
 	}
 
 	.iconSize4px {

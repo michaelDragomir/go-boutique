@@ -11,6 +11,6 @@ export const navTabItems = [
 		name: 'Kids',
 	},
 	{
-		name: 'Beaty',
+		name: 'Beauty',
 	},
 ];

@@ -17,7 +17,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoMdClose } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { CiMenuBurger, CiUser, CiShoppingCart, CiSearch } from 'react-icons/ci';
 
-const aboveNav = ['Store Finder', 'Gift Cards', 'Credit Services', 'Help'];
+const aboveNav = ['Find a Store', 'Help'];
 
 const Header = () => {
 	type Array = number[];
@@ -39,7 +39,7 @@ const Header = () => {
 	return (
 		<>
 			<div className='relative sticky w-full top-0 mx-auto'>
-				<div className='phone:hidden md:block bg-slate-900 m-4 my-2'>
+				<div className='phone:hidden md:block bg-black m-4 my-2'>
 					<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
 						{aboveNav.map((item: any, idx: any) => (
 							<ul key={idx}>

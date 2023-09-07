@@ -21,10 +21,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en' className={inter.className}>
+		<html lang='en' className={roboto.className}>
 			<body>
 				<div className='flex flex-col min-h-screen'>
-					<div className={`bg-slate-900 ${roboto.className}`}>
+					<div className={`bg-black ${roboto.className}`}>
 						<NavBar />
 					</div>
 					<main className={`flex-grow ${roboto_mono.className}`}>

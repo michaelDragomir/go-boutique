@@ -1,28 +1,19 @@
 export const categories = [
 	{
-		name: 'Clothing',
+		name: 'Men',
 	},
 	{
-		name: 'Pet Supplies',
+		name: 'Women',
 	},
 	{
-		name: 'Household',
+		name: 'Kids',
 	},
 	{
-		name: 'Electronics',
-	},
-	{
-		name: 'Bath & Body',
-	},
-	{
-		name: 'Toys',
-	},
-	{
-		name: 'Active',
+		name: 'Beauty',
 	},
 ];
 
-export const clothing = [
+export const men = [
 	{
 		name: 'Pants',
 	},
@@ -46,31 +37,22 @@ export const clothing = [
 	},
 ];
 
-export const petSupplies = [
+export const women = [
 	{
-		name: 'Dog Treats',
+		name: 'dresses',
 	},
 	{
-		name: 'Cat Treats',
+		name: 'shrts',
 	},
 	{
-		name: 'Cat Litter',
+		name: 'shoes',
 	},
 	{
-		name: 'Dog Food',
-	},
-	{
-		name: 'Cat Food',
-	},
-	{
-		name: 'Pet technology',
-	},
-	{
-		name: 'Apparal',
+		name: 'glasses',
 	},
 ];
 
-export const household = [
+export const kids = [
 	{
 		name: 'Laundry',
 	},
@@ -85,95 +67,17 @@ export const household = [
 	},
 ];
 
-export const electronics = [
+export const beauty = [
 	{
-		name: 'TV & Video',
+		name: 'face',
 	},
 	{
-		name: 'Cell Phones',
+		name: 'smell',
 	},
 	{
-		name: 'Video Games',
+		name: 'feel',
 	},
 	{
-		name: 'Music',
-	},
-	{
-		name: 'Car Stuff',
-	},
-	{
-		name: 'Headphones',
-	},
-	{
-		name: 'Musical Instruments',
-	},
-	{
-		name: 'Speakers',
-	},
-	{
-		name: 'Home Audio',
-	},
-];
-
-export const bathBody = [
-	{
-		name: 'Skin Care',
-	},
-	{
-		name: 'Hair Care',
-	},
-	{
-		name: 'Fragrance',
-	},
-	{
-		name: 'Foot, Hand, Nail Care',
-	},
-	{
-		name: "Men's Health",
-	},
-	{
-		name: "Woman's Health",
-	},
-];
-
-export const active = [
-	{
-		name: 'Active Wear',
-	},
-	{
-		name: 'Balance Trainers',
-	},
-	{
-		name: 'Running',
-	},
-	{
-		name: 'Speed & Agility Training',
-	},
-	{
-		name: 'Yoga',
-	},
-];
-
-export const toys = [
-	{
-		name: 'Arts & Crafts',
-	},
-	{
-		name: 'Games and Puzzles',
-	},
-	{
-		name: 'Collectible Dolls',
-	},
-	{
-		name: 'Building Toys',
-	},
-	{
-		name: 'Dress Up & Pretend Play',
-	},
-	{
-		name: 'Party Supplies',
-	},
-	{
-		name: 'Toy Figures & Playsets',
+		name: 'Bathroom',
 	},
 ];

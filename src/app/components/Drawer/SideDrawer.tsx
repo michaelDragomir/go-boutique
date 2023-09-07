@@ -7,7 +7,7 @@ import SubDrawerModal from './SubDrawerModal';
 import { navTabItems } from '@/app/utils/navTabIcons';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { IoIosArrowForward, IoIosArrowBack, IoMdClose } from 'react-icons/io';
-import { FaRegUser } from 'react-icons/fa6';
+import { CiUser } from 'react-icons/ci';
 
 const SideDrawer = ({
 	isModalOpen,
@@ -21,20 +21,14 @@ const SideDrawer = ({
 
 	const innerDrawerToggleHandler = (activeTab: any) => {
 		switch (activeTab) {
-			case 'Clothing':
-				return <SubDrawerModal data={dropDownItems.clothing} />;
-			case 'Pet Supplies':
-				return <SubDrawerModal data={dropDownItems.petSupplies} />;
-			case 'Household':
-				return <SubDrawerModal data={dropDownItems.household} />;
-			case 'Electronics':
-				return <SubDrawerModal data={dropDownItems.electronics} />;
-			case 'Bath & Body':
-				return <SubDrawerModal data={dropDownItems.bathBody} />;
-			case 'Toys':
-				return <SubDrawerModal data={dropDownItems.toys} />;
-			case 'Active':
-				return <SubDrawerModal data={dropDownItems.active} />;
+			case 'Men':
+				return <SubDrawerModal data={dropDownItems.men} />;
+			case 'Women':
+				return <SubDrawerModal data={dropDownItems.women} />;
+			case 'Kids':
+				return <SubDrawerModal data={dropDownItems.kids} />;
+			case 'Beauty':
+				return <SubDrawerModal data={dropDownItems.beauty} />;
 			default:
 				return null;
 		}
@@ -56,16 +50,16 @@ const SideDrawer = ({
 
 	return (
 		<div
-			className={`w-[300px] h-screen bg-slate-700 z-aboveAll absolute left-[-1px] top-0 drop-shadow-md ${
+			className={`w-[300px] h-screen bg-slate-900 z-aboveAll absolute left-[-1px] top-0 drop-shadow-md ${
 				isModalOpen ? 'animate-drawerSlideIn' : 'animate-drawerSlideOut'
 			}`}
 		>
 			<div onClick={mainMenuAndCloseHandler}>
-				<IoMdClose className='iconSize8px absolute top-[10px] left-[300px] text-slate-700 cursor-pointer hover:text-goPink' />
+				<IoMdClose className='iconSize6px absolute top-[8px] left-[275px] text-black cursor-pointer' />
 			</div>
-			<div className='flex border-b-2 border-b-goPink text-xl text-slate-800 bg-slate-100 px-6 py-2'>
+			<div className='flex text-xl bg-white px-6 py-1'>
 				<span className='mr-3'>
-					<FaRegUser className='text-slate-700 iconSize6px' />
+					<CiUser className='text-slate-900 iconSize6px' />
 				</span>
 				Hello, Renee
 			</div>
@@ -74,13 +68,13 @@ const SideDrawer = ({
 					{dropDownItems.categories.map((item: any, idx: any) => (
 						<div
 							key={idx}
-							className='px-6 hover:bg-slate-100 cursor-pointer animate-innerDrawerSlideOut'
+							className='px-6 cursor-pointer animate-innerDrawerSlideOut pt-8'
 							onClick={() => subDrawerToggleHandler(item.name)}
 						>
 							<ul>
-								<li className='group flex items-center justify-between text-slate-100 pt-6 py-2 hover:text-slate-800'>
+								<li className='group flex hover:border-b items-center justify-between text-slate-100 hover:text-slate-100 h-[20px]'>
 									{item.name}
-									<span className='text-slate-100 group-hover:text-slate-800'>
+									<span className='text-slate-100 group-hover:text-slate-100'>
 										<IoIosArrowForward />
 									</span>
 								</li>
@@ -94,8 +88,8 @@ const SideDrawer = ({
 						onClick={backToMainMenuHandler}
 						className='mt-6 px-3 flex items-center cursor-pointer mb-6'
 					>
-						<IoIosArrowBack className='iconSize5px text-slate-100' />
-						<h2 className='text-sm text-slate-200'>Main Menu</h2>
+						<IoIosArrowBack className='iconSize5px text-white' />
+						<h2 className='text-sm text-white'>Main Menu</h2>
 					</div>
 					{innerDrawerToggleHandler(activeTab)}
 				</div>

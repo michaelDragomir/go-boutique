@@ -19,20 +19,14 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 		switch (activeTab) {
 			case 'Categories':
 				return <NavItemsDropDown props={dropDownItems.categories} />;
-			case 'Clothing':
-				return <NavItemsDropDown props={dropDownItems.clothing} />;
-			case 'Pet Supplies':
-				return <NavItemsDropDown props={dropDownItems.petSupplies} />;
-			case 'Household':
-				return <NavItemsDropDown props={dropDownItems.household} />;
-			case 'Electronics':
-				return <NavItemsDropDown props={dropDownItems.electronics} />;
-			case 'Bath & Body':
-				return <NavItemsDropDown props={dropDownItems.bathBody} />;
-			case 'Toys':
-				return <NavItemsDropDown props={dropDownItems.toys} />;
-			case 'Sporting Goods':
-				return <NavItemsDropDown props={dropDownItems.active} />;
+			case 'Men':
+				return <NavItemsDropDown props={dropDownItems.men} />;
+			case 'Women':
+				return <NavItemsDropDown props={dropDownItems.women} />;
+			case 'Kids':
+				return <NavItemsDropDown props={dropDownItems.kids} />;
+			case 'Beauty':
+				return <NavItemsDropDown props={dropDownItems.beauty} />;
 			default:
 				return null;
 		}
@@ -40,8 +34,8 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 
 	return (
 		// <Container>
-		<>
-			<div className='flex justify-center relative group'>
+		<div className='relative group'>
+			<div className='flex justify-center relative'>
 				{navTabItems.map((item: any, idx: any) => (
 					<div
 						key={item.name}
@@ -59,11 +53,11 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 						</div>
 					</div>
 				))}
-				<div className='w-full h-[300px] invisible bg-slate-100 group-hover:visible absolute top-[179px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-b-lg drop-shadow-md border-slate-400 border z-10'>
-					{dropDownMenuItems()}
-				</div>
 			</div>
-		</>
+			<div className='w-screen h-[300px] invisible bg-white group-hover:visible absolute top-[50px] left-[-465px] border-slate-400 border z-10'>
+				{dropDownMenuItems()}
+			</div>
+		</div>
 		// </Container>
 	);
 };

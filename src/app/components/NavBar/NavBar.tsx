@@ -9,6 +9,10 @@ import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
 import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
 import SideDrawer from '@/app/components/Drawer/SideDrawer';
 import SearchForm from '@/app/components/SearchForm/SearchForm';
+import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
+
+import * as dropDownItems from '@/app/utils/dropDownItems';
+import { navTabItems } from '@/app/utils/navTabIcons';
 
 import { abril, aboreto } from '@/app/fonts';
 
@@ -25,6 +29,29 @@ const Header = () => {
 	const [FavoritesList, setfavoritesList] = useState<Number>(0);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false);
+
+	const [activeTab, setActiveTab] = useState<any>(navTabItems[0]);
+
+	const onMouseEnterToggle = (tab: any) => {
+		setActiveTab(tab);
+	};
+
+	const dropDownMenuItems = () => {
+		switch (activeTab) {
+			case 'Categories':
+				return <NavItemsDropDown props={dropDownItems.categories} />;
+			case 'Men':
+				return <NavItemsDropDown props={dropDownItems.men} />;
+			case 'Women':
+				return <NavItemsDropDown props={dropDownItems.women} />;
+			case 'Kids':
+				return <NavItemsDropDown props={dropDownItems.kids} />;
+			case 'Beauty':
+				return <NavItemsDropDown props={dropDownItems.beauty} />;
+			default:
+				return null;
+		}
+	};
 
 	const modalToggleHandler = () => {
 		setIsModalOpen((prev) => !prev);
@@ -70,15 +97,38 @@ const Header = () => {
 									modalToggleHandler={modalToggleHandler}
 								/>
 							</div>
-							<div className={`text-3xl pr-2 ${aboreto.className}`}>IVY</div>
+							<div className={`text-3xl pr-1 ${aboreto.className}`}>IVY</div>
 							<div className={`text-2xl ${aboreto.className}`}>LABICHE</div>
 						</div>
-						<div className='phone:hidden md:block border-0'>
-							<SubHeaderTabs />
+						<div className='relative group'>
+							<div className='flex justify-center relative'>
+								{navTabItems.map((item: any, idx: any) => (
+									<div
+										key={item.name}
+										onMouseEnter={() => onMouseEnterToggle(item.name)}
+										className={`flex items-center justify-center text-center gap-1 pt-3 pb-2.5 cursor-pointer text-black
+					w-[145px] h-[30px] relative hover:z-aboveAll ${
+						activeTab === navTabItems[idx].name ? '' : ''
+					}`}
+									>
+										<div className='flex group absolute flex-row items-center'>
+											{/* <span className='pr-2 sm:hidden lg:block xl:block'>
+												{item.icon}
+											</span> */}
+											<p className='font-medium text-sm hover:border-b border-black'>
+												{item.name}
+											</p>
+										</div>
+									</div>
+								))}
+							</div>
+							{/* <div className='invisible bg-white border-slate-400 border z-10 absolute w-screen h-screen bg-slate-400 fixed top-0 left-[-481px] opacity-40 z-overlay'>
+								{dropDownMenuItems()}
+							</div> */}
 						</div>
 						<div
 							onClick={searchModalToggleHandler}
-							className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-slate-500 rounded-md sm:hidden text-sm p-[5px] justify-start'
+							className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
 						>
 							<span className=''>Click to Search</span>
 							<CiSearch className='text-goGreen iconSize5px' />
@@ -87,7 +137,7 @@ const Header = () => {
 							<div className='mr-6'>
 								<SearchForm />
 							</div>
-							<CiUser className='text-slate-500 iconSize5px' />
+							<CiUser className='text-black iconSize5px' />
 							<div className='flex phone:p-[3px] xl:p-[7px] cursor-pointer'>
 								{FavoritesList === 0 ? (
 									<GoHeart className='iconSize6px pr-1 text-[#ddaaa5]' />
@@ -99,19 +149,19 @@ const Header = () => {
 								)}
 
 								{/* <h4 className='border-r border-goPink cursor-pointer text-sm text-slate-500 flex items-center'></h4> */}
-								<span className='border-0 border-l border-black text-slate-500 flex items-center text-sm pl-1'>
+								<span className='border-0 border-l border-black text-black flex items-center text-sm pl-1'>
 									2
 								</span>
 							</div>
 							<div className='cursor-pointer text-black'>
 								<div className='flex items-center'>
 									<div className='md:relative mr-1'>
-										<CiShoppingCart className='text-slate-500 iconSize8px' />
+										<CiShoppingCart className='text-black iconSize8px' />
 										{/* <h4 className='phone:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
 												Cart
 											</h4> */}
 									</div>
-									<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[45px] md:right-[10px] text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+									<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[40px] md:right-[10px] text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
 										1
 									</span>
 								</div>
@@ -139,23 +189,19 @@ const Header = () => {
 									className='iconSize6px pr-1 animate-pulse'
 								/>
 							)}
-
-							<h4 className='border-r border-goPink cursor-pointer text-sm text-slate-500 flex items-center'>
-								<span className='mr-1 sm:block'>Lists</span>
-							</h4>
-							<span className='text-slate-500 flex items-center text-sm pl-1'>
+							<span className='text-black flex items-center text-sm pl-1'>
 								3
 							</span>
 						</div>
 						<div className='cursor-pointer text-black'>
 							<div className='flex items-center'>
 								<div className='md:relative lg:border-r lg:border-slate-400 mr-1'>
-									<CiShoppingCart className='text-slate-500 iconSize8px' />
+									<CiShoppingCart className='text-black iconSize8px' />
 									{/* <h4 className='phone:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
 										Cart
 									</h4> */}
 								</div>
-								<span className='phone:relative phone:top-[-10px] phone:right-[18px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+								<span className='phone:relative phone:top-[-10px] phone:right-[18px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
 									1
 								</span>
 							</div>

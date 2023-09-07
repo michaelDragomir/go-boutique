@@ -54,7 +54,7 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 					</div>
 				))}
 			</div>
-			<div className='w-screen h-[300px] invisible bg-white group-hover:visible absolute top-[50px] left-[-465px] border-slate-400 border z-10'>
+			<div className='invisible bg-white border-slate-400 border z-10 absolute w-screen h-screen bg-slate-400 fixed top-0 left-[-481px] opacity-40 z-overlay'>
 				{dropDownMenuItems()}
 			</div>
 		</div>

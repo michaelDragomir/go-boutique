@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 
-import Container from '@/app/components/Container';
 import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
 
 import * as dropDownItems from '@/app/utils/dropDownItems';
@@ -33,7 +32,6 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 	};
 
 	return (
-		// <Container>
 		<div className='relative group'>
 			<div className='flex justify-center relative'>
 				{navTabItems.map((item: any, idx: any) => (
@@ -58,7 +56,6 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 				{dropDownMenuItems()}
 			</div>
 		</div>
-		// </Container>
 	);
 };
 

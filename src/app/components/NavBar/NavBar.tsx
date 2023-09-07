@@ -14,32 +14,25 @@ import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { navTabItems } from '@/app/utils/navTabIcons';
 
-import { abril, aboreto } from '@/app/fonts';
+import { aboreto } from '@/app/fonts';
 
-import { FaRegUser } from 'react-icons/fa6';
-import { IoIosArrowDown, IoIosArrowUp, IoMdClose } from 'react-icons/io';
+import { IoMdClose } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { CiMenuBurger, CiUser, CiShoppingCart, CiSearch } from 'react-icons/ci';
 
 const aboveNav = ['Find a Store', 'Help'];
+const test = ['Men', 'Women', 'Kids', 'Beauty'];
 
 const Header = () => {
-	type Array = number[];
-
 	const [FavoritesList, setfavoritesList] = useState<Number>(0);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false);
 
-	const [activeTab, setActiveTab] = useState<any>(navTabItems[0]);
-
-	const onMouseEnterToggle = (tab: any) => {
-		setActiveTab(tab);
-	};
+	const [activeTab, setActiveTab] = useState<any>('');
+	const [isactiveTab, setIsActiveTab] = useState<any>(false);
 
 	const dropDownMenuItems = () => {
 		switch (activeTab) {
-			case 'Categories':
-				return <NavItemsDropDown props={dropDownItems.categories} />;
 			case 'Men':
 				return <NavItemsDropDown props={dropDownItems.men} />;
 			case 'Women':
@@ -53,15 +46,28 @@ const Header = () => {
 		}
 	};
 
+	const onMouseEnterToggle = (tab: any) => {
+		setActiveTab(tab);
+		setIsActiveTab((prev: any) => !prev);
+	};
+
+	const dropDownToggleHandler = () => {
+		setIsActiveTab((prev: any) => !prev);
+	};
+
 	const modalToggleHandler = () => {
-		setIsModalOpen((prev) => !prev);
+		setIsModalOpen((prev: any) => !prev);
 	};
 
 	const searchModalToggleHandler = () => {
 		setIsSearchModalOpen((prev) => !prev);
 	};
 
-	console.log(FavoritesList);
+	const test = (tab: any) => {
+		setActiveTab(tab);
+		setIsActiveTab((prev: any) => !prev);
+	};
+
 	// #dabbb8;
 	return (
 		<>
@@ -75,7 +81,7 @@ const Header = () => {
 						))}
 					</div>
 				</div>
-				<div className='p-4 bg-white border-b border-black'>
+				<div className='px-4 py-2 bg-white border-b border-black'>
 					{/* <Container> */}
 					<div className='flex flex-row items-center justify-between gap-3 bg-white'>
 						<div className='flex flex-row items-center'>
@@ -100,32 +106,38 @@ const Header = () => {
 							<div className={`text-3xl pr-1 ${aboreto.className}`}>IVY</div>
 							<div className={`text-2xl ${aboreto.className}`}>LABICHE</div>
 						</div>
-						<div className='relative group'>
-							<div className='flex justify-center relative'>
-								{navTabItems.map((item: any, idx: any) => (
-									<div
-										key={item.name}
+						<div className='flex justify-center relative'>
+							{navTabItems.map((item: any, idx: any) => {
+								console.log('111', navTabItems[idx].name, item.name);
+								return (
+									<ul
+										key={idx}
 										onMouseEnter={() => onMouseEnterToggle(item.name)}
-										className={`flex items-center justify-center text-center gap-1 pt-3 pb-2.5 cursor-pointer text-black
-					w-[145px] h-[30px] relative hover:z-aboveAll ${
-						activeTab === navTabItems[idx].name ? '' : ''
-					}`}
+										onMouseLeave={() => dropDownToggleHandler()}
+										className='group flex items-center justify-center cursor-pointer text-black w-[110px] h-[30px] relative hover:z-aboveAll py-8'
 									>
-										<div className='flex group absolute flex-row items-center'>
-											{/* <span className='pr-2 sm:hidden lg:block xl:block'>
-												{item.icon}
-											</span> */}
-											<p className='font-medium text-sm hover:border-b border-black'>
-												{item.name}
-											</p>
-										</div>
-									</div>
-								))}
-							</div>
-							{/* <div className='invisible bg-white border-slate-400 border z-10 absolute w-screen h-screen bg-slate-400 fixed top-0 left-[-481px] opacity-40 z-overlay'>
-								{dropDownMenuItems()}
-							</div> */}
+										<li
+											className={`font-medium text-sm hover:border-b hover:border-black ${
+												activeTab === navTabItems[idx].name
+													? 'border-b border-black'
+													: ''
+											}`}
+										>
+											{item.name}
+										</li>
+									</ul>
+								);
+							})}
 						</div>
+						{isactiveTab && (
+							<div
+								onMouseEnter={() => dropDownToggleHandler()}
+								onMouseLeave={() => onMouseEnterToggle('')}
+								className='animate-slideDown visible border-slate-400 border z-10 absolute w-screen h-[400px] bg-slate-400 fixed top-[100px] left-0'
+							>
+								{dropDownMenuItems()}
+							</div>
+						)}
 						<div
 							onClick={searchModalToggleHandler}
 							className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
@@ -137,7 +149,7 @@ const Header = () => {
 							<div className='mr-6'>
 								<SearchForm />
 							</div>
-							<CiUser className='text-black iconSize5px' />
+							<CiUser className='text-black iconSize6px' />
 							<div className='flex phone:p-[3px] xl:p-[7px] cursor-pointer'>
 								{FavoritesList === 0 ? (
 									<GoHeart className='iconSize6px pr-1 text-[#ddaaa5]' />

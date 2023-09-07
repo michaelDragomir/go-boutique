@@ -6,18 +6,13 @@ const NavItemsDropDown = ({ props }: { props: any }) => {
 	//TODO:
 	// sanitize item name for url input
 
-	console.log('pROPS', props);
-
 	return (
 		<div className=''>
 			{props.map((item: String, idx: number) => (
-				<ul
-					className='pb-2 font-light text-slate-500 hover:text-slate-800'
-					key={idx}
-				>
+				<ul className='pb-2 font-light text-white' key={idx}>
 					<Link href={`/${item.name}`}>
 						<li className=''>
-							<span className='hover:border-b hover:border-b-goPink'>
+							<span className='hover:border-b hover:border-b-white'>
 								{item.name}
 							</span>
 						</li>

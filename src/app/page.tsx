@@ -19,11 +19,6 @@ export default function Home() {
 		fetchData();
 	}, []);
 
-	console.log(
-		'PRODUCTS',
-		products.map((item: any) => item),
-	);
-
 	return (
 		<main className='p-8'>
 			{/* {products.map((item: any, idx: any) => (

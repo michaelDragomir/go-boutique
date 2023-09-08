@@ -30,16 +30,31 @@ const Header = () => {
 
 	const [activeTab, setActiveTab] = useState<any>('');
 	const [isactiveTab, setIsActiveTab] = useState<any>(false);
+	const [isScrolled, setIsScrolled] = useState<any>(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollPosition = window.scrollY;
+
+			setIsScrolled(scrollPosition);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	const dropDownMenuItems = () => {
 		switch (activeTab) {
-			case 'Men':
+			case 'MEN':
 				return <NavItemsDropDown props={dropDownItems.men} />;
-			case 'Women':
+			case 'WOMEN':
 				return <NavItemsDropDown props={dropDownItems.women} />;
-			case 'Kids':
+			case 'KIDS':
 				return <NavItemsDropDown props={dropDownItems.kids} />;
-			case 'Beauty':
+			case 'BEAUTY':
 				return <NavItemsDropDown props={dropDownItems.beauty} />;
 			default:
 				return null;
@@ -63,177 +78,294 @@ const Header = () => {
 		setIsSearchModalOpen((prev) => !prev);
 	};
 
-	const test = (tab: any) => {
-		setActiveTab(tab);
-		setIsActiveTab((prev: any) => !prev);
-	};
-
 	// #dabbb8;
 	return (
 		<>
-			<div className='relative sticky w-full top-0 mx-auto'>
-				<div className='phone:hidden md:block bg-black m-4 my-2'>
-					<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
-						{aboveNav.map((item: any, idx: any) => (
-							<ul key={idx}>
-								<li className='above-nav text-white'>{item}</li>
-							</ul>
-						))}
+			{isScrolled < 120 ? (
+				<div className='mx-auto relative'>
+					<div className='phone:hidden md:block bg-black m-4 my-2'>
+						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
+							{aboveNav.map((item: any, idx: any) => (
+								<ul key={idx}>
+									<li className='above-nav text-white'>{item}</li>
+								</ul>
+							))}
+						</div>
 					</div>
-				</div>
-				<div className='px-4 py-2 bg-white border-b border-black'>
-					{/* <Container> */}
-					<div className='flex flex-row items-center justify-between gap-3 bg-white'>
-						<div className='flex flex-row items-center'>
-							<div className='flex items-center' onClick={modalToggleHandler}>
-								<CiMenuBurger className='phone:animate-pulse md:animate-none iconSize8px cursor-pointer mr-1' />
-								<p className='mr-8 text-lg cursor-pointer phone:hidden md:block'></p>
-							</div>
-							<div
-								onClick={modalToggleHandler}
-								className={`${
-									isModalOpen
-										? 'absolute w-screen h-screen bg-slate-400 fixed top-[-8px] left-0 opacity-40 z-overlay'
-										: ''
-								} `}
-							/>
-							<div>
-								<SideDrawer
-									isModalOpen={isModalOpen}
-									modalToggleHandler={modalToggleHandler}
+					<div className='px-4 py-2 bg-white border-b border-black'>
+						<div className='flex flex-row items-center justify-between gap-3 bg-white'>
+							<div className='flex flex-row items-center'>
+								<div className='flex items-center' onClick={modalToggleHandler}>
+									<CiMenuBurger className='phone:animate-pulse md:animate-none iconSize8px cursor-pointer mr-1' />
+									<p className='mr-8 text-lg cursor-pointer phone:hidden md:block'></p>
+								</div>
+								<div
+									onClick={modalToggleHandler}
+									className={`${
+										isModalOpen
+											? 'absolute w-screen h-screen bg-slate-400 fixed top-[-8px] left-0 opacity-40 z-overlay'
+											: ''
+									} `}
 								/>
+								<div>
+									<SideDrawer
+										isModalOpen={isModalOpen}
+										modalToggleHandler={modalToggleHandler}
+									/>
+								</div>
+								<div className={`text-3xl pr-1 ${aboreto.className}`}>IVY</div>
+								<div className={`text-2xl ${aboreto.className}`}>LABICHE</div>
 							</div>
-							<div className={`text-3xl pr-1 ${aboreto.className}`}>IVY</div>
-							<div className={`text-2xl ${aboreto.className}`}>LABICHE</div>
-						</div>
-						<div className='flex justify-center relative'>
-							{navTabItems.map((item: any, idx: any) => {
-								console.log('111', navTabItems[idx].name, item.name);
-								return (
-									<ul
-										key={idx}
-										onMouseEnter={() => onMouseEnterToggle(item.name)}
-										onMouseLeave={() => dropDownToggleHandler()}
-										className='group flex items-center justify-center cursor-pointer text-black w-[110px] h-[30px] relative hover:z-aboveAll py-8'
-									>
-										<li
-											className={`font-medium text-sm hover:border-b hover:border-black ${
-												activeTab === navTabItems[idx].name
-													? 'border-b border-black'
-													: ''
-											}`}
+							<div className='flex justify-center relative'>
+								{navTabItems.map((item: any, idx: any) => {
+									return (
+										<ul
+											key={idx}
+											onMouseEnter={() => onMouseEnterToggle(item.name)}
+											onMouseLeave={() => dropDownToggleHandler()}
+											className='group flex items-center justify-center cursor-pointer text-black w-[110px] h-[30px] relative hover:z-aboveAll py-8'
 										>
-											{item.name}
-										</li>
-									</ul>
-								);
-							})}
-						</div>
-						{isactiveTab && (
+											<li
+												className={`font-medium text-sm hover:border-b hover:border-black ${
+													activeTab === navTabItems[idx].name
+														? 'border-b border-black'
+														: ''
+												}`}
+											>
+												{item.name}
+											</li>
+										</ul>
+									);
+								})}
+							</div>
+							{isactiveTab && (
+								<div
+									onMouseEnter={() => dropDownToggleHandler()}
+									onMouseLeave={() => onMouseEnterToggle('')}
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[100px] left-0'
+								>
+									{dropDownMenuItems()}
+								</div>
+							)}
 							<div
-								onMouseEnter={() => dropDownToggleHandler()}
-								onMouseLeave={() => onMouseEnterToggle('')}
-								className='animate-slideDown visible border-slate-400 border z-10 absolute w-screen h-[400px] bg-slate-400 fixed top-[100px] left-0'
+								onClick={searchModalToggleHandler}
+								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
 							>
-								{dropDownMenuItems()}
+								<span className=''>Click to Search</span>
+								<CiSearch className='text-goGreen iconSize5px' />
 							</div>
-						)}
-						<div
-							onClick={searchModalToggleHandler}
-							className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
-						>
-							<span className=''>Click to Search</span>
-							<CiSearch className='text-goGreen iconSize5px' />
+							<div className='phone:hidden tablet:flex items-center phone:gap-4'>
+								<div className='mr-6'>
+									<SearchForm />
+								</div>
+								<CiUser className='text-black iconSize6px' />
+								<div className='flex phone:p-[3px] xl:p-[7px] cursor-pointer'>
+									{FavoritesList === 0 ? (
+										<GoHeart className='iconSize6px pr-1 text-[#ddaaa5]' />
+									) : (
+										<GoHeartFill
+											style={{ fill: '#ddaaa5' }}
+											className='iconSize6px pr-1 animate-pulse'
+										/>
+									)}
+									<span className='border-0 border-l border-black text-black flex items-center text-sm pl-1'>
+										2
+									</span>
+								</div>
+								<div className='cursor-pointer text-black'>
+									<div className='flex items-center'>
+										<div className='md:relative mr-1'>
+											<CiShoppingCart className='text-black iconSize8px' />
+										</div>
+										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[40px] md:right-[10px] text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+											1
+										</span>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div className='phone:hidden tablet:flex items-center phone:gap-4'>
-							<div className='mr-6'>
-								<SearchForm />
-							</div>
-							<CiUser className='text-black iconSize6px' />
-							<div className='flex phone:p-[3px] xl:p-[7px] cursor-pointer'>
+						<div className='tablet:hidden flex items-center lg:gap-4 phone:gap-4 xl:gap-8 justify-center mt-[20px]'>
+							<div className='flex border border-slate-500 rounded-md  phone:p-[3px] xl:p-[7px] hover:border-slate-800'>
 								{FavoritesList === 0 ? (
-									<GoHeart className='iconSize6px pr-1 text-[#ddaaa5]' />
+									<GoHeart className='text-goPink iconSize6px pr-1' />
 								) : (
 									<GoHeartFill
-										style={{ fill: '#ddaaa5' }}
+										style={{ fill: '#FF66C4' }}
 										className='iconSize6px pr-1 animate-pulse'
 									/>
 								)}
-
-								{/* <h4 className='border-r border-goPink cursor-pointer text-sm text-slate-500 flex items-center'></h4> */}
-								<span className='border-0 border-l border-black text-black flex items-center text-sm pl-1'>
-									2
+								<span className='text-black flex items-center text-sm pl-1'>
+									3
 								</span>
 							</div>
 							<div className='cursor-pointer text-black'>
 								<div className='flex items-center'>
-									<div className='md:relative mr-1'>
+									<div className='md:relative lg:border-r lg:border-slate-400 mr-1'>
 										<CiShoppingCart className='text-black iconSize8px' />
-										{/* <h4 className='phone:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
-												Cart
-											</h4> */}
 									</div>
-									<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[40px] md:right-[10px] text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+									<span className='phone:relative phone:top-[-10px] phone:right-[18px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
 										1
 									</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className='tablet:hidden flex items-center lg:gap-4 phone:gap-4 xl:gap-8 justify-center mt-[20px]'>
-						{/* <div className='group text-black z-50 hover:bg-slate-100'>
-							<div className='phone:p-[5px] xl:p-[7px] border border-slate-500 flex flex-row items-center gap-1 cursor-pointer text-slate-500 rounded-md'>
-								<span className='text-sm pr-2 sm:block'>Account</span>
-								<FaRegUser className='text-slate-500 iconSize5px' />
-								<IoIosArrowDown className='group-hover:hidden text-goGreen iconSize5px' />
-								<IoIosArrowUp className='hidden group-hover:block group-hover:text-goPink text-slate-500 iconSize5px' />
+					{isSearchModalOpen && (
+						<div onClick={searchModalToggleHandler}>
+							<IoMdClose className='sm:hidden rounded-full phone:absolute animate-searchSlideDown z-overlay phone:right-[12px] phone:top-[112px] iconSize6px bg-slate-400 text-white tablet:top-[60px]' />
+							<div className='rounded-b-lg phone:mx-auto sm:hidden w-screen phone:absolute bg-slate-400 animate-searchSlideDown p-3'>
+								<SearchForm />
 							</div>
-							<div className='absolute invisible group-hover:visible group-hover:animate-slideDown'>
-								<NavAcctDropDown />
-							</div>
-						</div> */}
-						<div className='flex border border-slate-500 rounded-md  phone:p-[3px] xl:p-[7px] hover:border-slate-800'>
-							{FavoritesList === 0 ? (
-								<GoHeart className='text-goPink iconSize6px pr-1' />
-							) : (
-								<GoHeartFill
-									style={{ fill: '#FF66C4' }}
-									className='iconSize6px pr-1 animate-pulse'
-								/>
-							)}
-							<span className='text-black flex items-center text-sm pl-1'>
-								3
-							</span>
 						</div>
-						<div className='cursor-pointer text-black'>
-							<div className='flex items-center'>
-								<div className='md:relative lg:border-r lg:border-slate-400 mr-1'>
-									<CiShoppingCart className='text-black iconSize8px' />
-									{/* <h4 className='phone:hidden lg:block xl:block text-sm pr-1 text-slate-500 flex justify-center items-center'>
-										Cart
-									</h4> */}
+					)}
+				</div>
+			) : (
+				<div className='mx-auto relative top-0 animate-slideDown'>
+					<div className='phone:hidden md:block m-4 my-2'>
+						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
+							{aboveNav.map((item: any, idx: any) => (
+								<ul key={idx}>
+									<li className='above-nav text-white'>{item}</li>
+								</ul>
+							))}
+						</div>
+					</div>
+					<div className='px-4 py-2 border-y border-white'>
+						<div className='flex flex-row items-center justify-between gap-3'>
+							<div className='flex flex-row items-center'>
+								<div className='flex items-center' onClick={modalToggleHandler}>
+									<CiMenuBurger className='text-white phone:animate-pulse md:animate-none iconSize8px cursor-pointer mr-1' />
+									<p className='mr-8 text-lg cursor-pointer phone:hidden md:block'></p>
 								</div>
-								<span className='phone:relative phone:top-[-10px] phone:right-[18px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
-									1
+								<div
+									onClick={modalToggleHandler}
+									className={`${
+										isModalOpen
+											? 'absolute w-screen h-screen bg-slate-400 fixed top-[-8px] left-0 opacity-40 z-overlay'
+											: ''
+									} `}
+								/>
+								<div>
+									<SideDrawer
+										isModalOpen={isModalOpen}
+										modalToggleHandler={modalToggleHandler}
+									/>
+								</div>
+								<div
+									className={`text-3xl pr-1 text-white ${aboreto.className}`}
+								>
+									IVY
+								</div>
+								<div className={`text-2xl text-white ${aboreto.className}`}>
+									LABICHE
+								</div>
+							</div>
+							<div className='flex justify-center relative'>
+								{navTabItems.map((item: any, idx: any) => {
+									return (
+										<ul
+											key={idx}
+											onMouseEnter={() => onMouseEnterToggle(item.name)}
+											onMouseLeave={() => dropDownToggleHandler()}
+											className='group flex items-center justify-center cursor-pointer text-white w-[110px] h-[30px] relative hover:z-aboveAll py-8'
+										>
+											<li
+												className={`font-medium text-sm hover:border-b hover:border-white ${
+													activeTab === navTabItems[idx].name
+														? 'border-b border-white'
+														: ''
+												}`}
+											>
+												{item.name}
+											</li>
+										</ul>
+									);
+								})}
+							</div>
+							{isactiveTab && (
+								<div
+									onMouseEnter={() => dropDownToggleHandler()}
+									onMouseLeave={() => onMouseEnterToggle('')}
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[100px] left-0'
+								>
+									{dropDownMenuItems()}
+								</div>
+							)}
+							<div
+								onClick={searchModalToggleHandler}
+								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
+							>
+								<span className=''>Click to Search</span>
+								<CiSearch className='text-white iconSize5px' />
+							</div>
+							<div className='phone:hidden tablet:flex items-center phone:gap-4'>
+								<div className='mr-6'>
+									<SearchForm />
+								</div>
+								<CiUser className='text-white iconSize6px' />
+								<div className='flex phone:p-[3px] xl:p-[7px] cursor-pointer'>
+									{FavoritesList === 0 ? (
+										<GoHeart className='iconSize6px pr-1 text-white' />
+									) : (
+										<GoHeartFill
+											style={{ fill: '#ddaaa5' }}
+											className='iconSize6px pr-1 animate-pulse'
+										/>
+									)}
+									<span className='border-0 border-l border-white text-white flex items-center text-sm pl-1'>
+										2
+									</span>
+								</div>
+								<div className='cursor-pointer text-black'>
+									<div className='flex items-center'>
+										<div className='md:relative mr-1'>
+											<CiShoppingCart className='text-white iconSize8px' />
+										</div>
+										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[40px] md:right-[10px] text-black h-6 w-6 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+											1
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className='tablet:hidden flex items-center lg:gap-4 phone:gap-4 xl:gap-8 justify-center mt-[20px]'>
+							<div className='flex border border-slate-500 rounded-md  phone:p-[3px] xl:p-[7px] hover:border-slate-800'>
+								{FavoritesList === 0 ? (
+									<GoHeart className='text-goPink iconSize6px pr-1' />
+								) : (
+									<GoHeartFill
+										style={{ fill: '#FF66C4' }}
+										className='iconSize6px pr-1 animate-pulse'
+									/>
+								)}
+								<span className='text-black flex items-center text-sm pl-1'>
+									3
 								</span>
 							</div>
+							<div className='cursor-pointer text-black'>
+								<div className='flex items-center'>
+									<div className='md:relative lg:border-r lg:border-slate-400 mr-1'>
+										<CiShoppingCart className='text-black iconSize8px' />
+									</div>
+									<span className='phone:relative phone:top-[-10px] phone:right-[18px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+										1
+									</span>
+								</div>
+							</div>
 						</div>
 					</div>
-					{/* </Container> */}
+					{isSearchModalOpen && (
+						<div onClick={searchModalToggleHandler}>
+							<IoMdClose className='sm:hidden rounded-full phone:absolute animate-searchSlideDown z-overlay phone:right-[12px] phone:top-[112px] iconSize6px bg-slate-400 text-white tablet:top-[60px]' />
+							<div className='rounded-b-lg phone:mx-auto sm:hidden w-screen phone:absolute bg-slate-400 animate-searchSlideDown p-3'>
+								<SearchForm />
+							</div>
+						</div>
+					)}
 				</div>
-				{isSearchModalOpen && (
-					<div onClick={searchModalToggleHandler}>
-						<IoMdClose className='sm:hidden rounded-full phone:absolute animate-searchSlideDown z-overlay phone:right-[12px] phone:top-[112px] iconSize6px bg-slate-400 text-white tablet:top-[60px]' />
-						<div className='rounded-b-lg phone:mx-auto sm:hidden w-screen phone:absolute bg-slate-400 animate-searchSlideDown p-3'>
-							<SearchForm />
-						</div>
-					</div>
-				)}
-			</div>
+			)}
 		</>
 	);
 };
 
 export default Header;
-
-// lg:w-[55%] xl:w-[100%] phone:w-[68%] phone:hidden sm:block -- form search width

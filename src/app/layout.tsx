@@ -24,7 +24,7 @@ export default function RootLayout({
 		<html lang='en' className={roboto.className}>
 			<body>
 				<div className='flex flex-col min-h-screen'>
-					<div className={`bg-black ${roboto.className}`}>
+					<div className={`sticky top-0 ${roboto.className}`}>
 						<NavBar />
 					</div>
 					<main className={`flex-grow ${roboto_mono.className}`}>

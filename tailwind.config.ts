@@ -43,6 +43,16 @@ const config: Config = {
 						opacity: '1',
 					},
 				},
+				slideup: {
+					'0%': {
+						transform: 'translateY(0)',
+						opacity: '1',
+					},
+					'100%': {
+						transform: 'translateY(-25%)',
+						opacity: '0',
+					},
+				},
 				drawerSlideIn: {
 					'0%': {
 						transform: 'translateX(-100%)',
@@ -87,6 +97,7 @@ const config: Config = {
 			animation: {
 				searchSlideDown: 'searchSlideDown .25s forwards',
 				slideDown: 'slideDown .15s forwards',
+				slideUp: 'slideUp .15s forwards',
 				drawerSlideIn: 'drawerSlideIn .15s forwards',
 				drawerSlideOut: 'drawerSlideOut .15s forwards',
 				innerDrawerSlideIn: 'innerDrawerSlideIn .15s ease-in-out',

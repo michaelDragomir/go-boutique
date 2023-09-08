@@ -9,10 +9,10 @@ const NavItemsDropDown = ({ props }: { props: any }) => {
 	return (
 		<div className=''>
 			{props.map((item: String, idx: number) => (
-				<ul className='pb-2 font-light text-white' key={idx}>
+				<ul className='pb-2 font-light text-black' key={idx}>
 					<Link href={`/${item.name}`}>
 						<li className=''>
-							<span className='hover:border-b hover:border-b-white'>
+							<span className='hover:border-b hover:border-b-black'>
 								{item.name}
 							</span>
 						</li>

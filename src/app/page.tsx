@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
@@ -7,26 +6,43 @@ import Image from 'next/image';
 export default function Home() {
 	const [products, setProducts] = useState([]);
 
-	const fetchData = useCallback(async () => {
-		const response = await fetch('/api/products');
+	// const fetchData = useCallback(async () => {
+	// 	const response = await fetch('/api/products');
 
-		const data = await response.json();
-		setProducts(data);
-		return data;
-	}, []);
+	// 	const data = await response.json();
+	// 	setProducts(data);
+	// 	return data;
+	// }, []);
 
-	useEffect(() => {
-		fetchData();
-	}, []);
+	// useEffect(() => {
+	// 	fetchData();
+	// }, []);
 
 	return (
-		<main className='p-8'>
-			{/* {products.map((item: any, idx: any) => (
-				<ul key={idx}>
-					<li>{item.title}</li>
-					<Image src={item.image} width={300} height={200} alt={item.title} />
-				</ul>
-			))} */}
+		<main>
+			<div className='flex'>
+				<Image
+					width={800}
+					height={1000}
+					src='/assets/images/test1.jpeg'
+					alt='image'
+				/>
+
+				<Image
+					width={800}
+					height={1000}
+					src='/assets/images/test2.jpeg'
+					alt='image'
+				/>
+			</div>
+			<div>
+				<Image
+					width={2000}
+					height={1000}
+					src='/assets/images/test3.jpeg'
+					alt='image'
+				/>
+			</div>
 		</main>
 	);
 }

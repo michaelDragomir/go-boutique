@@ -84,10 +84,12 @@ const Header = () => {
 				<div className='mx-auto relative'>
 					<div className='px-4 py-2 bg-white border-b border-black'>
 						<div className='phone:hidden md:block bg-white mb-1'>
-							<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer w-full h-full'>
+							<div className='flex justify-end gap-12 text-sm font-light h-[20px] w-full'>
 								{aboveNav.map((item: any, idx: any) => (
 									<ul key={idx}>
-										<li className='text-black'>{item}</li>
+										<li className='text-black cursor-pointer hover:font-bold'>
+											{item}
+										</li>
 									</ul>
 								))}
 							</div>
@@ -137,7 +139,7 @@ const Header = () => {
 										>
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-black ${
-													activeTab === navTabItems[idx].name
+													activeTab === navTabItems[idx].name && isactiveTab
 														? 'border-b border-black'
 														: ''
 												}`}
@@ -152,7 +154,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[100px] left-0'
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[98px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>
@@ -233,10 +235,10 @@ const Header = () => {
 				<div className='mx-auto animate-slideDown'>
 					<div className='px-4 py-2 border-b border-white'>
 						<div className='phone:hidden md:block mb-1'>
-							<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
+							<div className='flex justify-end gap-12 text-sm font-light h-[20px]'>
 								{aboveNav.map((item: any, idx: any) => (
 									<ul key={idx}>
-										<li className='above-nav text-white'>{item}</li>
+										<li className='text-white hover:font-bold'>{item}</li>
 									</ul>
 								))}
 							</div>
@@ -303,7 +305,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[100px] left-0'
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[98px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>

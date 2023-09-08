@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-	.above-nav {
-		@apply text-black hover:text-slate-100 hover:border-b hover:border-slate-100;
-	}
-
 	.iconSize4px {
 		@apply w-4 h-4;
 	}

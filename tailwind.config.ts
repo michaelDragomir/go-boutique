@@ -96,7 +96,7 @@ const config: Config = {
 			},
 			animation: {
 				searchSlideDown: 'searchSlideDown .25s forwards',
-				slideDown: 'slideDown .15s forwards',
+				slideDown: 'slideDown .25s forwards',
 				slideUp: 'slideUp .15s forwards',
 				drawerSlideIn: 'drawerSlideIn .15s forwards',
 				drawerSlideOut: 'drawerSlideOut .15s forwards',

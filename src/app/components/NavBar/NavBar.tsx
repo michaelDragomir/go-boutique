@@ -136,14 +136,14 @@ const Header = () => {
 									PARIS
 								</span>
 							</div>
-							<div className='flex justify-center relative phone:hidden lg:flex lg:gap-8 xl:gap-16'>
+							<div className='flex justify-center w-4/12 relative phone:hidden lg:flex lg:gap-3 xl:gap-3'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
 											key={idx}
 											onMouseEnter={() => onMouseEnterToggle(item.name)}
 											onMouseLeave={() => dropDownToggleHandler()}
-											className='group flex items-center cursor-pointer text-black w-full h-[30px] relative hover:z-aboveAll py-8'
+											className='group flex items-center justify-center cursor-pointer text-black w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-black ${
@@ -296,7 +296,7 @@ const Header = () => {
 									PARIS
 								</span>
 							</div>
-							<div className='flex justify-center relative phone:hidden lg:flex lg:gap-8 xl:gap-16'>
+							<div className='flex justify-center w-4/12 relative phone:hidden lg:flex lg:gap-3 xl:gap-3'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul

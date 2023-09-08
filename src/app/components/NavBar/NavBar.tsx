@@ -81,7 +81,7 @@ const Header = () => {
 		<>
 			{isScrolled < 110 ? (
 				<div className='mx-auto relative'>
-					<div className='bg-white border phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink'>
+					<div className='bg-white border phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
 						<div className='phone:hidden md:block bg-white mb-1'>
 							<div className='flex justify-end gap-12 text-sm font-light h-[20px] w-full'>
 								{aboveNav.map((item: any, idx: any) => (
@@ -136,14 +136,14 @@ const Header = () => {
 									PARIS
 								</span>
 							</div>
-							<div className='flex justify-center relative phone:hidden lg:flex'>
+							<div className='flex justify-center relative phone:hidden lg:flex lg:gap-8 xl:gap-16'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
 											key={idx}
 											onMouseEnter={() => onMouseEnterToggle(item.name)}
 											onMouseLeave={() => dropDownToggleHandler()}
-											className='group flex items-center justify-center cursor-pointer text-black w-[110px] h-[30px] relative hover:z-aboveAll py-8'
+											className='group flex items-center cursor-pointer text-black w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-black ${
@@ -296,14 +296,14 @@ const Header = () => {
 									PARIS
 								</span>
 							</div>
-							<div className='flex justify-center relative phone:hidden lg:flex'>
+							<div className='flex justify-center relative phone:hidden lg:flex lg:gap-8 xl:gap-16'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
 											key={idx}
 											onMouseEnter={() => onMouseEnterToggle(item.name)}
 											onMouseLeave={() => dropDownToggleHandler()}
-											className='group flex items-center justify-center cursor-pointer text-white w-[110px] h-[30px] relative hover:z-aboveAll py-8'
+											className='group flex items-center justify-center cursor-pointer text-white w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-white ${

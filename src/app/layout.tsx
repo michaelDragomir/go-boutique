@@ -23,7 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang='en' className={roboto.className}>
 			<body>
-				<div className='flex flex-col min-h-screen'>
+				<div className='flex flex-col min-h-screen max-w-[1650px] mx-auto px-2'>
 					<div className={`sticky top-0 ${roboto.className}`}>
 						<NavBar />
 					</div>

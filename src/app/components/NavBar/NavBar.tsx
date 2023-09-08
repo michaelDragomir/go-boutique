@@ -77,12 +77,11 @@ const Header = () => {
 		setIsSearchModalOpen((prev) => !prev);
 	};
 
-	// #dabbb8;
 	return (
 		<>
-			{isScrolled < 100 ? (
-				<div className='mx-auto relative'>
-					<div className='px-4 py-2 bg-white border-b border-black'>
+			{isScrolled < 110 ? (
+				<div className='mx-auto relative pt-2'>
+					<div className='bg-white border-b border-black'>
 						<div className='phone:hidden md:block bg-white mb-1'>
 							<div className='flex justify-end gap-12 text-sm font-light h-[20px] w-full'>
 								{aboveNav.map((item: any, idx: any) => (
@@ -232,8 +231,8 @@ const Header = () => {
 					)}
 				</div>
 			) : (
-				<div className='mx-auto animate-slideDown'>
-					<div className='px-4 py-2 border-b border-white'>
+				<div className='mx-auto animate-slideDown pt-2'>
+					<div className='border-b border-white'>
 						<div className='phone:hidden md:block mb-1'>
 							<div className='flex justify-end gap-12 text-sm font-light h-[20px]'>
 								{aboveNav.map((item: any, idx: any) => (

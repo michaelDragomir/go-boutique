@@ -14,7 +14,7 @@ import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { navTabItems } from '@/app/utils/navTabIcons';
 
-import { aboreto } from '@/app/fonts';
+import { aboreto, monsieur, roboto } from '@/app/fonts';
 
 import { IoMdClose } from 'react-icons/io';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
@@ -80,8 +80,8 @@ const Header = () => {
 	return (
 		<>
 			{isScrolled < 110 ? (
-				<div className='mx-auto relative pt-2'>
-					<div className='bg-white border-b border-black'>
+				<div className='mx-auto relative'>
+					<div className='bg-white border phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink'>
 						<div className='phone:hidden md:block bg-white mb-1'>
 							<div className='flex justify-end gap-12 text-sm font-light h-[20px] w-full'>
 								{aboveNav.map((item: any, idx: any) => (
@@ -93,11 +93,10 @@ const Header = () => {
 								))}
 							</div>
 						</div>
-						<div className='flex flex-row items-center justify-between gap-3 bg-white border-t border-black'>
+						<div className='flex flex-row items-center justify-between gap-3 bg-white border-t border-black phone:h-[65px] lg:h[0px]'>
 							<div className='flex flex-row items-center'>
 								<div className='flex items-center' onClick={modalToggleHandler}>
-									<CiMenuBurger className='phone:animate-pulse md:animate-none iconSize8px cursor-pointer mr-1' />
-									<p className='mr-8 text-lg cursor-pointer phone:hidden md:block'></p>
+									<CiMenuBurger className='phone:animate-pulse md:animate-none phone:hidden lg:block iconSize8px cursor-pointer mr-1' />
 								</div>
 								<div
 									onClick={modalToggleHandler}
@@ -113,21 +112,31 @@ const Header = () => {
 										modalToggleHandler={modalToggleHandler}
 									/>
 								</div>
-								<span className={`text-3xl pr-1 ${aboreto.className}`}>
+								<span
+									className={`phone:hidden md:block text-3xl ${aboreto.className}`}
+								>
 									PIERRE
 								</span>
 								<span
-									className={`text-2xl border-r border-black pr-1 ${aboreto.className}`}
+									className={`phone:hidden md:block text-3xl ${aboreto.className}`}
+								>
+									-
+								</span>
+								<span
+									className={`phone:hidden md:block text-3xl border-r border-black pr-2 ${aboreto.className}`}
 								>
 									LABICHE
 								</span>
+								<span className={`md:hidden text-3xl ${aboreto.className}`}>
+									P|L
+								</span>
 								<span
-									className={`text-sm text-black pl-1 ${aboreto.className}`}
+									className={`phone:hidden sm:block sm: text-sm text-black pl-2 ${aboreto.className}`}
 								>
 									PARIS
 								</span>
 							</div>
-							<div className='flex justify-center relative'>
+							<div className='flex justify-center relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
@@ -153,7 +162,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[98px] left-0'
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[88px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>
@@ -163,7 +172,7 @@ const Header = () => {
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
 							>
 								<span className=''>Click to Search</span>
-								<CiSearch className='text-goGreen iconSize5px' />
+								<CiSearch className='iconSize5px' />
 							</div>
 							<div className='phone:hidden tablet:flex items-center phone:gap-4'>
 								<div className='mr-6'>
@@ -188,7 +197,7 @@ const Header = () => {
 										<div className='md:relative mr-1'>
 											<CiShoppingCart className='text-black iconSize8px' />
 										</div>
-										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[40px] md:right-[10px] text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[45px] md:right-0 text-slate-100 h-5 w-5 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
 											1
 										</span>
 									</div>
@@ -242,11 +251,10 @@ const Header = () => {
 								))}
 							</div>
 						</div>
-						<div className='flex flex-row items-center justify-between gap-3 border-t border-white'>
+						<div className='flex flex-row items-center justify-between gap-3 border-t border-white phone:h-[65px] lg:h[0px]'>
 							<div className='flex flex-row items-center'>
 								<div className='flex items-center' onClick={modalToggleHandler}>
-									<CiMenuBurger className='text-white phone:animate-pulse md:animate-none iconSize8px cursor-pointer mr-1' />
-									<p className='mr-8 text-lg cursor-pointer phone:hidden md:block'></p>
+									<CiMenuBurger className='text-white phone:animate-pulse md:animate-none phone:hidden lg:block iconSize8px cursor-pointer mr-1' />
 								</div>
 								<div
 									onClick={modalToggleHandler}
@@ -263,22 +271,32 @@ const Header = () => {
 									/>
 								</div>
 								<span
-									className={`text-3xl pr-1 text-white ${aboreto.className}`}
+									className={`phone:hidden md:block text-3xl text-white ${aboreto.className}`}
 								>
 									PIERRE
 								</span>
 								<span
-									className={`text-2xl text-white border-r border-white pr-1 ${aboreto.className}`}
+									className={`phone:hidden md:block text-3xl text-white ${aboreto.className}`}
+								>
+									-
+								</span>
+								<span
+									className={`phone:hidden md:block text-3xl border-r border-white pr-2 text-white ${aboreto.className}`}
 								>
 									LABICHE
 								</span>
 								<span
-									className={`text-sm text-white pl-1 ${aboreto.className}`}
+									className={`md:hidden text-white text-3xl ${aboreto.className}`}
+								>
+									P|L
+								</span>
+								<span
+									className={`text-sm text-white pl-2 ${aboreto.className}`}
 								>
 									PARIS
 								</span>
 							</div>
-							<div className='flex justify-center relative'>
+							<div className='flex justify-center relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
@@ -289,7 +307,7 @@ const Header = () => {
 										>
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-white ${
-													activeTab === navTabItems[idx].name
+													activeTab === navTabItems[idx].name && isactiveTab
 														? 'border-b border-white'
 														: ''
 												}`}
@@ -304,7 +322,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[98px] left-0'
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[97px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>
@@ -339,7 +357,7 @@ const Header = () => {
 										<div className='md:relative mr-1'>
 											<CiShoppingCart className='text-white iconSize8px' />
 										</div>
-										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[40px] md:right-[10px] text-black h-6 w-6 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
+										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[45px] md:right-0 text-black h-6 w-6 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
 											1
 										</span>
 									</div>

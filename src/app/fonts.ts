@@ -7,6 +7,8 @@ import {
 	Bonheur_Royale,
 	Aboreto,
 	Abril_Fatface,
+	Monsieur_La_Doulaise,
+	Ballet,
 } from 'next/font/google';
 
 export const inter = Inter({
@@ -45,6 +47,11 @@ export const aboreto = Aboreto({
 });
 
 export const abril = Abril_Fatface({
+	subsets: ['latin'],
+	weight: ['400'],
+});
+
+export const monsieur = Ballet({
 	subsets: ['latin'],
 	weight: ['400'],
 });

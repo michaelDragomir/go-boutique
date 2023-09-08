@@ -22,27 +22,27 @@ export default function Home() {
 		<main>
 			<div className='flex'>
 				<Image
-					width={800}
+					width={867}
 					height={1000}
 					src='/assets/images/test1.jpeg'
 					alt='image'
 				/>
 
 				<Image
-					width={800}
+					width={867}
 					height={1000}
 					src='/assets/images/test2.jpeg'
 					alt='image'
 				/>
 			</div>
-			<div>
+			{/* <div>
 				<Image
-					width={1600}
+					width={1800}
 					height={1000}
 					src='/assets/images/test3.jpeg'
 					alt='image'
 				/>
-			</div>
+			</div> */}
 		</main>
 	);
 }

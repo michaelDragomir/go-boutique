@@ -21,7 +21,6 @@ import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { CiMenuBurger, CiUser, CiShoppingCart, CiSearch } from 'react-icons/ci';
 
 const aboveNav = ['Find a Store', 'Help'];
-const test = ['Men', 'Women', 'Kids', 'Beauty'];
 
 const Header = () => {
 	const [FavoritesList, setfavoritesList] = useState<Number>(0);
@@ -81,19 +80,19 @@ const Header = () => {
 	// #dabbb8;
 	return (
 		<>
-			{isScrolled < 120 ? (
+			{isScrolled < 100 ? (
 				<div className='mx-auto relative'>
-					<div className='phone:hidden md:block bg-black m-4 my-2'>
-						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
-							{aboveNav.map((item: any, idx: any) => (
-								<ul key={idx}>
-									<li className='above-nav text-white'>{item}</li>
-								</ul>
-							))}
-						</div>
-					</div>
 					<div className='px-4 py-2 bg-white border-b border-black'>
-						<div className='flex flex-row items-center justify-between gap-3 bg-white'>
+						<div className='phone:hidden md:block bg-white mb-1'>
+							<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer w-full h-full'>
+								{aboveNav.map((item: any, idx: any) => (
+									<ul key={idx}>
+										<li className='text-black'>{item}</li>
+									</ul>
+								))}
+							</div>
+						</div>
+						<div className='flex flex-row items-center justify-between gap-3 bg-white border-t border-black'>
 							<div className='flex flex-row items-center'>
 								<div className='flex items-center' onClick={modalToggleHandler}>
 									<CiMenuBurger className='phone:animate-pulse md:animate-none iconSize8px cursor-pointer mr-1' />
@@ -113,8 +112,19 @@ const Header = () => {
 										modalToggleHandler={modalToggleHandler}
 									/>
 								</div>
-								<div className={`text-3xl pr-1 ${aboreto.className}`}>IVY</div>
-								<div className={`text-2xl ${aboreto.className}`}>LABICHE</div>
+								<span className={`text-3xl pr-1 ${aboreto.className}`}>
+									PIERRE
+								</span>
+								<span
+									className={`text-2xl border-r border-black pr-1 ${aboreto.className}`}
+								>
+									LABICHE
+								</span>
+								<span
+									className={`text-sm text-black pl-1 ${aboreto.className}`}
+								>
+									PARIS
+								</span>
 							</div>
 							<div className='flex justify-center relative'>
 								{navTabItems.map((item: any, idx: any) => {
@@ -220,18 +230,18 @@ const Header = () => {
 					)}
 				</div>
 			) : (
-				<div className='mx-auto relative top-0 animate-slideDown'>
-					<div className='phone:hidden md:block m-4 my-2'>
-						<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
-							{aboveNav.map((item: any, idx: any) => (
-								<ul key={idx}>
-									<li className='above-nav text-white'>{item}</li>
-								</ul>
-							))}
+				<div className='mx-auto animate-slideDown'>
+					<div className='px-4 py-2 border-b border-white'>
+						<div className='phone:hidden md:block mb-1'>
+							<div className='flex justify-end gap-12 text-sm font-light h-[20px] cursor-pointer'>
+								{aboveNav.map((item: any, idx: any) => (
+									<ul key={idx}>
+										<li className='above-nav text-white'>{item}</li>
+									</ul>
+								))}
+							</div>
 						</div>
-					</div>
-					<div className='px-4 py-2 border-y border-white'>
-						<div className='flex flex-row items-center justify-between gap-3'>
+						<div className='flex flex-row items-center justify-between gap-3 border-t border-white'>
 							<div className='flex flex-row items-center'>
 								<div className='flex items-center' onClick={modalToggleHandler}>
 									<CiMenuBurger className='text-white phone:animate-pulse md:animate-none iconSize8px cursor-pointer mr-1' />
@@ -251,14 +261,21 @@ const Header = () => {
 										modalToggleHandler={modalToggleHandler}
 									/>
 								</div>
-								<div
+								<span
 									className={`text-3xl pr-1 text-white ${aboreto.className}`}
 								>
-									IVY
-								</div>
-								<div className={`text-2xl text-white ${aboreto.className}`}>
+									PIERRE
+								</span>
+								<span
+									className={`text-2xl text-white border-r border-white pr-1 ${aboreto.className}`}
+								>
 									LABICHE
-								</div>
+								</span>
+								<span
+									className={`text-sm text-white pl-1 ${aboreto.className}`}
+								>
+									PARIS
+								</span>
 							</div>
 							<div className='flex justify-center relative'>
 								{navTabItems.map((item: any, idx: any) => {

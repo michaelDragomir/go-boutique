@@ -37,7 +37,7 @@ export default function Home() {
 			</div>
 			<div>
 				<Image
-					width={2000}
+					width={1600}
 					height={1000}
 					src='/assets/images/test3.jpeg'
 					alt='image'

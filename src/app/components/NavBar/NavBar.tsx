@@ -17,10 +17,9 @@ import { navTabItems } from '@/app/utils/navTabIcons';
 import { aboreto, monsieur, roboto } from '@/app/fonts';
 
 import { IoMdClose } from 'react-icons/io';
+import { FaGithub } from 'react-icons/fa';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { CiMenuBurger, CiUser, CiShoppingCart, CiSearch } from 'react-icons/ci';
-
-const aboveNav = ['Find a Store', 'Help'];
 
 const Header = () => {
 	const [FavoritesList, setfavoritesList] = useState<Number>(0);
@@ -55,6 +54,8 @@ const Header = () => {
 				return <NavItemsDropDown props={dropDownItems.kids} />;
 			case 'BEAUTY':
 				return <NavItemsDropDown props={dropDownItems.beauty} />;
+			case 'ENGINEERS':
+				return <NavItemsDropDown props={dropDownItems.engineers} />;
 			default:
 				return null;
 		}
@@ -79,24 +80,33 @@ const Header = () => {
 
 	return (
 		<>
-			{isScrolled < 110 ? (
+			{isScrolled < 155 ? (
 				<div className='mx-auto relative'>
-					<div className='bg-white border phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
-						<div className='phone:hidden md:block bg-white mb-1'>
-							<div className='flex justify-end gap-12 text-sm font-light h-[20px] w-full'>
-								{aboveNav.map((item: any, idx: any) => (
-									<ul key={idx}>
-										<li className='text-black cursor-pointer hover:font-bold'>
-											{item}
-										</li>
-									</ul>
-								))}
-							</div>
+					<div className='bg-white phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
+						<div className='flex justify-center'>
+							<span
+								className={`phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+							>
+								PIERRE
+							</span>
+							<span
+								className={`phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+							>
+								-
+							</span>
+							<span
+								className={`phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+							>
+								LABICHE
+							</span>
 						</div>
-						<div className='flex flex-row items-center justify-between gap-3 bg-white border-t border-black phone:h-[65px] lg:h[0px]'>
+						<div className={`flex justify-center  ${aboreto.className}`}>
+							<span className='tracking-[.2em]'>PARIS</span>
+						</div>
+						<div className='flex items-center justify-between mx-4'>
 							<div className='flex flex-row items-center'>
 								<div className='flex items-center' onClick={modalToggleHandler}>
-									<CiMenuBurger className='phone:animate-pulse md:animate-none phone:hidden lg:block iconSize8px cursor-pointer mr-1' />
+									<CiMenuBurger className='phone:animate-pulse md:animate-none phone:block iconSize8px cursor-pointer mr-1' />
 								</div>
 								<div
 									onClick={modalToggleHandler}
@@ -112,31 +122,8 @@ const Header = () => {
 										modalToggleHandler={modalToggleHandler}
 									/>
 								</div>
-								<span
-									className={`phone:hidden md:block text-3xl ${aboreto.className}`}
-								>
-									PIERRE
-								</span>
-								<span
-									className={`phone:hidden md:block text-3xl ${aboreto.className}`}
-								>
-									-
-								</span>
-								<span
-									className={`phone:hidden md:block text-3xl border-r border-black pr-2 ${aboreto.className}`}
-								>
-									LABICHE
-								</span>
-								<span className={`md:hidden text-3xl ${aboreto.className}`}>
-									P|L
-								</span>
-								<span
-									className={`phone:hidden sm:block sm: text-sm text-black pl-2 ${aboreto.className}`}
-								>
-									PARIS
-								</span>
 							</div>
-							<div className='flex justify-center w-4/12 relative phone:hidden lg:flex lg:gap-3 xl:gap-3'>
+							<div className='flex justify-center ml-[100px] w-4/12 relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
@@ -146,13 +133,17 @@ const Header = () => {
 											className='group flex items-center justify-center cursor-pointer text-black w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
-												className={`font-medium text-sm hover:border-b hover:border-black ${
+												className={`text-sm hover:border-b hover:border-black ${
 													activeTab === navTabItems[idx].name && isactiveTab
 														? 'border-b border-black'
 														: ''
 												}`}
 											>
-												{item.name}
+												<span
+													className={`font-medium tracking-[.15em] ${roboto.className}`}
+												>
+													{item.name}
+												</span>
 											</li>
 										</ul>
 									);
@@ -162,43 +153,42 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[88px] left-0'
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>
 							)}
-							<div
+							{/* <div
 								onClick={searchModalToggleHandler}
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
-							>
-								<span className=''>Click to Search</span>
-								<CiSearch className='iconSize5px' />
-							</div>
-							<div className='phone:hidden tablet:flex items-center phone:gap-4'>
-								<div className='mr-6'>
-									<SearchForm />
-								</div>
-								<CiUser className='text-black iconSize6px' />
-								<div className='flex phone:p-[3px] xl:p-[7px] cursor-pointer'>
+							></div> */}
+							<div className='flex items-center gap-3'>
+								<FaGithub className='iconSize5px cursor-pointer' />
+								<CiSearch className='iconSize5px cursor-pointer' />
+								<CiUser className='text-black iconSize5px cursor-pointer' />
+								<div className='cursor-pointer'>
 									{FavoritesList === 0 ? (
-										<GoHeart className='iconSize6px pr-1 text-[#ddaaa5]' />
+										<GoHeart
+											style={{ fill: '#f44336' }}
+											className='cursor-pointer iconSize5px'
+										/>
 									) : (
 										<GoHeartFill
-											style={{ fill: '#ddaaa5' }}
-											className='iconSize6px pr-1 animate-pulse'
+											style={{ fill: '#f44336' }}
+											className='cursor-pointer iconSize5px animate-pulse'
 										/>
 									)}
-									<span className='border-0 border-l border-black text-black flex items-center text-sm pl-1'>
-										2
-									</span>
 								</div>
 								<div className='cursor-pointer text-black'>
 									<div className='flex items-center'>
 										<div className='md:relative mr-1'>
-											<CiShoppingCart className='text-black iconSize8px' />
+											<CiShoppingCart className='text-black iconSize6px' />
 										</div>
-										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[45px] md:right-0 text-slate-100 h-5 w-5 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
-											1
+										<span className='relative flex h-5 w-5'>
+											<span className='animate-pinging absolute top-[-10px] right-[13px] h-full w-full rounded-full bg-black opacity-75' />
+											<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-10px] md:right-[13px] text-slate-100 h-5 w-5 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
+												1
+											</span>
 										</span>
 									</div>
 								</div>
@@ -207,16 +197,13 @@ const Header = () => {
 						<div className='tablet:hidden flex items-center lg:gap-4 phone:gap-4 xl:gap-8 justify-center mt-[20px]'>
 							<div className='flex border border-slate-500 rounded-md  phone:p-[3px] xl:p-[7px] hover:border-slate-800'>
 								{FavoritesList === 0 ? (
-									<GoHeart className='text-goPink iconSize6px pr-1' />
+									<GoHeart className='iconSize6px' />
 								) : (
 									<GoHeartFill
 										style={{ fill: '#FF66C4' }}
 										className='iconSize6px pr-1 animate-pulse'
 									/>
 								)}
-								<span className='text-black flex items-center text-sm pl-1'>
-									3
-								</span>
 							</div>
 							<div className='cursor-pointer text-black'>
 								<div className='flex items-center'>
@@ -240,21 +227,34 @@ const Header = () => {
 					)}
 				</div>
 			) : (
-				<div className='mx-auto animate-slideDown pt-2'>
-					<div className='border-b border-white'>
-						<div className='phone:hidden md:block mb-1'>
-							<div className='flex justify-end gap-12 text-sm font-light h-[20px]'>
-								{aboveNav.map((item: any, idx: any) => (
-									<ul key={idx}>
-										<li className='text-white hover:font-bold'>{item}</li>
-									</ul>
-								))}
-							</div>
+				<div className='mx-auto relative'>
+					<div className='group hover:bg-white duration-200 ease-in-out phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
+						<div className='flex justify-center'>
+							<span
+								className={`group-hover:text-black text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+							>
+								PIERRE
+							</span>
+							<span
+								className={`group-hover:text-black text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+							>
+								-
+							</span>
+							<span
+								className={`group-hover:text-black text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+							>
+								LABICHE
+							</span>
 						</div>
-						<div className='flex flex-row items-center justify-between gap-3 border-t border-white phone:h-[65px] lg:h[0px]'>
+						<div className={`flex justify-center  ${aboreto.className}`}>
+							<span className='group-hover:text-black text-white hover:text-black tracking-[.2em]'>
+								PARIS
+							</span>
+						</div>
+						<div className='flex items-center justify-between mx-4 border-b border-white'>
 							<div className='flex flex-row items-center'>
 								<div className='flex items-center' onClick={modalToggleHandler}>
-									<CiMenuBurger className='text-white phone:animate-pulse md:animate-none phone:hidden lg:block iconSize8px cursor-pointer mr-1' />
+									<CiMenuBurger className='group-hover:text-black phone:animate-pulse md:animate-none phone:block iconSize8px cursor-pointer mr-1 text-white hover:text-black' />
 								</div>
 								<div
 									onClick={modalToggleHandler}
@@ -270,49 +270,28 @@ const Header = () => {
 										modalToggleHandler={modalToggleHandler}
 									/>
 								</div>
-								<span
-									className={`phone:hidden md:block text-3xl text-white ${aboreto.className}`}
-								>
-									PIERRE
-								</span>
-								<span
-									className={`phone:hidden md:block text-3xl text-white ${aboreto.className}`}
-								>
-									-
-								</span>
-								<span
-									className={`phone:hidden md:block text-3xl border-r border-white pr-2 text-white ${aboreto.className}`}
-								>
-									LABICHE
-								</span>
-								<span
-									className={`md:hidden text-white text-3xl ${aboreto.className}`}
-								>
-									P|L
-								</span>
-								<span
-									className={`text-sm text-white pl-2 ${aboreto.className}`}
-								>
-									PARIS
-								</span>
 							</div>
-							<div className='flex justify-center w-4/12 relative phone:hidden lg:flex lg:gap-3 xl:gap-3'>
+							<div className='flex justify-center ml-[100px] w-4/12 relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
 											key={idx}
 											onMouseEnter={() => onMouseEnterToggle(item.name)}
 											onMouseLeave={() => dropDownToggleHandler()}
-											className='group flex items-center justify-center cursor-pointer text-white w-full h-[30px] relative hover:z-aboveAll py-8'
+											className='flex items-center justify-center cursor-pointer text-white group-hover:text-black w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-white ${
 													activeTab === navTabItems[idx].name && isactiveTab
-														? 'border-b border-white'
+														? 'border-b group-hover:border-black'
 														: ''
 												}`}
 											>
-												{item.name}
+												<span
+													className={`font-medium tracking-[.15em] ${roboto.className}`}
+												>
+													{item.name}
+												</span>
 											</li>
 										</ul>
 									);
@@ -322,43 +301,42 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[97px] left-0'
+									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>
 							)}
-							<div
+							{/* <div
 								onClick={searchModalToggleHandler}
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
-							>
-								<span className=''>Click to Search</span>
-								<CiSearch className='text-white iconSize5px' />
-							</div>
-							<div className='phone:hidden tablet:flex items-center phone:gap-4'>
-								<div className='mr-6'>
-									<SearchForm />
-								</div>
-								<CiUser className='text-white iconSize6px' />
-								<div className='flex phone:p-[3px] xl:p-[7px] cursor-pointer'>
+							></div> */}
+							<div className='flex items-center gap-3 text-white'>
+								<FaGithub className='iconSize5px group-hover:text-black cursor-pointer' />
+								<CiSearch className='group-hover:text-black iconSize5px cursor-pointer' />
+								<CiUser className='group-hover:text-black text-white hover:text-black iconSize5px cursor-pointer' />
+								<div className='cursor-pointer'>
 									{FavoritesList === 0 ? (
-										<GoHeart className='iconSize6px pr-1 text-white' />
+										<GoHeart
+											style={{ fill: '#f44336' }}
+											className='group-hover:text-black cursor-pointer iconSize5px'
+										/>
 									) : (
 										<GoHeartFill
-											style={{ fill: '#ddaaa5' }}
-											className='iconSize6px pr-1 animate-pulse'
+											style={{ fill: '#f44336' }}
+											className='cursor-pointer iconSize5px animate-pulse'
 										/>
 									)}
-									<span className='border-0 border-l border-white text-white flex items-center text-sm pl-1'>
-										2
-									</span>
 								</div>
-								<div className='cursor-pointer text-black'>
+								<div className='cursor-pointer text-white '>
 									<div className='flex items-center'>
 										<div className='md:relative mr-1'>
-											<CiShoppingCart className='text-white iconSize8px' />
+											<CiShoppingCart className='group-hover:text-black text-white iconSize6px' />
 										</div>
-										<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[17px] tablet:right-[10px] md:absolute md:top-[45px] md:right-0 text-black h-6 w-6 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
-											1
+										<span className='relative flex h-5 w-5'>
+											<span className='animate-pinging absolute top-[-10px] right-[13px] h-full w-full rounded-full bg-white opacity-75 group-hover:bg-black' />
+											<span className='group-hover:bg-black group-hover:text-white sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-10px] md:right-[13px] text-black h-5 w-5 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
+												1
+											</span>
 										</span>
 									</div>
 								</div>
@@ -367,21 +345,18 @@ const Header = () => {
 						<div className='tablet:hidden flex items-center lg:gap-4 phone:gap-4 xl:gap-8 justify-center mt-[20px]'>
 							<div className='flex border border-slate-500 rounded-md  phone:p-[3px] xl:p-[7px] hover:border-slate-800'>
 								{FavoritesList === 0 ? (
-									<GoHeart className='text-goPink iconSize6px pr-1' />
+									<GoHeart className='iconSize6px pr-1' />
 								) : (
 									<GoHeartFill
 										style={{ fill: '#FF66C4' }}
 										className='iconSize6px pr-1 animate-pulse'
 									/>
 								)}
-								<span className='text-black flex items-center text-sm pl-1'>
-									3
-								</span>
 							</div>
-							<div className='cursor-pointer text-black'>
+							<div className='cursor-pointer text-white'>
 								<div className='flex items-center'>
 									<div className='md:relative lg:border-r lg:border-slate-400 mr-1'>
-										<CiShoppingCart className='text-black iconSize8px' />
+										<CiShoppingCart className='text-white iconSize8px' />
 									</div>
 									<span className='phone:relative phone:top-[-10px] phone:right-[18px] tablet:absolute tablet:top-[36px] tablet:right-[10px] md:absolute md:top-[55px] md:right-[10px] lg:static text-slate-100 h-6 w-6 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]'>
 										1

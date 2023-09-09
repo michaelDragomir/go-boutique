@@ -9,8 +9,11 @@ const Footer = () => {
 	return (
 		<footer className='bg-black text-slate-200 text-sm mt-16'>
 			<div className='mb-6 mt-6 flex justify-center'>
-				<div className={`text-3xl pr-2 ${aboreto.className}`}>IVY</div>
-				<div className={`text-2xl ${aboreto.className}`}>LABICHE</div>
+				<span className={`text-3xl ${aboreto.className}`}>PIERRE</span>
+				<span className={`phone:hidden md:block text-3xl ${aboreto.className}`}>
+					-
+				</span>
+				<span className={`text-3xl ${aboreto.className}`}>LABICHE</span>
 			</div>
 			<div className='sm:flex sm:flex-row sm:justify-center md:justify-center lg:block'>
 				<div className='sm:pr-[20px] md:pr-0 phone:text-center tablet:flex tablet:justify-center sm:flex-row lg:block md:mr-12 lg:mr-0'>

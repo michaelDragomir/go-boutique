@@ -28,7 +28,7 @@ export const anonymous_pro = Anonymous_Pro({
 
 export const roboto = Roboto({
 	subsets: ['latin'],
-	weight: ['300'],
+	weight: ['400'],
 });
 
 export const alata = Alata({

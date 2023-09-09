@@ -81,3 +81,18 @@ export const beauty = [
 		name: 'Bathroom',
 	},
 ];
+
+export const engineers = [
+	{
+		name: 'Laundry',
+	},
+	{
+		name: 'Bedroom',
+	},
+	{
+		name: 'Kitchen',
+	},
+	{
+		name: 'Bathroom',
+	},
+];

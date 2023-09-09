@@ -23,6 +23,12 @@ const config: Config = {
 				aboveAll: '9999',
 			},
 			keyframes: {
+				pinging: {
+					'75%, 100%': {
+						transform: 'scale(1.5)',
+						opacity: '0',
+					},
+				},
 				searchSlideDown: {
 					'0%': {
 						transform: 'translateY(-25%)',
@@ -95,6 +101,7 @@ const config: Config = {
 				},
 			},
 			animation: {
+				pinging: 'pinging 2s cubic-bezier(0, 0, 0.2, 1) infinite',
 				searchSlideDown: 'searchSlideDown .25s forwards',
 				slideDown: 'slideDown .25s forwards',
 				slideUp: 'slideUp .15s forwards',

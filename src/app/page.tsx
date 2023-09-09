@@ -22,14 +22,14 @@ export default function Home() {
 		<main>
 			<div className='flex'>
 				<Image
-					width={867}
+					width={840}
 					height={1000}
 					src='/assets/images/test1.jpeg'
 					alt='image'
 				/>
 
 				<Image
-					width={867}
+					width={840}
 					height={1000}
 					src='/assets/images/test2.jpeg'
 					alt='image'

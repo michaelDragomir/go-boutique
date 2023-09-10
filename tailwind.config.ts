@@ -39,6 +39,14 @@ const config: Config = {
 						opacity: '1',
 					},
 				},
+				fadeIn: {
+					'0%': {
+						opacity: '0',
+					},
+					'100%': {
+						opacity: '1',
+					},
+				},
 				slideDown: {
 					'0%': {
 						transform: 'translateY(-25%)',
@@ -109,6 +117,8 @@ const config: Config = {
 				drawerSlideOut: 'drawerSlideOut .15s forwards',
 				innerDrawerSlideIn: 'innerDrawerSlideIn .15s ease-in-out',
 				innerDrawerSlideOut: 'innerDrawerSlideOut .15s forwards',
+				fadeIn: 'fadeIn .2s ease-in-out',
+				fadeOut: 'fadeOut .2s ease-in-out',
 			},
 
 			backgroundImage: {

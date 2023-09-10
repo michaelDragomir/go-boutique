@@ -16,8 +16,6 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 
 	const dropDownMenuItems = () => {
 		switch (activeTab) {
-			case 'Categories':
-				return <NavItemsDropDown props={dropDownItems.categories} />;
 			case 'Men':
 				return <NavItemsDropDown props={dropDownItems.men} />;
 			case 'Women':

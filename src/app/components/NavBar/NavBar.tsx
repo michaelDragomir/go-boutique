@@ -54,8 +54,6 @@ const Header = () => {
 				return <NavItemsDropDown props={dropDownItems.kids} />;
 			case 'BEAUTY':
 				return <NavItemsDropDown props={dropDownItems.beauty} />;
-			case 'ENGINEERS':
-				return <NavItemsDropDown props={dropDownItems.engineers} />;
 			default:
 				return null;
 		}
@@ -123,7 +121,7 @@ const Header = () => {
 									/>
 								</div>
 							</div>
-							<div className='flex justify-center ml-[100px] w-4/12 relative phone:hidden lg:flex'>
+							<div className='flex justify-center ml-[125px] w-4/12 relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
@@ -153,7 +151,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
+									className='animate-fadeIn visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>
@@ -228,7 +226,7 @@ const Header = () => {
 				</div>
 			) : (
 				<div className='mx-auto relative'>
-					<div className='group hover:bg-white duration-200 ease-in-out phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
+					<div className='group hover:animate-fadeIn hover:bg-white duration-200 ease-in-out phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
 						<div className='flex justify-center'>
 							<span
 								className={`group-hover:text-black text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
@@ -271,7 +269,7 @@ const Header = () => {
 									/>
 								</div>
 							</div>
-							<div className='flex justify-center ml-[100px] w-4/12 relative phone:hidden lg:flex'>
+							<div className='flex justify-center ml-[125px] w-4/12 relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
@@ -301,7 +299,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-slideDown visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
+									className='animate-fadeIn visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>

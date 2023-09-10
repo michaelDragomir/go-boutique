@@ -4,10 +4,10 @@ import { useState } from 'react';
 
 import SubDrawerModal from './SubDrawerModal';
 
+import { roboto } from '@/app/fonts';
 import { navTabItems } from '@/app/utils/navTabIcons';
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { IoIosArrowForward, IoIosArrowBack, IoMdClose } from 'react-icons/io';
-import { CiUser } from 'react-icons/ci';
 
 const SideDrawer = ({
 	isModalOpen,
@@ -21,6 +21,8 @@ const SideDrawer = ({
 
 	const innerDrawerToggleHandler = (activeTab: any) => {
 		switch (activeTab) {
+			case 'Categories':
+				return <SubDrawerModal data={dropDownItems.categories} />;
 			case 'Men':
 				return <SubDrawerModal data={dropDownItems.men} />;
 			case 'Women':
@@ -50,18 +52,12 @@ const SideDrawer = ({
 
 	return (
 		<div
-			className={`w-[300px] h-screen bg-black z-aboveAll absolute left-[-1px] top-[-10px] drop-shadow-md ${
+			className={`w-[350px] h-screen bg-white z-aboveAll absolute left-0 top-0 drop-shadow-md ${
 				isModalOpen ? 'animate-drawerSlideIn' : 'animate-drawerSlideOut'
 			}`}
 		>
-			<div onClick={mainMenuAndCloseHandler}>
-				<IoMdClose className='iconSize6px absolute top-[8px] left-[275px] text-black cursor-pointer' />
-			</div>
-			<div className='flex text-xl bg-white px-6 py-1'>
-				<span className='mr-3'>
-					<CiUser className='text-slate-900 iconSize6px' />
-				</span>
-				Hello, Renee
+			<div className='m-20' onClick={mainMenuAndCloseHandler}>
+				<IoMdClose className='iconSize5px absolute top-[30px] right-[21px] text-black cursor-pointer' />
 			</div>
 			{isModalOpen && !subDrawerModalOpen ? (
 				<>
@@ -71,28 +67,50 @@ const SideDrawer = ({
 							className='px-6 cursor-pointer animate-innerDrawerSlideOut pt-8'
 							onClick={() => subDrawerToggleHandler(item.name)}
 						>
-							<ul>
-								<li className='group flex hover:border-b items-center justify-between text-slate-100 hover:text-slate-100 h-[20px]'>
+							<ul
+								className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
+							>
+								<li className='group flex hover:font-bold items-center justify-between text-black hover:text-black'>
 									{item.name}
-									<span className='text-slate-100 group-hover:text-slate-100'>
+									<span className='text-black group-hover:text-black'>
 										<IoIosArrowForward />
 									</span>
 								</li>
 							</ul>
 						</div>
 					))}
+					<div className='border-b border-black mx-6 mt-12' />
+					<div className='px-6 cursor-pointer pt-8'>
+						<ul
+							className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
+						>
+							<li className='hover:font-bold text-black hover:text-black'>
+								my account
+							</li>
+							<li className='hover:font-bold text-black hover:text-black pt-8'>
+								favorites Saved
+							</li>
+							<li className='hover:font-bold text-black hover:text-black pt-8'>
+								delivery & returns
+							</li>
+							<li className='hover:font-bold text-black hover:text-black pt-8'>
+								contact us
+							</li>
+						</ul>
+					</div>
 				</>
 			) : (
-				<div className='animate-innerDrawerSlideIn'>
+				<>
 					<div
 						onClick={backToMainMenuHandler}
-						className='mt-6 px-3 flex items-center cursor-pointer mb-6'
+						className='relative mt-6 px-3 flex items-center cursor-pointer mb-6'
 					>
-						<IoIosArrowBack className='iconSize5px text-white' />
-						<h2 className='text-sm text-white'>Main Menu</h2>
+						<IoIosArrowBack className='iconSize5px text-black absolute top-[-47px] left-[20px]' />
 					</div>
-					{innerDrawerToggleHandler(activeTab)}
-				</div>
+					<div className='animate-innerDrawerSlideIn'>
+						{innerDrawerToggleHandler(activeTab)}
+					</div>
+				</>
 			)}
 		</div>
 	);

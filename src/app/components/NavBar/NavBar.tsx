@@ -5,8 +5,6 @@ import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 
-import SubHeaderTabs from '@/app/components/Tabs/SubHeaderTabs';
-import NavAcctDropDown from '@/app/components/NavAcctDropDown/navAcctDropDown';
 import SideDrawer from '@/app/components/Drawer/SideDrawer';
 import SearchForm from '@/app/components/SearchForm/SearchForm';
 import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown';
@@ -14,7 +12,7 @@ import NavItemsDropDown from '@/app/components/NavItemsDropDown/NavItemsDropDown
 import * as dropDownItems from '@/app/utils/dropDownItems';
 import { navTabItems } from '@/app/utils/navTabIcons';
 
-import { aboreto, monsieur, roboto } from '@/app/fonts';
+import { aboreto, roboto } from '@/app/fonts';
 
 import { IoMdClose } from 'react-icons/io';
 import { FaGithub } from 'react-icons/fa';
@@ -110,7 +108,7 @@ const Header = () => {
 									onClick={modalToggleHandler}
 									className={`${
 										isModalOpen
-											? 'absolute w-screen h-screen bg-slate-400 fixed top-[-8px] left-0 opacity-40 z-overlay'
+											? 'absolute w-screen h-screen bg-white fixed top-0 left-0 opacity-40 z-overlay'
 											: ''
 									} `}
 								/>
@@ -121,14 +119,14 @@ const Header = () => {
 									/>
 								</div>
 							</div>
-							<div className='flex justify-center ml-[125px] w-4/12 relative phone:hidden lg:flex'>
+							<div className='flex justify-center ml-[143px] w-5/12 relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
 											key={idx}
 											onMouseEnter={() => onMouseEnterToggle(item.name)}
 											onMouseLeave={() => dropDownToggleHandler()}
-											className='group flex items-center justify-center cursor-pointer text-black w-full h-[30px] relative hover:z-aboveAll py-8'
+											className='group flex items-center justify-evenly cursor-pointer text-black w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
 												className={`text-sm hover:border-b hover:border-black ${
@@ -182,9 +180,9 @@ const Header = () => {
 										<div className='md:relative mr-1'>
 											<CiShoppingCart className='text-black iconSize6px' />
 										</div>
-										<span className='relative flex h-5 w-5'>
-											<span className='animate-pinging absolute top-[-10px] right-[13px] h-full w-full rounded-full bg-black opacity-75' />
-											<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-10px] md:right-[13px] text-slate-100 h-5 w-5 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
+										<span className='relative flex h-6 w-6'>
+											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-black opacity-75' />
+											<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-7px] md:right-[18px] text-slate-100 h-5 w-5 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
 												1
 											</span>
 										</span>
@@ -269,14 +267,14 @@ const Header = () => {
 									/>
 								</div>
 							</div>
-							<div className='flex justify-center ml-[125px] w-4/12 relative phone:hidden lg:flex'>
+							<div className='flex justify-center ml-[143px] w-5/12 relative phone:hidden lg:flex'>
 								{navTabItems.map((item: any, idx: any) => {
 									return (
 										<ul
 											key={idx}
 											onMouseEnter={() => onMouseEnterToggle(item.name)}
 											onMouseLeave={() => dropDownToggleHandler()}
-											className='flex items-center justify-center cursor-pointer text-white group-hover:text-black w-full h-[30px] relative hover:z-aboveAll py-8'
+											className='flex items-center justify-evenly cursor-pointer text-white group-hover:text-black w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-white ${
@@ -330,9 +328,9 @@ const Header = () => {
 										<div className='md:relative mr-1'>
 											<CiShoppingCart className='group-hover:text-black text-white iconSize6px' />
 										</div>
-										<span className='relative flex h-5 w-5'>
-											<span className='animate-pinging absolute top-[-10px] right-[13px] h-full w-full rounded-full bg-white opacity-75 group-hover:bg-black' />
-											<span className='group-hover:bg-black group-hover:text-white sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-10px] md:right-[13px] text-black h-5 w-5 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
+										<span className='relative flex h-6 w-6'>
+											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-white opacity-75 group-hover:bg-black' />
+											<span className='group-hover:bg-black group-hover:text-white sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-7px] md:right-[18px] text-black h-5 w-5 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
 												1
 											</span>
 										</span>

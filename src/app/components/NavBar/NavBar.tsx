@@ -102,7 +102,7 @@ const Header = () => {
 						<div className='flex items-center justify-between mx-4'>
 							<div className='flex flex-row items-center'>
 								<div className='flex items-center' onClick={modalToggleHandler}>
-									<CiMenuBurger className='phone:animate-pulse md:animate-none phone:block iconSize8px cursor-pointer mr-1' />
+									<CiMenuBurger className='text-black phone:animate-pulse md:animate-none phone:block iconSize8px cursor-pointer mr-1' />
 								</div>
 								<div
 									onClick={modalToggleHandler}
@@ -159,9 +159,9 @@ const Header = () => {
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
 							></div> */}
 							<div className='flex items-center gap-3'>
-								<FaGithub className='iconSize5px cursor-pointer' />
-								<CiSearch className='iconSize5px cursor-pointer' />
-								<CiUser className='text-black iconSize5px cursor-pointer' />
+								<FaGithub className='text-[#BBA14F] iconSize5px cursor-pointer' />
+								<CiSearch className='text-[#BBA14F] iconSize5px cursor-pointer' />
+								<CiUser className='text-[#BBA14F] iconSize5px cursor-pointer' />
 								<div className='cursor-pointer'>
 									{FavoritesList === 0 ? (
 										<GoHeart
@@ -178,7 +178,7 @@ const Header = () => {
 								<div className='cursor-pointer text-black'>
 									<div className='flex items-center'>
 										<div className='md:relative mr-1'>
-											<CiShoppingCart className='text-black iconSize6px' />
+											<CiShoppingCart className='text-[#BBA14F] iconSize6px' />
 										</div>
 										<span className='relative flex h-6 w-6'>
 											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-black opacity-75' />
@@ -307,9 +307,9 @@ const Header = () => {
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
 							></div> */}
 							<div className='flex items-center gap-3 text-white'>
-								<FaGithub className='iconSize5px group-hover:text-black cursor-pointer' />
-								<CiSearch className='group-hover:text-black iconSize5px cursor-pointer' />
-								<CiUser className='group-hover:text-black text-white hover:text-black iconSize5px cursor-pointer' />
+								<FaGithub className='iconSize5px group-hover:text-[#BBA14F] cursor-pointer' />
+								<CiSearch className='group-hover:text-[#BBA14F] iconSize5px cursor-pointer' />
+								<CiUser className='group-hover:text-[#BBA14F] text-white hover:text-black iconSize5px cursor-pointer' />
 								<div className='cursor-pointer'>
 									{FavoritesList === 0 ? (
 										<GoHeart
@@ -326,7 +326,7 @@ const Header = () => {
 								<div className='cursor-pointer text-white '>
 									<div className='flex items-center'>
 										<div className='md:relative mr-1'>
-											<CiShoppingCart className='group-hover:text-black text-white iconSize6px' />
+											<CiShoppingCart className='group-hover:text-[#BBA14F] text-white iconSize6px' />
 										</div>
 										<span className='relative flex h-6 w-6'>
 											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-white opacity-75 group-hover:bg-black' />

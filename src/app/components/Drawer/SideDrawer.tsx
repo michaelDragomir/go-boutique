@@ -29,8 +29,6 @@ const SideDrawer = ({
 				return <SubDrawerModal data={dropDownItems.kids} />;
 			case 'Beauty':
 				return <SubDrawerModal data={dropDownItems.beauty} />;
-			case 'Engineers':
-				return <SubDrawerModal data={dropDownItems.engineers} />;
 			default:
 				return null;
 		}

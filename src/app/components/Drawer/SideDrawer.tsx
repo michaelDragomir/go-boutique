@@ -3,7 +3,10 @@
 import { useState } from 'react';
 
 import SubDrawerModal from './SubDrawerModal';
-import Test from './Test';
+import Page1 from './Page1';
+import Page2 from './Page2';
+import Page3 from './Page3';
+import Page4 from './Page4';
 
 import { roboto } from '@/app/fonts';
 import { navTabItems } from '@/app/utils/navTabIcons';
@@ -25,8 +28,10 @@ const SideDrawer = ({
 		switch (activeTab) {
 			case 'categories':
 				return <SubDrawerModal data={dropDownItems.categories} />;
+			case 'accessories':
+				return <SubDrawerModal data={dropDownItems.accessories} />;
 			case 'men':
-				return <SubDrawerModal data={dropDownItems.account} />;
+				return <SubDrawerModal data={dropDownItems.men} />;
 			case 'women':
 				return <SubDrawerModal data={dropDownItems.women} />;
 			case 'kids':
@@ -34,7 +39,13 @@ const SideDrawer = ({
 			case 'beauty':
 				return <SubDrawerModal data={dropDownItems.beauty} />;
 			case 'my account':
-				return <Test />;
+				return <Page1 />;
+			case 'favorites saved':
+				return <Page2 />;
+			case 'delivery & returns':
+				return <Page3 />;
+			case 'contact us':
+				return <Page4 />;
 			default:
 				return null;
 		}

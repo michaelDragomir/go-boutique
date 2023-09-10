@@ -16,6 +16,21 @@ export const categories = [
 	},
 ];
 
+export const accessories = [
+	{
+		name: 'belts',
+	},
+	{
+		name: 'socks',
+	},
+	{
+		name: 'rings',
+	},
+	{
+		name: 'necklace',
+	},
+];
+
 export const men = [
 	{
 		name: 'Pants',

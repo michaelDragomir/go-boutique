@@ -84,3 +84,18 @@ export const beauty = [
 		name: 'Bathroom',
 	},
 ];
+
+export const secondaryCategories = [
+	{
+		name: 'my account',
+	},
+	{
+		name: 'favorites saved',
+	},
+	{
+		name: 'delivery & returns',
+	},
+	{
+		name: 'contact us',
+	},
+];

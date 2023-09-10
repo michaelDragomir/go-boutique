@@ -72,7 +72,7 @@ const SideDrawer = ({
 							>
 								<li className='group flex hover:font-bold items-center justify-between text-black hover:text-black'>
 									{item.name}
-									<span className='text-black group-hover:text-black'>
+									<span>
 										<IoIosArrowForward />
 									</span>
 								</li>
@@ -80,24 +80,22 @@ const SideDrawer = ({
 						</div>
 					))}
 					<div className='border-b border-black mx-6 mt-12' />
-					<div className='px-6 cursor-pointer pt-8'>
-						<ul
-							className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
-						>
-							<li className='hover:font-bold text-black hover:text-black'>
-								my account
-							</li>
-							<li className='hover:font-bold text-black hover:text-black pt-8'>
-								favorites Saved
-							</li>
-							<li className='hover:font-bold text-black hover:text-black pt-8'>
-								delivery & returns
-							</li>
-							<li className='hover:font-bold text-black hover:text-black pt-8'>
-								contact us
-							</li>
-						</ul>
-					</div>
+					{dropDownItems.secondaryCategories.map((item: any, idx: any) => (
+						<>
+							<div
+								key={idx}
+								className='px-6 cursor-pointer pt-8 animate-innerDrawerSlideOut'
+							>
+								<ul
+									className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
+								>
+									<li className='hover:font-bold text-black hover:text-black'>
+										{item.name}
+									</li>
+								</ul>
+							</div>
+						</>
+					))}
 				</>
 			) : (
 				<>

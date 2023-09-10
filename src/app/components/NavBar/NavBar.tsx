@@ -181,8 +181,8 @@ const Header = () => {
 											<CiShoppingCart className='text-[#BBA14F] iconSize6px' />
 										</div>
 										<span className='relative flex h-6 w-6'>
-											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-black opacity-75' />
-											<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-7px] md:right-[18px] text-slate-100 h-5 w-5 rounded-full flex items-center justify-center text-sm bg-slate-900 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
+											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-[#BBA14F] opacity-75' />
+											<span className='sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-7px] md:right-[18px] text-white h-5 w-5 rounded-full flex items-center justify-center text-sm bg-[#BBA14F] drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
 												1
 											</span>
 										</span>
@@ -329,8 +329,8 @@ const Header = () => {
 											<CiShoppingCart className='group-hover:text-[#BBA14F] text-white iconSize6px' />
 										</div>
 										<span className='relative flex h-6 w-6'>
-											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-white opacity-75 group-hover:bg-black' />
-											<span className='group-hover:bg-black group-hover:text-white sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-7px] md:right-[18px] text-black h-5 w-5 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
+											<span className='animate-pinging absolute top-[-9px] right-[16px] h-full w-full rounded-full bg-white opacity-75 group-hover:bg-[#BBA14F]' />
+											<span className='group-hover:bg-[#BBA14F] group-hover:text-white sm:absolute sm:top-[17px] sm:right-[10px] tablet:absolute tablet:top-[35px] tablet:right-[10px] md:absolute md:top-[-7px] md:right-[18px] text-black h-5 w-5 rounded-full flex items-center justify-center text-sm bg-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-[12px]'>
 												1
 											</span>
 										</span>

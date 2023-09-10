@@ -79,7 +79,7 @@ const Header = () => {
 			{isScrolled < 155 ? (
 				<div className='mx-auto relative'>
 					<div className='bg-white phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
-						<div className='flex justify-center'>
+						<div className='flex justify-center text-[#BBA14F]'>
 							<span
 								className={`phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
 							>
@@ -96,8 +96,8 @@ const Header = () => {
 								LABICHE
 							</span>
 						</div>
-						<div className={`flex justify-center  ${aboreto.className}`}>
-							<span className='tracking-[.2em]'>PARIS</span>
+						<div className={`flex justify-center ${aboreto.className}`}>
+							<span className='tracking-[.2em] text-[#BBA14F]'>PARIS</span>
 						</div>
 						<div className='flex items-center justify-between mx-4'>
 							<div className='flex flex-row items-center'>
@@ -225,25 +225,25 @@ const Header = () => {
 			) : (
 				<div className='mx-auto relative'>
 					<div className='group hover:animate-fadeIn hover:bg-white duration-200 ease-in-out phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
-						<div className='flex justify-center'>
+						<div className='flex justify-center group-hover:text-[#BBA14F]'>
 							<span
-								className={`group-hover:text-black text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
 							>
 								PIERRE
 							</span>
 							<span
-								className={`group-hover:text-black text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
 							>
 								-
 							</span>
 							<span
-								className={`group-hover:text-black text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
 							>
 								LABICHE
 							</span>
 						</div>
 						<div className={`flex justify-center  ${aboreto.className}`}>
-							<span className='group-hover:text-black text-white hover:text-black tracking-[.2em]'>
+							<span className='group-hover:text-[#BBA14F] text-white hover:text-black tracking-[.2em]'>
 								PARIS
 							</span>
 						</div>

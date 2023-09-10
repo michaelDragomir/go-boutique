@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import SubDrawerModal from './SubDrawerModal';
+import Test from './Test';
 
 import { roboto } from '@/app/fonts';
 import { navTabItems } from '@/app/utils/navTabIcons';
@@ -18,19 +19,22 @@ const SideDrawer = ({
 }) => {
 	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
 	const [subDrawerModalOpen, setSubDrawerModalOpen] = useState<boolean>(false);
+	console.log('@@@', activeTab);
 
 	const innerDrawerToggleHandler = (activeTab: any) => {
 		switch (activeTab) {
-			case 'Categories':
+			case 'categories':
 				return <SubDrawerModal data={dropDownItems.categories} />;
-			case 'Men':
-				return <SubDrawerModal data={dropDownItems.men} />;
-			case 'Women':
+			case 'men':
+				return <SubDrawerModal data={dropDownItems.account} />;
+			case 'women':
 				return <SubDrawerModal data={dropDownItems.women} />;
-			case 'Kids':
+			case 'kids':
 				return <SubDrawerModal data={dropDownItems.kids} />;
-			case 'Beauty':
+			case 'beauty':
 				return <SubDrawerModal data={dropDownItems.beauty} />;
+			case 'my account':
+				return <Test />;
 			default:
 				return null;
 		}
@@ -64,13 +68,13 @@ const SideDrawer = ({
 					{dropDownItems.categories.map((item: any, idx: any) => (
 						<div
 							key={idx}
-							className='px-6 cursor-pointer animate-innerDrawerSlideOut pt-8'
+							className='px-6 animate-innerDrawerSlideOut pt-8'
 							onClick={() => subDrawerToggleHandler(item.name)}
 						>
 							<ul
 								className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
 							>
-								<li className='group flex hover:font-bold items-center justify-between text-black hover:text-black'>
+								<li className='cursor-pointer group flex hover:font-bold items-center justify-between text-black hover:text-black'>
 									{item.name}
 									<span>
 										<IoIosArrowForward />
@@ -84,12 +88,13 @@ const SideDrawer = ({
 						<>
 							<div
 								key={idx}
-								className='px-6 cursor-pointer pt-8 animate-innerDrawerSlideOut'
+								className='px-6 pt-8 animate-innerDrawerSlideOut'
+								onClick={() => subDrawerToggleHandler(item.name)}
 							>
 								<ul
 									className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
 								>
-									<li className='hover:font-bold text-black hover:text-black'>
+									<li className='cursor-pointer hover:font-bold text-black hover:text-black'>
 										{item.name}
 									</li>
 								</ul>

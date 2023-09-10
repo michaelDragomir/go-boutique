@@ -1,18 +1,18 @@
 export const categories = [
 	{
-		name: 'Accessories',
+		name: 'accessories',
 	},
 	{
-		name: 'Men',
+		name: 'men',
 	},
 	{
-		name: 'Women',
+		name: 'women',
 	},
 	{
-		name: 'Kids',
+		name: 'kids',
 	},
 	{
-		name: 'Beauty',
+		name: 'beauty',
 	},
 ];
 
@@ -97,5 +97,11 @@ export const secondaryCategories = [
 	},
 	{
 		name: 'contact us',
+	},
+];
+
+export const account = [
+	{
+		name: 'test',
 	},
 ];

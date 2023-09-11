@@ -129,9 +129,9 @@ const Header = () => {
 											className='group flex items-center justify-evenly cursor-pointer text-black w-full h-[30px] relative hover:z-aboveAll py-8'
 										>
 											<li
-												className={`text-sm hover:border-b hover:border-black ${
+												className={`text-sm hover:border-b hover:border-[#BBA14F] animate-fadeIn ${
 													activeTab === navTabItems[idx].name && isactiveTab
-														? 'border-b border-black'
+														? 'border-b border-[#BBA14F]'
 														: ''
 												}`}
 											>
@@ -279,7 +279,7 @@ const Header = () => {
 											<li
 												className={`font-medium text-sm hover:border-b hover:border-white ${
 													activeTab === navTabItems[idx].name && isactiveTab
-														? 'border-b group-hover:border-black'
+														? 'border-b group-hover:border-[#BBA14F]'
 														: ''
 												}`}
 											>

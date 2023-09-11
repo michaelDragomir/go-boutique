@@ -2,13 +2,6 @@ const SignIn = () => {
 	return (
 		<main className='w-full flex flex-col items-center justify-center px-4'>
 			<div className='max-w-sm w-full text-gray-600 space-y-5'>
-				<div className='text-center pb-8'>
-					<div className='mt-5'>
-						<h3 className='text-gray-800 text-2xl font-bold sm:text-3xl'>
-							Sign In
-						</h3>
-					</div>
-				</div>
 				<form onSubmit={(e) => e.preventDefault()} className='space-y-5'>
 					<div>
 						<label className='font-medium'>Email</label>
@@ -87,7 +80,7 @@ const SignIn = () => {
 					Don't have an account?
 					<a
 						href='javascript:void(0)'
-						className='font-medium text-black hover:text-black pl-3 hover:text-zinc-400'
+						className='font-medium text-zinc-300 hover:text-black pl-3 hover:text-zinc-500'
 					>
 						Sign up
 					</a>

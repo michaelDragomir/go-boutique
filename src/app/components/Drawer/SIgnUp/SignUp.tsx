@@ -1,15 +1,17 @@
+'use client';
+
+import { useState } from 'react';
+
 const SignUp = () => {
+	const [isChecked, setIsChecked] = useState(true);
+
+	const handleCheckboxChange = () => {
+		setIsChecked((prev) => !prev);
+	};
 	return (
 		<main className='w-full flex flex-col items-center justify-center px-4'>
-			<div className='max-w-sm w-full text-gray-600 space-y-5'>
-				<div className='text-center pb-8'>
-					<div className='mt-5'>
-						<h3 className='text-gray-800 text-2xl font-bold sm:text-3xl'>
-							Create Account
-						</h3>
-					</div>
-				</div>
-				<form onSubmit={(e) => e.preventDefault()} className='space-y-5'>
+			<div className='max-w-sm w-full text-gray-600'>
+				<form onSubmit={(e) => e.preventDefault()} className='space-y-8'>
 					<div>
 						<label className='font-medium'>
 							First Name <span className='text-red-600'>*</span>
@@ -54,11 +56,13 @@ const SignUp = () => {
 						<div className='flex items-center gap-x-3'>
 							<input
 								type='checkbox'
-								id='remember-me-checkbox'
+								id='checkbox-mailing-list'
+								checked={isChecked}
+								onClick={() => handleCheckboxChange()}
 								className='checkbox-item peer hidden'
 							/>
 							<label
-								htmlFor='remember-me-checkbox'
+								htmlFor='checkbox-mailing-list'
 								className='relative flex w-10 h-5 bg-white peer-checked:bg-[#BBA14F] rounded-md border ring-offset-2 ring-[#BBA14F] duration-150 peer-active:ring cursor-pointer after:absolute after:inset-x-0 after:top-[3px] after:m-auto after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45'
 							></label>
 							<span className='text-sm'>
@@ -72,7 +76,7 @@ const SignUp = () => {
 						Create Account
 					</button>
 				</form>
-				<p className='text-slate-400 text-[10px] text-center'>
+				<p className='text-slate-400 text-[10px] text-center mt-3'>
 					By clicking Create Account you agree to Terms and Conditions and
 					Privacy Policy
 				</p>

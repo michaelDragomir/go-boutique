@@ -21,7 +21,6 @@ const SideDrawer = ({
 }) => {
 	const [activeTab, setActiveTab] = useState<String>(navTabItems[0].name);
 	const [subDrawerModalOpen, setSubDrawerModalOpen] = useState<boolean>(false);
-	console.log('@@@', activeTab);
 
 	const innerDrawerToggleHandler = (activeTab: any) => {
 		switch (activeTab) {
@@ -37,14 +36,15 @@ const SideDrawer = ({
 				return <SubDrawerModal data={dropDownItems.kids} />;
 			case 'beauty':
 				return <SubDrawerModal data={dropDownItems.beauty} />;
+			default:
+				return null;
+		}
+	};
+
+	const testDrawerToggleHandler = (activeTab: any) => {
+		switch (activeTab) {
 			case 'my account':
 				return <UserPanal />;
-			case 'favorites saved':
-				return <SignUp />;
-			// case 'delivery & returns':
-			// 	return <Page3 />;
-			// case 'contact us':
-			// 	return <Page4 />;
 			default:
 				return null;
 		}
@@ -122,6 +122,9 @@ const SideDrawer = ({
 					</div>
 					<div className='animate-innerDrawerSlideIn'>
 						{innerDrawerToggleHandler(activeTab)}
+					</div>
+					<div className='animate-fadeIn'>
+						{testDrawerToggleHandler(activeTab)}
 					</div>
 				</>
 			)}

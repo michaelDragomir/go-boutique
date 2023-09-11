@@ -77,7 +77,7 @@ const SignIn = () => {
 					<span className='group-hover:text-white'>Continue with Google</span>
 				</button>
 				<p className='text-center'>
-					Don't have an account?
+					Don&apos;t have an account?
 					<a
 						href='javascript:void(0)'
 						className='font-medium text-zinc-300 hover:text-black pl-3 hover:text-zinc-500'

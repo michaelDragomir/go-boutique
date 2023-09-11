@@ -28,6 +28,7 @@ const UserPanal = () => {
 							activeTab === tab ? 'border-b border-[#BBA14F]' : ''
 						}`}
 					>
+						<span key={idx}></span>
 						{tab}
 					</div>
 				))}

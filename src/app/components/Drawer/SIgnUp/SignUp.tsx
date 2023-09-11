@@ -58,7 +58,7 @@ const SignUp = () => {
 								type='checkbox'
 								id='checkbox-mailing-list'
 								checked={isChecked}
-								onClick={() => handleCheckboxChange()}
+								onChange={() => handleCheckboxChange()}
 								className='checkbox-item peer hidden'
 							/>
 							<label

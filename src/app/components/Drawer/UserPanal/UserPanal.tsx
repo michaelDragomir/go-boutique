@@ -14,7 +14,9 @@ const UserPanal = () => {
 		<main className='border-goGreen w-full flex flex-col items-center justify-center px-4'>
 			<div className='border-b flex text-center max-w-sm w-full justify-between px-8'>
 				{tabItems.map((tab: any, idx: any) => (
-					<div className='text-black text-2xl'>{tab}</div>
+					<div key={idx} className='text-black text-2xl'>
+						{tab}
+					</div>
 				))}
 			</div>
 		</main>

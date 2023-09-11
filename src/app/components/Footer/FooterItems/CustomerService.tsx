@@ -4,9 +4,9 @@ import * as customerServiceItems from '@/app/utils/footerItems';
 const AboutUs = () => {
 	const { customerService } = customerServiceItems;
 	return (
-		<div className='mb-6'>
+		<div className='mb-6 text-white'>
 			<h3 className='text-base font-bold pb lg:flex lg:justify-center'>
-				Customer Service
+				Customer Care
 			</h3>
 			<div className='phone:space-y-2 flex flex-col md:space-y-4 lg:flex lg:flex-row p1 font-light lg:justify-center'>
 				{customerService.map((item: any, idx: any) => (

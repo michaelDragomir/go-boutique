@@ -4,7 +4,7 @@ import * as categoriesItems from '@/app/utils/footerItems';
 const ShopCategories = () => {
 	const { categories } = categoriesItems;
 	return (
-		<div className='mb-6'>
+		<div className='mb-6 text-white'>
 			<h3 className='text-base font-bold pb lg:flex lg:justify-center'>
 				Shop Categories
 			</h3>

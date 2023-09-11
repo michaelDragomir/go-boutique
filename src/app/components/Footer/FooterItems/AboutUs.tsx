@@ -4,7 +4,7 @@ import * as aboutUsItems from '@/app/utils/footerItems';
 const AboutUs = () => {
 	const { aboutUs } = aboutUsItems;
 	return (
-		<div className='mb-6'>
+		<div className='mb-6 text-white'>
 			<h3 className='text-base font-bold pb lg:flex lg:justify-center'>
 				Get to Know Us
 			</h3>

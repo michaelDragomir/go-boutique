@@ -7,54 +7,38 @@ import {
 
 export const categories = [
 	{
-		name: 'Clothing',
+		name: 'Accessories',
 		separator: '|',
 	},
 	{
-		name: 'Pet Supplies',
+		name: 'Men',
 		separator: '|',
 	},
 	{
-		name: 'Household',
+		name: 'Women',
 		separator: '|',
 	},
 	{
-		name: 'Electronics',
+		name: 'Kids',
 		separator: '|',
 	},
 	{
-		name: 'Bath & Body',
-		separator: '|',
-	},
-	{
-		name: 'Toys',
-		separator: '|',
-	},
-	{
-		name: 'Active',
+		name: 'Beauty',
 		separator: '',
 	},
 ];
 
 export const customerService = [
 	{
-		name: 'Your Account',
+		name: 'My Account',
 		separator: '|',
 	},
 	{
-		name: 'Your Orders',
+		name: 'Orders',
 		separator: '|',
 	},
 	{
 		name: 'Help',
-		separator: '|',
-	},
-	{
-		name: 'Credit Services',
-		separator: '|',
-	},
-	{
-		name: 'Store Finder',
 		separator: '|',
 	},
 	{
@@ -67,10 +51,6 @@ export const customerService = [
 	},
 	{
 		name: 'Returns & Exchanges',
-		separator: '|',
-	},
-	{
-		name: 'FAQs',
 		separator: '',
 	},
 ];
@@ -93,10 +73,6 @@ export const aboutUs = [
 		separator: '|',
 	},
 	{
-		name: 'Investor Realations',
-		separator: '|',
-	},
-	{
 		name: 'Accessibility',
 		separator: '|',
 	},
@@ -108,19 +84,19 @@ export const aboutUs = [
 
 export const paymentProducts = [
 	{
-		name: 'Go Visa',
+		name: 'Visa',
 		separator: '|',
 	},
 	{
-		name: 'Go Store Card',
+		name: 'Store Card',
 		separator: '|',
 	},
 	{
-		name: 'Go Secured Card',
+		name: 'Secured Card',
 		separator: '|',
 	},
 	{
-		name: 'Go Business Card',
+		name: 'Business Card',
 		separator: '|',
 	},
 	{
@@ -128,15 +104,7 @@ export const paymentProducts = [
 		separator: '|',
 	},
 	{
-		name: 'Reload Your Balance',
-		separator: '|',
-	},
-	{
 		name: 'Gift Cards',
-		separator: '|',
-	},
-	{
-		name: 'Currency Converter',
 		separator: '',
 	},
 ];

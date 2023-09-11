@@ -117,7 +117,7 @@ const config: Config = {
 				drawerSlideOut: 'drawerSlideOut .25s forwards',
 				innerDrawerSlideIn: 'innerDrawerSlideIn .15s ease-in-out',
 				innerDrawerSlideOut: 'innerDrawerSlideOut .15s forwards',
-				fadeIn: 'fadeIn .2s ease-in-out',
+				fadeIn: 'fadeIn .25s ease-in-out',
 				fadeOut: 'fadeOut .2s ease-in-out',
 			},
 

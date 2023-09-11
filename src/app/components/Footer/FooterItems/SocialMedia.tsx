@@ -4,7 +4,7 @@ import * as SocialMediaIcons from '@/app/utils/footerItems';
 const SocialMedia = () => {
 	const { socialMedia } = SocialMediaIcons;
 	return (
-		<div className='border-t border-slate-400 flex justify-center p-4'>
+		<div className='border-t border-slate-400 flex justify-center p-4 text-white'>
 			<div className='flex gap-2'>
 				{socialMedia.map((icon: any, idx: any) => (
 					<ul key={idx}>

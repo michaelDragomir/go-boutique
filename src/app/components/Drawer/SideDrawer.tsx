@@ -3,10 +3,9 @@
 import { useState } from 'react';
 
 import SubDrawerModal from './SubDrawerModal';
-import Page1 from './Page1';
-import Page2 from './Page2';
-import Page3 from './Page3';
-import Page4 from './Page4';
+import SignIn from './SignIn/SignIn';
+import SignUp from './SIgnUp/SignUp';
+import UserPanal from './UserPanal/UserPanal';
 
 import { roboto } from '@/app/fonts';
 import { navTabItems } from '@/app/utils/navTabIcons';
@@ -39,13 +38,13 @@ const SideDrawer = ({
 			case 'beauty':
 				return <SubDrawerModal data={dropDownItems.beauty} />;
 			case 'my account':
-				return <Page1 />;
+				return <UserPanal />;
 			case 'favorites saved':
-				return <Page2 />;
-			case 'delivery & returns':
-				return <Page3 />;
-			case 'contact us':
-				return <Page4 />;
+				return <SignUp />;
+			// case 'delivery & returns':
+			// 	return <Page3 />;
+			// case 'contact us':
+			// 	return <Page4 />;
 			default:
 				return null;
 		}
@@ -67,7 +66,7 @@ const SideDrawer = ({
 
 	return (
 		<div
-			className={`w-[350px] h-screen bg-white z-aboveAll absolute left-0 top-0 drop-shadow-md ${
+			className={`w-[450px] h-screen bg-white z-aboveAll absolute left-0 top-0 drop-shadow-md ${
 				isModalOpen ? 'animate-drawerSlideIn' : 'animate-drawerSlideOut'
 			}`}
 		>
@@ -94,7 +93,7 @@ const SideDrawer = ({
 							</ul>
 						</div>
 					))}
-					<div className='border-b border-black mx-6 mt-12' />
+					<div className='border-b border-[#BBA14F] mx-6 mt-12' />
 					{dropDownItems.secondaryCategories.map((item: any, idx: any) => (
 						<>
 							<div

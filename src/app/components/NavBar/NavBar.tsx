@@ -180,7 +180,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-fadeIn visible border z-10 absolute w-full h-[330px] bg-white fixed top-[123px] left-0'
+									className='animate-fadeIn visible border z-10 absolute w-full h-suto bg-white fixed top-[123px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>

@@ -8,7 +8,7 @@ const ShopCategories = () => {
 			<h3 className='text-base font-bold pb lg:flex lg:justify-center'>
 				Shop Categories
 			</h3>
-			<div className='phone:space-y-2 flex flex-col md:space-y-4 lg:flex lg:flex-row p1 font-light lg:justify-center'>
+			<div className=''>
 				{categories.map((item: any, idx: any) => (
 					<>
 						<ul className='mt-[15px]'>

@@ -22,7 +22,7 @@ const NavItemsDropDown = ({
 			<div className='w-[270px]'>
 				{collections.map((item: String, idx: number) => (
 					<ul className='pb-2 font-light text-black uppercase' key={idx}>
-						<h2 className={`mb-1 font-medium ${inter.className}`}>
+						<h2 className={`mb-1 tracking-[.05em] ${inter.className}`}>
 							{item.headline}
 						</h2>
 					</ul>
@@ -30,14 +30,11 @@ const NavItemsDropDown = ({
 			</div>
 			<div className='w-[190px]'>
 				{items.map((item: String, idx: number) => (
-					<ul
-						className='pb-2 font-light text-black uppercase text-sm'
-						key={idx}
-					>
+					<ul className='pb-2 font-light text-black uppercase ' key={idx}>
 						<Link href={`/${item.name}`}>
 							<li className=''>
 								<span
-									className={`hover:border-b hover:border-b-black font-medium ${inter.className}`}
+									className={`hover:border-b hover:border-b-black text-sm tracking-[.1em] ${inter.className}`}
 								>
 									{item.name}
 								</span>
@@ -49,9 +46,7 @@ const NavItemsDropDown = ({
 			<div className='flex gap-4'>
 				{images.map((item: String, idx: number) => (
 					<ul className='pb-2 font-light text-black uppercase' key={idx}>
-						<h2 className={`mb-1 font-medium ${inter.className}`}>
-							{item.headline}
-						</h2>
+						<h2 className={`mb-1 ${inter.className}`}>{item.headline}</h2>
 						<Image
 							width={331}
 							height={224}

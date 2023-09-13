@@ -128,7 +128,9 @@ const Header = () => {
 								LABICHE
 							</span>
 						</div>
-						<div className={`flex justify-center ${aboreto.className}`}>
+						<div
+							className={`flex justify-center border-b border-b-black ${aboreto.className}`}
+						>
 							<span className='tracking-[.2em] text-[#BBA14F]'>PARIS</span>
 						</div>
 						<div className='flex items-center justify-between mx-4'>
@@ -273,8 +275,10 @@ const Header = () => {
 								LABICHE
 							</span>
 						</div>
-						<div className={`flex justify-center  ${aboreto.className}`}>
-							<span className='group-hover:text-[#BBA14F] text-white hover:text-black tracking-[.2em]'>
+						<div
+							className={`flex justify-center border-b group-hover:border-b-black border-b-white  ${aboreto.className}`}
+						>
+							<span className='group-hover:text-[#BBA14F] text-white tracking-[.2em]'>
 								PARIS
 							</span>
 						</div>

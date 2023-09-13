@@ -12,7 +12,7 @@ const SubDrawerModal = ({ data }: { data: any }) => {
 				<div key={idx} className='px-6'>
 					<ul className='' key={idx}>
 						<Link href={`/${item.name}`}>
-							<li className='flex items-center justify-between text-black hover:text-black pt-6'>
+							<li className='flex items-center justify-between text-black hover:text-slate-400 pt-6'>
 								<span className='hover:font-bold h-[20px]'>{item.name}</span>
 							</li>
 						</Link>

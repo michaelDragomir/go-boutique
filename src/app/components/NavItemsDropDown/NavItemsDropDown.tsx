@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { inter } from '@/app/fonts';
+import { roboto } from '@/app/fonts';
 
 const NavItemsDropDown = ({
 	items,
@@ -22,9 +22,13 @@ const NavItemsDropDown = ({
 			<div className='w-[270px]'>
 				{collections.map((item: String, idx: number) => (
 					<ul className='pb-2 font-light text-black uppercase' key={idx}>
-						<h2 className={`mb-1 tracking-[.05em] ${inter.className}`}>
-							{item.headline}
-						</h2>
+						<Link href={`/${item.name}`}>
+							<li
+								className={`mb-1 tracking-[.05em] hover:text-slate-400 ${roboto.className}`}
+							>
+								{item.headline}
+							</li>
+						</Link>
 					</ul>
 				))}
 			</div>
@@ -34,7 +38,7 @@ const NavItemsDropDown = ({
 						<Link href={`/${item.name}`}>
 							<li className=''>
 								<span
-									className={`hover:border-b hover:border-b-black text-sm tracking-[.1em] ${inter.className}`}
+									className={`hover:text-slate-400 font-light text-sm tracking-[.1em] ${roboto.className}`}
 								>
 									{item.name}
 								</span>
@@ -46,7 +50,9 @@ const NavItemsDropDown = ({
 			<div className='flex gap-4'>
 				{images.map((item: String, idx: number) => (
 					<ul className='pb-2 font-light text-black uppercase' key={idx}>
-						<h2 className={`mb-1 ${inter.className}`}>{item.headline}</h2>
+						<Link href={`/${item.name}`}>
+							<h2 className={`mb-1 ${roboto.className}`}>{item.headline}</h2>
+						</Link>
 						<Image
 							width={331}
 							height={224}

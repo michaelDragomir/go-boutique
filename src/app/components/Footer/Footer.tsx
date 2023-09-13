@@ -7,7 +7,7 @@ import { aboreto } from '@/app/fonts';
 
 const Footer = () => {
 	return (
-		<footer className='bg-[url(/assets/images/laImage.jpg)] bg-cover opacity-70 text-slate-200 text-sm mt-16'>
+		<footer className='bg-[url(/assets/images/parisImage.jpg)] filter z-1 grayscale bg-cover bg-center text-slate-200 text-sm mt-16'>
 			<div className='mt-6 flex justify-center'>
 				<span className={`text-3xl text-white ${aboreto.className}`}>
 					PIERRE

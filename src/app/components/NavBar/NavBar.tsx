@@ -44,14 +44,46 @@ const Header = () => {
 
 	const dropDownMenuItems = () => {
 		switch (activeTab) {
+			case 'ACCESSORIES':
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.accessories}
+						images={dropDownItems.accessoriesDropdownImages}
+						collections={dropDownItems.accessoriesDropdownCollections}
+					/>
+				);
 			case 'MEN':
-				return <NavItemsDropDown props={dropDownItems.men} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.men}
+						images={dropDownItems.menDropdownImages}
+						collections={dropDownItems.menDropdownCollections}
+					/>
+				);
 			case 'WOMEN':
-				return <NavItemsDropDown props={dropDownItems.women} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.women}
+						images={dropDownItems.womenDropdownImages}
+						collections={dropDownItems.womenDropdownCollections}
+					/>
+				);
 			case 'KIDS':
-				return <NavItemsDropDown props={dropDownItems.kids} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.kids}
+						images={dropDownItems.kidsDropdownImages}
+						collections={dropDownItems.kidsDropdownCollections}
+					/>
+				);
 			case 'BEAUTY':
-				return <NavItemsDropDown props={dropDownItems.beauty} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.beauty}
+						images={dropDownItems.beautyDropdownImages}
+						collections={dropDownItems.beautyDropdownCollections}
+					/>
+				);
 			default:
 				return null;
 		}
@@ -81,17 +113,17 @@ const Header = () => {
 					<div className='bg-white phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
 						<div className='flex justify-center text-[#BBA14F]'>
 							<span
-								className={`phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`phone:hidden md:block text-3xl font-bold ${aboreto.className}`}
 							>
 								PIERRE
 							</span>
 							<span
-								className={`phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`phone:hidden md:block text-3xl font-bold ${aboreto.className}`}
 							>
 								-
 							</span>
 							<span
-								className={`phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`phone:hidden md:block text-3xl font-bold ${aboreto.className}`}
 							>
 								LABICHE
 							</span>
@@ -145,15 +177,15 @@ const Header = () => {
 									);
 								})}
 							</div>
-							{isactiveTab && (
-								<div
-									onMouseEnter={() => dropDownToggleHandler()}
-									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-fadeIn visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
-								>
-									{dropDownMenuItems()}
-								</div>
-							)}
+							<div
+								// onMouseEnter={() => dropDownToggleHandler()}
+								// onMouseLeave={() => onMouseEnterToggle('')}
+								className='animate-fadeIn visible border z-10 absolute w-full h-[330px] bg-white fixed top-[123px] left-0'
+							>
+								{dropDownMenuItems()}
+							</div>
+							{/* {isactiveTab && (
+							)} */}
 							{/* <div
 								onClick={searchModalToggleHandler}
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'
@@ -297,7 +329,7 @@ const Header = () => {
 								<div
 									onMouseEnter={() => dropDownToggleHandler()}
 									onMouseLeave={() => onMouseEnterToggle('')}
-									className='animate-fadeIn visible border-slate-200 border-t z-10 absolute w-screen h-[400px] bg-white fixed top-[132px] left-0'
+									className='animate-fadeIn visible border-slate-200 border-t z-10 absolute w-screen h-[330px] bg-white fixed top-[123px] left-0'
 								>
 									{dropDownMenuItems()}
 								</div>

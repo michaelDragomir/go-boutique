@@ -35,14 +35,14 @@ export default function Home() {
 					alt='image'
 				/>
 			</div>
-			{/* <div>
+			<div>
 				<Image
 					width={1800}
 					height={1000}
 					src='/assets/images/test3.jpeg'
 					alt='image'
 				/>
-			</div> */}
+			</div>
 		</main>
 	);
 }

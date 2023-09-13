@@ -41,7 +41,7 @@ const SideDrawer = ({
 		}
 	};
 
-	const testDrawerToggleHandler = (activeTab: any) => {
+	const secondaryInfoSetToggleHandler = (activeTab: any) => {
 		switch (activeTab) {
 			case 'my account':
 				return <UserPanal />;
@@ -84,7 +84,7 @@ const SideDrawer = ({
 							<ul
 								className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
 							>
-								<li className='cursor-pointer group flex hover:font-bold items-center justify-between text-black hover:text-black'>
+								<li className='cursor-pointer group flex hover:text-[#BBA14F] items-center justify-between text-black hover:text-black'>
 									{item.name}
 									<span>
 										<IoIosArrowForward />
@@ -104,7 +104,7 @@ const SideDrawer = ({
 								<ul
 									className={`font-medium tracking-[.15em] uppercase text-sm ${roboto.className}`}
 								>
-									<li className='cursor-pointer hover:font-bold text-black hover:text-black'>
+									<li className='cursor-pointer hover:text-[#BBA14F] text-black hover:text-black'>
 										{item.name}
 									</li>
 								</ul>
@@ -124,7 +124,7 @@ const SideDrawer = ({
 						{innerDrawerToggleHandler(activeTab)}
 					</div>
 					<div className='animate-fadeIn'>
-						{testDrawerToggleHandler(activeTab)}
+						{secondaryInfoSetToggleHandler(activeTab)}
 					</div>
 				</>
 			)}

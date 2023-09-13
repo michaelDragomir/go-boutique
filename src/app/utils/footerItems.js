@@ -5,7 +5,7 @@ import {
 	AiFillYoutube,
 } from 'react-icons/ai';
 
-export const categories = [
+export const theBrand = [
 	{
 		name: 'The Brand',
 	},
@@ -29,9 +29,6 @@ export const customerService = [
 	},
 	{
 		name: 'Orders',
-	},
-	{
-		name: 'Help',
 	},
 	{
 		name: 'Contact Us',
@@ -62,27 +59,6 @@ export const aboutUs = [
 	},
 	{
 		name: 'Our Team',
-	},
-];
-
-export const paymentProducts = [
-	{
-		name: 'Visa',
-	},
-	{
-		name: 'Store Card',
-	},
-	{
-		name: 'Secured Card',
-	},
-	{
-		name: 'Business Card',
-	},
-	{
-		name: 'Shop with points',
-	},
-	{
-		name: 'Gift Cards',
 	},
 ];
 

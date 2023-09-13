@@ -1,4 +1,4 @@
-import ShopCategories from './FooterItems/ShopCategories';
+import TheBrand from './FooterItems/TheBrand';
 import CustomerService from './FooterItems/CustomerService';
 import AboutUs from './FooterItems/AboutUs';
 import SocialMedia from './FooterItems/SocialMedia';
@@ -7,7 +7,7 @@ import { aboreto } from '@/app/fonts';
 
 const Footer = () => {
 	return (
-		<footer className='bg-[url(/assets/images/parisImage.jpg)] filter z-1 grayscale bg-cover bg-center text-slate-200 text-sm mt-16'>
+		<footer className='bg-[url(/assets/images/parisImage.webp)] filter z-1 grayscale bg-cover bg-center text-slate-200 text-sm mt-16'>
 			<div className='mt-6 flex justify-center'>
 				<span className={`text-3xl text-white ${aboreto.className}`}>
 					PIERRE
@@ -27,7 +27,7 @@ const Footer = () => {
 					<AboutUs />
 				</div>
 				<div className=''>
-					<ShopCategories />
+					<TheBrand />
 				</div>
 				<div>
 					<CustomerService />

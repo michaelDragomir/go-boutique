@@ -40,11 +40,11 @@ export const accessories = [
 export const accessoriesDropdownImages = [
 	{
 		headline: 'fall-winter collection',
-		image: '/assets/images/accessoriesPic1.jpg',
+		image: '/assets/images/accessoriesPic1.webp',
 	},
 	{
 		headline: 'Santa Ana collection',
-		image: '/assets/images/accessoriesPic2.jpg',
+		image: '/assets/images/accessoriesPic2.webp',
 	},
 ];
 
@@ -181,11 +181,11 @@ export const kids = [
 export const kidsDropdownImages = [
 	{
 		headline: 'hippy dippy collection',
-		image: '/assets/images/kidsPic2.jpg',
+		image: '/assets/images/kidsPic1.webp',
 	},
 	{
 		headline: 'fall-winter collection',
-		image: '/assets/images/kidsPic1.jpg',
+		image: '/assets/images/kidsPic2.webp',
 	},
 ];
 
@@ -228,11 +228,11 @@ export const beauty = [
 export const beautyDropdownImages = [
 	{
 		headline: 'Rock out with your face out',
-		image: '/assets/images/beautyPic1.jpg',
+		image: '/assets/images/beautyPic1.webp',
 	},
 	{
 		headline: 'Beauty in a beautiful world',
-		image: '/assets/images/beautyPic2.jpg',
+		image: '/assets/images/beautyPic2.webp',
 	},
 ];
 

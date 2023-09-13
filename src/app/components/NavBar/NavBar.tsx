@@ -137,10 +137,9 @@ const Header = () => {
 									<CiMenuBurger className='text-black phone:animate-pulse md:animate-none phone:block iconSize8px cursor-pointer mr-1' />
 								</div>
 								<div
-									onClick={modalToggleHandler}
 									className={`${
 										isModalOpen
-											? 'absolute w-screen h-screen bg-white fixed top-0 left-0 opacity-40 z-overlay'
+											? 'absolute w-screen h-screen bg-white fixed top-0 left-0 opacity-40 z-overlay overflow-hidden'
 											: ''
 									} `}
 								/>

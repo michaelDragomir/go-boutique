@@ -4,19 +4,16 @@ import * as customerServiceItems from '@/app/utils/footerItems';
 const AboutUs = () => {
 	const { customerService } = customerServiceItems;
 	return (
-		<div className='mb-6 text-white'>
-			<h3 className='text-base font-bold pb lg:flex lg:justify-center'>
-				Customer Care
-			</h3>
-			<div className='phone:space-y-2 flex flex-col md:space-y-4 lg:flex lg:flex-row p1 font-light lg:justify-center'>
+		<div className='text-white'>
+			<h3 className='text-base font-bold'>Customer Care</h3>
+			<div className=''>
 				{customerService.map((item: any, idx: any) => (
 					<>
-						<ul className='mt-[15px]'>
+						<ul className='mt-[6px]'>
 							<Link href={'/'}>
 								<li key={idx}>{item.name}</li>
 							</Link>
 						</ul>
-						<span className='px-2 phone:hidden lg:block'>{item.separator}</span>
 					</>
 				))}
 			</div>
@@ -25,3 +22,5 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+// phone:space-y-2 flex flex-col md:space-y-4 lg:flex lg:flex-row p1 font-light lg:justify-center

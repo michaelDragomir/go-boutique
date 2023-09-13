@@ -15,7 +15,7 @@ const SocialMedia = () => {
 				))}
 			</div>
 			<div className='pl-8 font-extralight text-sm'>
-				&#169; 2023, Go Boutique, Inc.
+				&#169; 2023, Pierre Labiche, Inc.
 			</div>
 		</div>
 	);

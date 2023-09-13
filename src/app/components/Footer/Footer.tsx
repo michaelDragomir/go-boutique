@@ -2,7 +2,7 @@ import ShopCategories from './FooterItems/ShopCategories';
 import CustomerService from './FooterItems/CustomerService';
 import AboutUs from './FooterItems/AboutUs';
 import SocialMedia from './FooterItems/SocialMedia';
-import PaymentProducts from './FooterItems/PaymentProducts';
+import ContactInfo from './FooterItems/ContactInfo';
 import { aboreto } from '@/app/fonts';
 
 const Footer = () => {
@@ -22,18 +22,18 @@ const Footer = () => {
 				</span>
 			</div>
 			<div className='tracking-[.2em] text-white text-center mb-6'>PARIS</div>
-			<div className=''>
-				<div className='sm:pr-[20px] md:pr-0 phone:text-center tablet:flex tablet:justify-center sm:flex-row lg:block md:mr-12 lg:mr-0'>
-					<span className='tablet:pr-12 md:pr-12 lg:pr-0'>
-						<ShopCategories />
-					</span>
+			<div className='flex justify-evenly'>
+				<div>
+					<AboutUs />
+				</div>
+				<div className=''>
+					<ShopCategories />
+				</div>
+				<div>
 					<CustomerService />
 				</div>
-				<div className='phone:text-center tablet:flex tablet:justify-center sm:flex-row lg:block md:mr-12 lg:mr-0'>
-					<span className='tablet:pr-12 md:pr-12 lg:pr-0'>
-						<PaymentProducts />
-					</span>
-					<AboutUs />
+				<div>
+					<ContactInfo />
 				</div>
 			</div>
 			<SocialMedia />

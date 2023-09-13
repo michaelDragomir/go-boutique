@@ -7,19 +7,19 @@ import {
 
 export const categories = [
 	{
-		name: 'Accessories',
+		name: 'The Brand',
 	},
 	{
-		name: 'Men',
+		name: 'Sustainability',
 	},
 	{
-		name: 'Women',
+		name: 'Terms & Conditions',
 	},
 	{
-		name: 'Kids',
+		name: 'Manufacture',
 	},
 	{
-		name: 'Beauty',
+		name: 'Stores',
 	},
 ];
 

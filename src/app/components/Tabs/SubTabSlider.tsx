@@ -17,13 +17,37 @@ const SubTabSlider = ({ navTabItems }: { navTabItems: any }) => {
 	const dropDownMenuItems = () => {
 		switch (activeTab) {
 			case 'Men':
-				return <NavItemsDropDown props={dropDownItems.men} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.men}
+						images={null}
+						collections={null}
+					/>
+				);
 			case 'Women':
-				return <NavItemsDropDown props={dropDownItems.women} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.women}
+						images={null}
+						collections={null}
+					/>
+				);
 			case 'Kids':
-				return <NavItemsDropDown props={dropDownItems.kids} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.kids}
+						images={null}
+						collections={null}
+					/>
+				);
 			case 'Beauty':
-				return <NavItemsDropDown props={dropDownItems.beauty} />;
+				return (
+					<NavItemsDropDown
+						items={dropDownItems.beauty}
+						images={null}
+						collections={null}
+					/>
+				);
 			default:
 				return null;
 		}

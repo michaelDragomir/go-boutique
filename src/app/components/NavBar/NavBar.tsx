@@ -177,15 +177,15 @@ const Header = () => {
 									);
 								})}
 							</div>
-							<div
-								// onMouseEnter={() => dropDownToggleHandler()}
-								// onMouseLeave={() => onMouseEnterToggle('')}
-								className='animate-fadeIn visible border z-10 absolute w-full h-[330px] bg-white fixed top-[123px] left-0'
-							>
-								{dropDownMenuItems()}
-							</div>
-							{/* {isactiveTab && (
-							)} */}
+							{isactiveTab && (
+								<div
+									onMouseEnter={() => dropDownToggleHandler()}
+									onMouseLeave={() => onMouseEnterToggle('')}
+									className='animate-fadeIn visible border z-10 absolute w-full h-[330px] bg-white fixed top-[123px] left-0'
+								>
+									{dropDownMenuItems()}
+								</div>
+							)}
 							{/* <div
 								onClick={searchModalToggleHandler}
 								className='phone:w-screen phone:justify-center z-50 border flex border-slate-500 gap-1 cursor-pointer text-black rounded-md sm:hidden text-sm p-[5px] justify-start'

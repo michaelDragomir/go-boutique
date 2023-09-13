@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { aboreto, roboto, roboto_mono, inter } from '@/app/fonts';
+import { inter } from '@/app/fonts';
 
 const NavItemsDropDown = ({
 	items,

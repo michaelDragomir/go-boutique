@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+import Test from './Test';
+
 const NewsLetterSignUp = () => {
 	const [emailValue, setEmailValue] = useState<any>('');
 
@@ -30,7 +32,7 @@ const NewsLetterSignUp = () => {
 						className='w-72 mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#BBA14F] shadow-sm rounded-full text-sm'
 					/>
 					<Link
-						href={`mailto:${emailValue}?subject=welcome to the pierre labiche newsletter&body=this is for demo purposes. Email is not being shared nor will you recieve anything`}
+						href={`mailto:${emailValue}?subject=${(<Test />)}`}
 						className='w-20 ml-3 px-3 py-2 text-white text-sm bg-black hover:bg-zinc-600 rounded-full duration-150'
 					>
 						Sign Up

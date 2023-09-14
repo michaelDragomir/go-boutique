@@ -1,12 +1,6 @@
-'use client';
-
-import { useState } from 'react';
-
 import { createTransport } from 'nodemailer';
 
 const NewsLetterSignUp = () => {
-	const [emailValue, setEmailValue] = useState<any>('');
-
 	const transporter = createTransport({
 		service: 'gmail',
 		auth: {
@@ -15,15 +9,19 @@ const NewsLetterSignUp = () => {
 		},
 	});
 
-	const mailOptions = {
-		from: 'pierrelabichel@pierrelabiche.com',
-		to: emailValue,
-		subject: 'Thanks for subscribing!',
-		text: 'Welcome to our email list. We will keep you updated with the latest news and promotions.',
+	const mailOptionsFun = (e: any) => {
+		const mailOptions = {
+			from: 'pierrelabichel@pierrelabiche.com',
+			to: e.target.value,
+			subject: 'Thanks for subscribing!',
+			text: 'Welcome to our email list. We will keep you updated with the latest news and promotions.',
+		};
+
+		return mailOptions;
 	};
 
-	const test = () => {
-		transporter.sendMail(mailOptions, (error, info) => {
+	const test = (e: any) => {
+		transporter.sendMail(mailOptionsFun(e), (error, info) => {
 			if (error) {
 				console.log('Error:', error);
 			} else {
@@ -49,8 +47,7 @@ const NewsLetterSignUp = () => {
 				<input
 					type='email'
 					placeholder='Enter your email'
-					value={emailValue}
-					onChange={(e) => setEmailValue(e.target.value)}
+					onChange={(e) => test(e.target.value)}
 					required
 					className='w-72 mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#BBA14F] shadow-sm rounded-full text-sm'
 				/>

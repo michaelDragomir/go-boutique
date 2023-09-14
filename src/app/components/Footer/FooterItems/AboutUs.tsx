@@ -8,13 +8,11 @@ const AboutUs = () => {
 			<h3 className='text-base font-bold pb'>Get to Know Us</h3>
 			<div className=''>
 				{aboutUs.map((item: any, idx: any) => (
-					<>
-						<ul className='mt-[6px]'>
-							<Link href={'/'}>
-								<li key={idx}>{item.name}</li>
-							</Link>
-						</ul>
-					</>
+					<ul key={idx} className='mt-[6px]'>
+						<Link href={'/'}>
+							<li key={idx}>{item.name}</li>
+						</Link>
+					</ul>
 				))}
 			</div>
 		</div>

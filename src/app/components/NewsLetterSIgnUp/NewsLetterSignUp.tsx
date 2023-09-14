@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
 
 import { createTransport } from 'nodemailer';
@@ -68,10 +67,3 @@ const NewsLetterSignUp = () => {
 };
 
 export default NewsLetterSignUp;
-
-// <Link
-// 	href={`mailto:${emailValue}?subject=welcome to the pierre labiche newsletter&body=${emailBody}`}
-// 	className='w-20 ml-3 px-3 py-2 text-white text-sm bg-black hover:bg-zinc-600 rounded-full duration-150'
-// >
-
-// </Link>;

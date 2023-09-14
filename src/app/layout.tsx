@@ -23,7 +23,7 @@ export default function RootLayout({
 				onClick={() => preventScrollHandler()}
 				className={`${isDrawerOpen ? 'overflow-hidden' : ''}`}
 			>
-				<div className='flex flex-col min-h-screen mx-auto max-w-[1750px] m-2'>
+				<div className='flex flex-col min-h-screen mx-auto max-w-[1750px] p-3'>
 					<div className={`sticky top-0 ${roboto.className}`}>
 						<NavBar />
 					</div>
@@ -32,7 +32,7 @@ export default function RootLayout({
 					</main>
 					<NewsLetterSignUp />
 					<div className={`tracking-[.05em] ${inter.className}`}>
-						<Footer />N
+						<Footer />
 					</div>
 				</div>
 			</body>

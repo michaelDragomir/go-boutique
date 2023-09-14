@@ -19,7 +19,7 @@ const NavItemsDropDown = ({
 
 	return (
 		<div className='flex justify-evenly pt-4'>
-			<div className='w-[270px]'>
+			<div className='w-[275px]'>
 				{collections.map((item: String, idx: number) => (
 					<ul className='pb-2 font-light text-black uppercase' key={idx}>
 						<Link href={`/${item.name}`}>

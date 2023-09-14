@@ -20,7 +20,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<div className='flex'>
+			{/* <div className='flex'>
 				<Image
 					width={840}
 					height={1000}
@@ -42,7 +42,8 @@ export default function Home() {
 					src='/assets/images/test3.jpeg'
 					alt='image'
 				/>
-			</div>
+			</div> */}
 		</main>
 	);
 }
+382;

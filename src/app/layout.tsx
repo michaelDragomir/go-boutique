@@ -1,26 +1,27 @@
 'use client';
 
 import './globals.css';
-import { roboto_mono, roboto } from './fonts';
+import { useState } from 'react';
+import { roboto_mono, roboto, inter } from './fonts';
+
 import NavBar from '@/app/components/NavBar/NavBar';
 import Footer from '@/app/components/Footer/Footer';
-import { useState } from 'react';
-
+import NewsLetterSignUp from '@/app/components/NewsLetterSIgnUp/NewsLetterSignUp';
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	const [isModalOpen, setIsModalOpen] = useState<any>(false);
+	const [isDrawerOpen, setIsDrawerOpen] = useState<any>(false);
 
 	const preventScrollHandler = () => {
-		setIsModalOpen((prev: any) => !prev);
+		setIsDrawerOpen((prev: any) => !prev);
 	};
 	return (
 		<html lang='en' className={roboto.className}>
 			<body
 				onClick={() => preventScrollHandler()}
-				className={`${isModalOpen ? 'overflow-hidden' : ''}`}
+				className={`${isDrawerOpen ? 'overflow-hidden' : ''}`}
 			>
 				<div className='flex flex-col min-h-screen max-w-[1750px] m-2'>
 					<div className={`sticky top-0 ${roboto.className}`}>
@@ -29,7 +30,10 @@ export default function RootLayout({
 					<main className={`flex-grow ${roboto_mono.className}`}>
 						{children}
 					</main>
-					<Footer />
+					<NewsLetterSignUp />
+					<div className={`tracking-[.05em] ${inter.className}`}>
+						<Footer />N
+					</div>
 				</div>
 			</body>
 		</html>

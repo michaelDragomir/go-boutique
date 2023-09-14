@@ -260,17 +260,17 @@ const Header = () => {
 					<div className='group hover:animate-fadeIn hover:bg-white duration-200 ease-in-out phone:border-green-500 tablet:border-red-600 sm:border-amber-400 md:border-green-500 lg:border-goPink xl:border-goGreen'>
 						<div className='flex justify-center group-hover:text-[#BBA14F]'>
 							<span
-								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold ${aboreto.className}`}
 							>
 								PIERRE
 							</span>
 							<span
-								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold ${aboreto.className}`}
 							>
 								-
 							</span>
 							<span
-								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold pt-2 ${aboreto.className}`}
+								className={`group-hover:text-[#BBA14F] text-white hover:text-black phone:hidden md:block text-3xl font-bold ${aboreto.className}`}
 							>
 								LABICHE
 							</span>
@@ -278,7 +278,7 @@ const Header = () => {
 						<div
 							className={`flex justify-center border-b group-hover:border-b-black border-b-white  ${aboreto.className}`}
 						>
-							<span className='group-hover:text-[#BBA14F] text-white tracking-[.2em]'>
+							<span className='group-hover:text-[#BBA14F] text-white group-hover:border-b-black tracking-[.2em]'>
 								PARIS
 							</span>
 						</div>
@@ -288,7 +288,6 @@ const Header = () => {
 									<CiMenuBurger className='group-hover:text-black phone:animate-pulse md:animate-none phone:block iconSize8px cursor-pointer mr-1 text-white hover:text-black' />
 								</div>
 								<div
-									onClick={modalToggleHandler}
 									className={`${
 										isModalOpen
 											? 'absolute w-screen h-screen bg-slate-400 fixed top-[-8px] left-0 opacity-40 z-overlay'

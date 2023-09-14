@@ -8,9 +8,6 @@ import { createTransport } from 'nodemailer';
 const NewsLetterSignUp = () => {
 	const [emailValue, setEmailValue] = useState<any>('');
 
-	const emailBody =
-		'this is for demo purposes. Email is not being shared nor will you recieve anything';
-
 	const transporter = createTransport({
 		service: 'gmail',
 		auth: {

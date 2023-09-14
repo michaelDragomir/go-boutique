@@ -2,15 +2,18 @@
 const path = require('path');
 
 const nextConfig = {
-	// webpack: (config, { isServer }) => {
-	// 	if (!isServer) {
-	// 		config.node = {
-	// 			fs: 'empty',
-	// 		};
-	// 	}
-
-	// 	return config;
-	// },
+	webpack: (config, { isServer }) => {
+		if (!isServer) {
+			config.resolve.fallback = {
+				fs: false,
+				net: false,
+				dns: false,
+				child_process: false,
+				tls: false,
+			};
+		}
+		return config;
+	},
 	reactStrictMode: true,
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],

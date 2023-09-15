@@ -14,9 +14,6 @@ const nextConfig = {
 		}
 		return config;
 	},
-	future: {
-		webpack5: true,
-	},
 	reactStrictMode: true,
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],

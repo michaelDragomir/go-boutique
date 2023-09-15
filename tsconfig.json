@@ -28,7 +28,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"src/app/api/emailRoute/route.jd"
+		"src/app/api/email-route/route.jd",
+		"src/app/api/email-route/send-email.ts"
 	],
 	"exclude": ["node_modules"]
 }

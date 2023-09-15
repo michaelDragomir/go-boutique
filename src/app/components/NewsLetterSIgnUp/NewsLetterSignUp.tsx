@@ -8,23 +8,26 @@ const NewsLetterSignUp = () => {
 	const router = useRouter();
 	const [emailInput, setEmailInput] = useState<String>('');
 
-	const submitHandler = async (event: any) => {
-		event.preventDefault();
+	const submitHandler = async (e: any) => {
+		e.preventDefault();
+
 		try {
-			const response = await fetch('/api/emailRoute', {
+			const response = await fetch('/api/email-route', {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
 				body: JSON.stringify({
 					email: emailInput,
 				}),
+				headers: {
+					'Content-Type': 'application/json',
+				},
 			});
 
 			if (response.ok) {
 				router.push('/');
 			}
-		} catch (error) {}
+		} catch (error) {
+			console.log('error');
+		}
 	};
 
 	return (
@@ -51,7 +54,10 @@ const NewsLetterSignUp = () => {
 						required
 						className='w-72 mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#BBA14F] shadow-sm rounded-full text-sm'
 					/>
-					<button className='w-20 ml-3 px-3 py-2 text-white text-sm bg-black hover:bg-zinc-600 rounded-full duration-150'>
+					<button
+						type='submit'
+						className='w-20 ml-3 px-3 py-2 text-white text-sm bg-black hover:bg-zinc-600 rounded-full duration-150'
+					>
 						Sign Up
 					</button>
 				</div>

@@ -40,7 +40,7 @@ const NewsLetterSignUp = () => {
 							order.
 						</h2>
 						<p className='text-[12px] text-zinc-500'>
-							BE THE FIRST TO KNOW ABOUT OUR LATEST NEWS AND PROMOTIONS.
+							THIS FEATURE WORKS. TRY IT OUT...USING NODEMAILER.
 						</p>
 					</div>
 				</div>

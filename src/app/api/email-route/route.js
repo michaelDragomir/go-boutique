@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 const emailENV = process.env.EMAIL;
 const pass = process.env.EMAIL_PASS;
 
-export const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: emailENV,
@@ -15,20 +15,16 @@ export const POST = async (req) => {
 	const { email } = await req.json();
 	if (req.method === 'POST') {
 		const mailOptions = {
-			from: emailENV,
 			to: email,
-			subject: 'Hello ✔',
-			text: 'Hello world?',
-			html: '<b>Hello world?</b>',
+			subject: 'Welcome to Pierre Labiche fake Newsletter.',
+			text: 'I am a fullstack javascript engineer.  This is my full stack, fully functional e-commerce portfolio site.  stack: next.js, typescript, tailwind css, mongo, prisma, graphql, stripe, next auth, nodemailer.',
 		};
 
 		try {
 			transporter.sendMail(mailOptions, (error) => {
 				if (error) {
-					console.log('NNNOOOOOOOOOOOOOO', error);
 					new Response('Email sending failed', { status: 500 });
 				} else {
-					console.log('IT WORKED');
 					new Response('Email sent successfully', { status: 200 });
 				}
 			});

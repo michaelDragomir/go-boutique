@@ -21,7 +21,6 @@ const NewsLetterSignUp = () => {
 			});
 
 			if (response.ok) {
-				console.log('hitting statement');
 				setEmailInput('');
 			}
 		} catch (error) {
@@ -38,7 +37,7 @@ const NewsLetterSignUp = () => {
 						order.
 					</h2>
 					<p className='text-[12px] text-zinc-500'>
-						THIS FEATURE WORKS. TRY IT OUT...USING NODEMAILER.
+						BE THE FIRST TO KNOW ABOUT OUR LATEST NEWS AND PROMOTIONS.
 					</p>
 				</div>
 			</div>

@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { AWS } from 'aws-sdk';
 import * as aws from '@aws-sdk/client-ses';
 
 export const POST = async (req) => {
@@ -12,6 +13,8 @@ export const POST = async (req) => {
 				secretAccessKey: process.env.SECRET_ACCESS_KEY,
 			},
 		});
+
+		AWS.config.loadFromEnvironment();
 
 		const transporter = nodemailer.createTransport({
 			SES: { ses, aws },

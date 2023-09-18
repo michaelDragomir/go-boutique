@@ -29,6 +29,7 @@
 		"nodemailer-ses-transport": "^1.5.1",
 		"nodemon": "^3.0.1",
 		"postcss": "8.4.27",
+		"postmark": "^3.0.19",
 		"prisma": "^5.1.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",

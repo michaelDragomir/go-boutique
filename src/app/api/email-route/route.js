@@ -1,10 +1,11 @@
 import nodemailer from 'nodemailer';
-import { SES } from '@aws-sdk/client-ses';
+import * as aws from '@aws-sdk/client-ses';
 
 export const POST = async (req) => {
 	const { email } = await req.json();
 	if (req.method === 'POST') {
-		const ses = new SES({
+		const ses = new aws.SES({
+			apiVersion: '2010-12-01',
 			region: 'us-east-2',
 			credentials: {
 				accessKeyId: process.env.ACCESS_KEY_ID,
@@ -13,7 +14,7 @@ export const POST = async (req) => {
 		});
 
 		const transporter = nodemailer.createTransport({
-			SES: { ses, aws: { region: 'us-east-2' } },
+			SES: { ses, aws },
 		});
 
 		const mailOptions = {
@@ -40,10 +41,3 @@ export const POST = async (req) => {
 		return new Response('no data', { status: 500 });
 	}
 };
-
-// sanity.io - cms prfeormance cdns..how they deliver the content. how much does it cost? how do they deleiver things..what do they use? how does it work..impact/benefit.
-// cms.
-// programmatic SEO!!!!!!!!
-
-// jobs and accomodataions..what's the latest and greatest scrapping tool for node js.  how do we architecture it? who what when where why?
-// read through seo docs in next .js

@@ -6,7 +6,7 @@ export const POST = async (req) => {
 	if (req.method === 'POST') {
 		const ses = new aws.SES({
 			apiVersion: '2010-12-01',
-			region: 'us-east-2',
+			region: process.env.REGION,
 			credentials: {
 				accessKeyId: process.env.ACCESS_KEY_ID,
 				secretAccessKey: process.env.SECRET_ACCESS_KEY,

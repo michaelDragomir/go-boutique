@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { AWS } from 'aws-sdk';
+// const AWS = require('aws-sdk');
 import * as aws from '@aws-sdk/client-ses';
 
 export const POST = async (req) => {
@@ -14,7 +14,7 @@ export const POST = async (req) => {
 			},
 		});
 
-		AWS.config.loadFromEnvironment();
+		// AWS.config.loadFromEnvironment();
 
 		const transporter = nodemailer.createTransport({
 			SES: { ses, aws },

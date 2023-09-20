@@ -8,10 +8,8 @@ export const POST = async (req) => {
 		const ses = new aws.SES({
 			apiVersion: '2010-12-01',
 			region: process.env.REGION,
-			credentials: {
-				accessKeyId: process.env.ACCESS_KEY_ID,
-				secretAccessKey: process.env.SECRET_ACCESS_KEY,
-			},
+			accessKeyId: process.env.ACCESS_KEY_ID,
+			secretAccessKey: process.env.SECRET_ACCESS_KEY,
 		});
 
 		// AWS.config.loadFromEnvironment();

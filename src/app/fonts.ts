@@ -29,16 +29,6 @@ export const roboto = Roboto({
 	weight: ['400'],
 });
 
-export const alata = Alata({
-	subsets: ['latin'],
-	weight: ['400'],
-});
-
-export const bonhuer = Bonheur_Royale({
-	subsets: ['latin'],
-	weight: ['400'],
-});
-
 export const aboreto = Aboreto({
 	subsets: ['latin'],
 	weight: ['400'],
